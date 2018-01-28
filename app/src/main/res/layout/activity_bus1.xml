@@ -37,16 +37,10 @@
 
     <ListView
         android:id="@+id/lv"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv"
         />
-        <ListView
-            android:id="@+id/lv2"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv"
-            />
 
 
     </LinearLayout>

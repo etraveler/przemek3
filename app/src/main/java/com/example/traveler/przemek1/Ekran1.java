@@ -21,6 +21,7 @@ public class Ekran1 extends AppCompatActivity implements AsyncResponse,  View.On
     Button btnbus1;
     Button btnlogout;
     Button btnbus2;
+    Button btnpopup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,8 @@ public class Ekran1 extends AppCompatActivity implements AsyncResponse,  View.On
         btnlogout.setOnClickListener(this);
         btnbus2 = (Button) findViewById(R.id.btnbus2);
         btnbus2.setOnClickListener(this);
+        btnpopup = (Button) findViewById(R.id.btnpopup);
+        btnpopup.setOnClickListener(this);
     }
 
 
@@ -80,6 +83,10 @@ public class Ekran1 extends AppCompatActivity implements AsyncResponse,  View.On
             case R.id.btnbus2:
                 Intent in4 = new Intent(this, Bus2.class);
                 startActivity(in4);
+                break;
+            case R.id.btnpopup:
+                Intent in5 = new Intent(this, okno_pop.class);
+                startActivity(in5);
                 break;
 
         }

@@ -16,63 +16,141 @@
         tools:layout_editor_absoluteY="0dp">
 
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#EEEEEE"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="145dp">
-
-        <Button
-            android:id="@+id/btnwyswietlhasla"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="hasla"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="117dp" />
+            android:background="#800080"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="145dp">
 
-        <Button
-            android:id="@+id/btnlista"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lista"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="117dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#EEEEEE"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="145dp">
 
-        <Button
-            android:id="@+id/btnbus2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bus2" />
+            <Button
+                android:id="@+id/btnwyswietlhasla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hasla"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="117dp" />
 
-        <Button
-            android:id="@+id/btnbus1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bus1"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="117dp" />
+            <Button
+                android:id="@+id/btnlista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lista"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="117dp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#EEEEEE"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="145dp">
+            <Button
+                android:id="@+id/btnbus1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bus1"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="117dp" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btnbus2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bus2" />
+
+            <Button
+                android:id="@+id/btnpopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="popup" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nic" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nic" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#EEEEEE"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="145dp">
+
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="pokazuje baze w chmurce" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="pobieranie danych z bazy do tabeli" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:text="w srodku tabela ktorej wiersze sa aktywne. wyskakujace okienka wczytuja tekst z konkretnego wiersza tabeli" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="testowa ltabela zawierajaca wiecej danych" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:text="wyskakujace okienko ale nic wiecej" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:text="jeszcze nic" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#EEEEEE"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="145dp">
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="#FFF2175E"
             android:orientation="vertical"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="145dp">
-        </LinearLayout>
+            tools:layout_editor_absoluteY="145dp"></LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

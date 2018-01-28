@@ -60,8 +60,22 @@ public class CreateAccount extends AppCompatActivity implements AsyncResponse, V
                 postData.put("createUsername", createUsername.getText().toString());
                 postData.put("createPassword", createPassword.getText().toString());
 
-                PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
-                task.execute("http://traveler95.nazwa.pl/jeden/client/create.php");
+
+
+
+                 //   String text = createName.getText().toString();
+                int namedl = createName.getText().length();
+                int logindl = createUsername.getText().length();
+                int passdl = createPassword.getText().length();
+
+                if (logindl<5 || namedl<5 || passdl<5 || logindl>8 || passdl>8 || namedl>8)
+                {
+                    Toast.makeText(this, "imie, login lub haslo maja nie odpowiednia dlugosc", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
+                    task.execute("http://traveler95.nazwa.pl/jeden/client/create.php");
+                }
                 break;
 
             case R.id.btnBack:

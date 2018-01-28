@@ -29,13 +29,13 @@ public class Bus1 extends Activity {
         final TextView tv = (TextView) findViewById(R.id.tv);
 
         // Initializing a new String Array
-        String[] fruits = new String[] {
-                "Japanese Persimmon",
-                "Logowanie",
+        final String[] fruits = new String[] {
+                "tylko zmiena tekst na gorze",
+                "Cofnij",
                 "lista",
-                "Malay Apple ",
-                "Mamoncillo",
-                "Persian lime"
+                "wyskakujace okno",
+                "drugie wyskakujace okno",
+                "nic ciekawego"
         };
 
         // Create a List from String Array elements
@@ -56,7 +56,7 @@ public class Bus1 extends Activity {
                 String selectedItem = (String) parent.getItemAtPosition(position);
 
                 // Display the selected item text on TextView
-                tv.setText("Your favorite : " + position + id + selectedItem);
+                tv.setText("pozycja: " + position + " id: " + id +" "+ selectedItem);
 
 
 
@@ -65,12 +65,22 @@ public class Bus1 extends Activity {
 
 
                     case 1:
-                        Intent in1 = new Intent(Bus1.this, Logowanie.class);
+                        Intent in1 = new Intent(Bus1.this, Ekran1.class);
                         startActivity(in1);
                         break;
                     case 2:
                         Intent in2 = new Intent(Bus1.this, lista.class);
                         startActivity(in2);
+                        break;
+                    case 3:
+                        Intent in3 = new Intent(Bus1.this, okno_pop.class);
+                        in3.putExtra("tekst",fruits[position]);
+                        startActivity(in3);
+                        break;
+                    case 4:
+                        Intent in4 = new Intent(Bus1.this, okno_pop.class);
+                        in4.putExtra("tekst",fruits[position]);
+                        startActivity(in4);
                         break;
                 }
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="225dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="79dp">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="136dp"
+            tools:layout_editor_absoluteY="172dp" />
+
+        <Button
+            android:id="@+id/btnshow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kliknij to wczytam tekst"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="124dp" />
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
