@@ -22,6 +22,7 @@ import java.util.List;
 public class Bus2 extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG = "MainActivity";
+    Button btnback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +31,29 @@ public class Bus2 extends AppCompatActivity implements View.OnClickListener{
         Log.d(TAG, "onCreate: Started.");
         ListView mListView = (ListView) findViewById(R.id.listView);
 
-        Button btnback;
+
         btnback = (Button) findViewById(R.id.btnback);
         btnback.setOnClickListener((View.OnClickListener) this);
 
         //Create the Person objects
+
+        ArrayList<Person> peopleList = new ArrayList<>();
+        int number=1;
+
+        while (number<10)
+        {
+
+
+            String numerstring = number + "";
+            Person osoba = new Person("John", numerstring,"Male");
+            peopleList.add(osoba);
+            number++;
+        }
+
+
+
+
+      /*
         Person john = new Person("John","12-20-1998","Male");
         Person steve = new Person("Steve","08-03-1987","Male");
         Person stacy = new Person("Stacy","11-15-2000","Female");
@@ -53,9 +72,9 @@ public class Bus2 extends AppCompatActivity implements View.OnClickListener{
 
         //Add the Person objects to an ArrayList
         ArrayList<Person> peopleList = new ArrayList<>();
+
+
         peopleList.add(john);
-        peopleList.add(steve);
-        peopleList.add(stacy);
         peopleList.add(ashley);
         peopleList.add(matt);
         peopleList.add(matt2);
@@ -68,7 +87,7 @@ public class Bus2 extends AppCompatActivity implements View.OnClickListener{
         peopleList.add(matt9);
         peopleList.add(matt10);
         peopleList.add(matt11);
-
+*/
         PersonListAdapter adapter = new PersonListAdapter(this, R.layout.adapter_view_layout, peopleList);
         mListView.setAdapter(adapter);
     }

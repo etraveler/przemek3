@@ -35,7 +35,16 @@ public class Bus1 extends Activity {
                 "lista",
                 "wyskakujace okno",
                 "drugie wyskakujace okno",
-                "nic ciekawego"
+                "kolejne okienko...",
+                "kolejne okienko...",
+                "kolejne okienko...",
+                "kolejne okienko...",
+                "kolejne okienko...",
+                "kolejne okienko...",
+                "kolejne okienko...",
+                "kolejne okienko...",
+                "kolejne okienko...",
+                "kolejne okienko..."
         };
 
         // Create a List from String Array elements
@@ -64,6 +73,8 @@ public class Bus1 extends Activity {
                 switch (position) {
 
 
+                    case 0:
+                        break;
                     case 1:
                         Intent in1 = new Intent(Bus1.this, Ekran1.class);
                         startActivity(in1);
@@ -75,12 +86,18 @@ public class Bus1 extends Activity {
                     case 3:
                         Intent in3 = new Intent(Bus1.this, okno_pop.class);
                         in3.putExtra("tekst",fruits[position]);
+                        in3.putExtra("tekst2",fruits[1]);
                         startActivity(in3);
                         break;
                     case 4:
                         Intent in4 = new Intent(Bus1.this, okno_pop.class);
                         in4.putExtra("tekst",fruits[position]);
                         startActivity(in4);
+                        break;
+                    default:
+                        Intent in5 = new Intent(Bus1.this, okno_pop.class);
+                        in5.putExtra("tekst",fruits[position]);
+                        startActivity(in5);
                         break;
                 }
 

@@ -68,9 +68,12 @@ public class CreateAccount extends AppCompatActivity implements AsyncResponse, V
                 int logindl = createUsername.getText().length();
                 int passdl = createPassword.getText().length();
 
-                if (logindl<5 || namedl<5 || passdl<5 || logindl>8 || passdl>8 || namedl>8)
-                {
-                    Toast.makeText(this, "imie, login lub haslo maja nie odpowiednia dlugosc", Toast.LENGTH_SHORT).show();
+                if (logindl<6 || passdl<6 || logindl>10 || passdl>10 ) {
+                    if (namedl < 3 || namedl > 10) {
+                        Toast.makeText(this, "Imię musi zawierać od 3 do 10 znaków. Login oraz hasło muszą zawierać od 6 do 10 znaków", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    Toast.makeText(this, "Login oraz hasło muszą zawierać od 6 do 10 znaków", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);

@@ -21,7 +21,6 @@ import java.util.HashMap;
 public class okno_pop extends Activity implements View.OnClickListener{
 
     Button btnshow;
-  //  final TextView tv = (TextView) findViewById(R.id.tv);
     TextView tv;
 
     @Override
@@ -31,9 +30,10 @@ public class okno_pop extends Activity implements View.OnClickListener{
 
        btnshow = (Button) findViewById(R.id.btnshow);
        btnshow.setOnClickListener(this);
-        tv = (TextView) findViewById(R.id.tv);
+       tv = (TextView) findViewById(R.id.tv);
 
 
+        //zmiana rozmiaru okienka
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;
@@ -45,7 +45,7 @@ public class okno_pop extends Activity implements View.OnClickListener{
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String value = extras.getString("tekst");
-         //   tv.setText("Your favorite : " + value);
+            tv.setText("Your favorite : " + value);
         }
 
     }
@@ -59,8 +59,8 @@ public class okno_pop extends Activity implements View.OnClickListener{
             case R.id.btnshow:
                 Bundle extras = getIntent().getExtras();
                 if (extras != null) {
-                    String value = extras.getString("tekst");
-                       tv.setText("nazwa przycisku: " + value);
+                    String value2 = extras.getString("tekst2");
+                       tv.setText("nazwa przycisku: " + value2);
                 }
                 break;
         }

@@ -69,9 +69,10 @@
                 android:text="popup" />
 
             <Button
+                android:id="@+id/btnlistabus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="nic" />
+                android:text="Lista busów" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -115,7 +116,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
-                    android:text="testowa ltabela zawierajaca wiecej danych" />
+                    android:text="testowa tabela zawierajaca wiecej danych" />
 
                 <TextView
                     android:id="@+id/textView7"

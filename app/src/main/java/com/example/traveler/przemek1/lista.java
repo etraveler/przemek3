@@ -69,11 +69,11 @@ cars[2]=zwierzak;
             case R.id.btngetpass:
 
 
-                while (wiersz<10) {
-                    String wierszz = wiersz + "";
+                while (wiersz<11) {
+                    String wierszstring = wiersz + "";
                     HashMap postData = new HashMap();
                     postData.put("mobile1", "android1");
-                    postData.put("numerwiersza", wierszz);
+                    postData.put("numerwiersza", wierszstring);
                     PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
                     task.execute("http://traveler95.nazwa.pl/jeden/client/tester.php");
                     wiersz++;

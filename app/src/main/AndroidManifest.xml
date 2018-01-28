@@ -7,7 +7,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="OPUS APP"
+        android:label="OPUS"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -27,12 +27,12 @@
             android:name=".Bus1"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Bus2"></activity>
-        <activity android:name=".okno_pop"
-            android:theme="@style/AppTheme.pop_up_style">
-        </activity>
-
-
+        <activity android:name=".Bus2" />
+        <activity
+            android:name=".okno_pop"
+            android:theme="@style/AppTheme.pop_up_style" />
+        <activity android:name=".Bus" />
+        <activity android:name=".ListaBus"></activity>
     </application>
 
 </manifest>
