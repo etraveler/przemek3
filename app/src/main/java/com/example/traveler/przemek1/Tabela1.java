@@ -7,7 +7,6 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,13 +14,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Bus1 extends Activity {
+public class Tabela1 extends Activity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bus1);
+        setContentView(R.layout.activity_tabela1);
 
 
         // Get reference of widgets from XML layout
@@ -76,26 +75,26 @@ public class Bus1 extends Activity {
                     case 0:
                         break;
                     case 1:
-                        Intent in1 = new Intent(Bus1.this, Ekran1.class);
+                        Intent in1 = new Intent(Tabela1.this, Menu.class);
                         startActivity(in1);
                         break;
                     case 2:
-                        Intent in2 = new Intent(Bus1.this, lista.class);
+                        Intent in2 = new Intent(Tabela1.this, lista.class);
                         startActivity(in2);
                         break;
                     case 3:
-                        Intent in3 = new Intent(Bus1.this, okno_pop.class);
+                        Intent in3 = new Intent(Tabela1.this, okno_pop.class);
                         in3.putExtra("tekst",fruits[position]);
                         in3.putExtra("tekst2",fruits[1]);
                         startActivity(in3);
                         break;
                     case 4:
-                        Intent in4 = new Intent(Bus1.this, okno_pop.class);
+                        Intent in4 = new Intent(Tabela1.this, okno_pop.class);
                         in4.putExtra("tekst",fruits[position]);
                         startActivity(in4);
                         break;
                     default:
-                        Intent in5 = new Intent(Bus1.this, okno_pop.class);
+                        Intent in5 = new Intent(Tabela1.this, okno_pop.class);
                         in5.putExtra("tekst",fruits[position]);
                         startActivity(in5);
                         break;

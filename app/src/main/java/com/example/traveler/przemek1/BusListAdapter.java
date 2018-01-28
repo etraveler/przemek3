@@ -7,21 +7,18 @@ package com.example.traveler.przemek1;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
-        import android.view.animation.Animation;
-        import android.view.animation.AnimationUtils;
         import android.widget.ArrayAdapter;
         import android.widget.TextView;
 
         import java.util.ArrayList;
-        import java.util.List;
 
 /**
  * Created by User on 3/14/2017.
  */
 
-public class PersonListAdapter extends ArrayAdapter<Person> {
+public class BusListAdapter extends ArrayAdapter<Autobus> {
 
-    private static final String TAG = "PersonListAdapter";
+    private static final String TAG = "BusListAdapter";
 
     private Context mContext;
     private int mResource;
@@ -37,12 +34,12 @@ public class PersonListAdapter extends ArrayAdapter<Person> {
     }
 
     /**
-     * Default constructor for the PersonListAdapter
+     * Default constructor for the BusListAdapter
      * @param context
      * @param resource
      * @param objects
      */
-    public PersonListAdapter(Context context, int resource, ArrayList<Person> objects) {
+    public BusListAdapter(Context context, int resource, ArrayList<Autobus> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -53,11 +50,11 @@ public class PersonListAdapter extends ArrayAdapter<Person> {
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the persons information
         String name = getItem(position).getName();
-        String birthday = getItem(position).getBirthday();
+        String birthday = getItem(position).getIdentyfikator();
         String sex = getItem(position).getSex();
 
-        //Create the person object with the information
-        Person person = new Person(name,birthday,sex);
+        //Create the autobus object with the information
+        Autobus autobus = new Autobus(name,birthday,sex);
 
 
             LayoutInflater inflater = LayoutInflater.from(mContext);

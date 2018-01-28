@@ -19,15 +19,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Ekran1"
+            android:name=".Menu"
             android:label="Menu" />
         <activity android:name=".CreateAccount" />
         <activity android:name=".lista" />
         <activity
-            android:name=".Bus1"
+            android:name=".Tabela1"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Bus2" />
+        <activity android:name=".Tabela2" />
         <activity
             android:name=".okno_pop"
             android:theme="@style/AppTheme.pop_up_style" />
