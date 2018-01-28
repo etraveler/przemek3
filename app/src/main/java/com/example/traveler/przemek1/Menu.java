@@ -13,7 +13,7 @@ import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
 import java.util.HashMap;
 
-public class Ekran1 extends AppCompatActivity implements AsyncResponse,  View.OnClickListener {
+public class Menu extends AppCompatActivity implements AsyncResponse,  View.OnClickListener {
 
 
     Button btnwyswietlhasla;
@@ -27,7 +27,7 @@ public class Ekran1 extends AppCompatActivity implements AsyncResponse,  View.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ekran1);
+        setContentView(R.layout.activity_menu);
 
         btnwyswietlhasla = (Button) findViewById(R.id.btnwyswietlhasla);
         btnwyswietlhasla.setOnClickListener(this);
@@ -75,7 +75,7 @@ public class Ekran1 extends AppCompatActivity implements AsyncResponse,  View.On
                 break;
 
             case R.id.btnbus1:
-                Intent in2 = new Intent(this, Bus1.class);
+                Intent in2 = new Intent(this, Tabela1.class);
                 startActivity(in2);
                 break;
 
@@ -84,7 +84,7 @@ public class Ekran1 extends AppCompatActivity implements AsyncResponse,  View.On
                 startActivity(in3);
                 break;
             case R.id.btnbus2:
-                Intent in4 = new Intent(this, Bus2.class);
+                Intent in4 = new Intent(this, Tabela2.class);
                 startActivity(in4);
                 break;
             case R.id.btnpopup:

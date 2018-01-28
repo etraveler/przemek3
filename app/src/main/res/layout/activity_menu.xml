@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.traveler.przemek1.Ekran1">
+    tools:context="com.example.traveler.przemek1.Menu">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,19 +48,19 @@
                 tools:layout_editor_absoluteX="148dp"
                 tools:layout_editor_absoluteY="117dp" />
 
-            <Button
-                android:id="@+id/btnbus1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bus1"
-                tools:layout_editor_absoluteX="148dp"
-                tools:layout_editor_absoluteY="117dp" />
+                <Button
+                    android:id="@+id/btnbus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tabela1"
+                    tools:layout_editor_absoluteX="148dp"
+                    tools:layout_editor_absoluteY="117dp" />
 
-            <Button
-                android:id="@+id/btnbus2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bus2" />
+                <Button
+                    android:id="@+id/btnbus2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tabela2" />
 
             <Button
                 android:id="@+id/btnpopup"
@@ -128,7 +128,7 @@
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="43dp"
-                    android:text="jeszcze nic" />
+                    android:text="busy wczytują się z BD popup wyswietla id busa" />
             </LinearLayout>
 
 

@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class Bus2 extends AppCompatActivity implements View.OnClickListener{
+public class Tabela2 extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG = "MainActivity";
     Button btnback;
@@ -19,7 +19,7 @@ public class Bus2 extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bus2);
+        setContentView(R.layout.activity_tabela2);
         Log.d(TAG, "onCreate: Started.");
         ListView mListView = (ListView) findViewById(R.id.listView);
 
@@ -93,7 +93,7 @@ public class Bus2 extends AppCompatActivity implements View.OnClickListener{
 
 
             case R.id.btnback:
-                Intent in = new Intent(this, Ekran1.class);
+                Intent in = new Intent(this, Menu.class);
                 startActivity(in);
                 break;
 

@@ -83,7 +83,7 @@ cars[2]=zwierzak;
                 break;
 
             case R.id.btnback:
-                Intent in = new Intent(this, Ekran1.class);
+                Intent in = new Intent(this, Menu.class);
                 startActivity(in);
                 break;
 

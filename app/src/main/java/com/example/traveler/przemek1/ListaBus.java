@@ -126,7 +126,7 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse, View.O
                 break;
         }
     }
-    
+
 
     @Override
     public void onClick(View v)
