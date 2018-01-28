@@ -4,20 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.kosalgeek.asynctask.AsyncResponse;
-import com.kosalgeek.asynctask.PostResponseAsyncTask;
-
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class Bus2 extends AppCompatActivity implements View.OnClickListener{
 
@@ -35,9 +27,9 @@ public class Bus2 extends AppCompatActivity implements View.OnClickListener{
         btnback = (Button) findViewById(R.id.btnback);
         btnback.setOnClickListener((View.OnClickListener) this);
 
-        //Create the Person objects
+        //Create the Autobus objects
 
-        ArrayList<Person> peopleList = new ArrayList<>();
+        ArrayList<Autobus> peopleList = new ArrayList<>();
         int number=1;
 
         while (number<10)
@@ -45,7 +37,7 @@ public class Bus2 extends AppCompatActivity implements View.OnClickListener{
 
 
             String numerstring = number + "";
-            Person osoba = new Person("John", numerstring,"Male");
+            Autobus osoba = new Autobus("John", numerstring,"Male");
             peopleList.add(osoba);
             number++;
         }
@@ -54,24 +46,24 @@ public class Bus2 extends AppCompatActivity implements View.OnClickListener{
 
 
       /*
-        Person john = new Person("John","12-20-1998","Male");
-        Person steve = new Person("Steve","08-03-1987","Male");
-        Person stacy = new Person("Stacy","11-15-2000","Female");
-        Person ashley = new Person("Ashley","07-02-1999","Female");
-        Person matt = new Person("Matt","03-29-2001","Male");
-        Person matt2 = new Person("Matt2","03-29-2001","Male");
-        Person matt3 = new Person("Matt3","03-29-2001","Male");
-        Person matt4 = new Person("Matt4","03-29-2001","Male");
-        Person matt5 = new Person("Matt5","03-29-2001","Male");
-        Person matt6 = new Person("Matt6","03-29-2001","Male");
-        Person matt7 = new Person("Matt7","03-29-2001","Male");
-        Person matt8 = new Person("Matt8","03-29-2001","Male");
-        Person matt9 = new Person("Matt9","03-29-2001","Male");
-        Person matt10 = new Person("Matt10","03-29-2001","Male");
-        Person matt11 = new Person("Matt11","03-29-2001","Male");
+        Autobus john = new Autobus("John","12-20-1998","Male");
+        Autobus steve = new Autobus("Steve","08-03-1987","Male");
+        Autobus stacy = new Autobus("Stacy","11-15-2000","Female");
+        Autobus ashley = new Autobus("Ashley","07-02-1999","Female");
+        Autobus matt = new Autobus("Matt","03-29-2001","Male");
+        Autobus matt2 = new Autobus("Matt2","03-29-2001","Male");
+        Autobus matt3 = new Autobus("Matt3","03-29-2001","Male");
+        Autobus matt4 = new Autobus("Matt4","03-29-2001","Male");
+        Autobus matt5 = new Autobus("Matt5","03-29-2001","Male");
+        Autobus matt6 = new Autobus("Matt6","03-29-2001","Male");
+        Autobus matt7 = new Autobus("Matt7","03-29-2001","Male");
+        Autobus matt8 = new Autobus("Matt8","03-29-2001","Male");
+        Autobus matt9 = new Autobus("Matt9","03-29-2001","Male");
+        Autobus matt10 = new Autobus("Matt10","03-29-2001","Male");
+        Autobus matt11 = new Autobus("Matt11","03-29-2001","Male");
 
-        //Add the Person objects to an ArrayList
-        ArrayList<Person> peopleList = new ArrayList<>();
+        //Add the Autobus objects to an ArrayList
+        ArrayList<Autobus> peopleList = new ArrayList<>();
 
 
         peopleList.add(john);
@@ -88,7 +80,7 @@ public class Bus2 extends AppCompatActivity implements View.OnClickListener{
         peopleList.add(matt10);
         peopleList.add(matt11);
 */
-        PersonListAdapter adapter = new PersonListAdapter(this, R.layout.adapter_view_layout, peopleList);
+        BusListAdapter adapter = new BusListAdapter(this, R.layout.adapter_view_layout, peopleList);
         mListView.setAdapter(adapter);
     }
 
