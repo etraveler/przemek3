@@ -19,6 +19,9 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
     EditText etUsername, etPassword;
     Button btnLogin;
     Button btnCreate;
+    final tokenGlobal globalVariable = (tokenGlobal) getApplicationContext();
+    globalVariable.setName("Android Example variable");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
