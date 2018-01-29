@@ -6,22 +6,24 @@ import android.app.Application;
  * Created by Przemek on 28.01.2018.
  */
 
-public class tokenGlobal extends Application{
+class MyApplication extends Application{
 
-    private String name;
+    private String someVariable;
 
 
-    public String getName() {
+    public String getSomeVariable() {
 
-        return name;
+        return someVariable;
     }
 
-    public void setName(String aName) {
+    public void setSomeVariable(String someVariable) {
 
-        name = aName;
+        this.someVariable = someVariable;
 
     }
+    public String getToken(){
 
+    }
 
 
 }
