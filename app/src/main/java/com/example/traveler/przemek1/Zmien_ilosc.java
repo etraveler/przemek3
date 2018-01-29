@@ -31,6 +31,8 @@ public class Zmien_ilosc extends AppCompatActivity implements AsyncResponse, Vie
     String kod;
     String nazwa;
     String idprzedmiotu;
+    String idbusa;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,17 +71,16 @@ public class Zmien_ilosc extends AppCompatActivity implements AsyncResponse, Vie
             iloscstara = extras.getString("ilosc");
             kod = extras.getString("kod");
             idprzedmiotu = extras.getString("idprzedmiotu");
+            idbusa = extras.getString("idbusa");
         }
-        Toast.makeText(this, nazwa, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, idprzedmiotu, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, kod, Toast.LENGTH_SHORT).show();
 
     }
 
 
     @Override
     public void processFinish(String result) {
-
+        Toast.makeText(this, "Zmieniono", Toast.LENGTH_SHORT).show();
+        
     }
     @Override
     public void onClick(View v) {
@@ -107,9 +108,12 @@ public class Zmien_ilosc extends AppCompatActivity implements AsyncResponse, Vie
                 break;
             case R.id.set:
                 HashMap postData2 = new HashMap();
+                int intiloscstara = Integer.parseInt(iloscstara);
+                ilosc = intiloscstara+ilosc;
+                iloscstring = ilosc + "";
                 postData2.put("ilosc", iloscstring);
-                postData2.put("idbus", iloscstring);
-                postData2.put("idprzedmiot", iloscstring);
+                postData2.put("idbus", idbusa);
+                postData2.put("idprzedmiot", idprzedmiotu);
                 PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
                 task.execute("http://traveler95.nazwa.pl/jeden/client/zmien_ilosc.php");
                 break;

@@ -107,6 +107,7 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse {
                                 in.putExtra("ilosc", ilosc);
                                 in.putExtra("kod", kod);
                                 in.putExtra("idprzedmiotu", idprzedmiotu);
+                                in.putExtra("idbusa", value1);
                                 startActivity(in);
                                 break;
                         }
