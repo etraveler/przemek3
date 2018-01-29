@@ -48,6 +48,31 @@
             android:backgroundTint="@color/colorPrimaryDark"
             android:text="MENU ROBOCZE" />
 
+        <Button
+            android:id="@+id/btnkalendarz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:backgroundTint="?android:attr/colorPrimaryDark"
+            android:text="KALENDARZ" />
+
+        <Button
+        android:id="@+id/btnmagazyn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:backgroundTint="?android:attr/colorPrimaryDark"
+        android:text="MAGAZYN" />
+
+        <Button
+            android:id="@+id/btnsklep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:backgroundTint="?android:attr/colorPrimaryDark"
+            android:text="SKLEP" />
+
+
         <RelativeLayout android:id="@+id/RelativeLayout01"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -61,6 +86,7 @@
                 android:layout_centerHorizontal="true"
                 android:backgroundTint="@color/colorPrimary"
                 android:text="WYLOGUJ" />
+
         </RelativeLayout>
     </LinearLayout>
 

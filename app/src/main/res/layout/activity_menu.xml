@@ -19,7 +19,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#800080"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="145dp">
@@ -66,7 +65,7 @@
                     android:id="@+id/btnpopup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="popup" />
+                    android:text="Nowe menu" />
 
             <Button
                 android:id="@+id/btnlistabus"
@@ -122,13 +121,13 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="49dp"
-                    android:text="wyskakujace okienko ale nic wiecej" />
+                    android:text="przyszłe menu" />
 
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="43dp"
-                    android:text="busy wczytują się z BD popup wyswietla id busa" />
+                    android:text="busy wczytują się z BD popup bedzie służył do zmiany ilości produktów" />
             </LinearLayout>
 
 

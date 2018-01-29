@@ -88,7 +88,7 @@ public class Menu extends AppCompatActivity implements AsyncResponse,  View.OnCl
                 startActivity(in4);
                 break;
             case R.id.btnpopup:
-                Intent in5 = new Intent(this, okno_pop.class);
+                Intent in5 = new Intent(this, Menu_nowe.class);
                 startActivity(in5);
                 break;
             case R.id.btnlistabus:
