@@ -11,37 +11,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#EEEEEE"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tekst1"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:textSize="20dp"
+            android:layout_height="0dp"
+            android:layout_weight=".06"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tekst2"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:textSize="20dp"
+            android:layout_height="0dp"
+            android:layout_weight=".06"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tekst3"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:textSize="20dp"
+            android:layout_height="0dp"
+            android:layout_weight=".06"
             android:text="TextView" />
 
         <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp" />
+            android:layout_height="0dp"
+            android:layout_weight=".72" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".10"
+            android:text="Dodaj przedmiot" />
 
     </LinearLayout>
 
