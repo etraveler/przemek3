@@ -36,19 +36,19 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:text="Zaloguj" />
 
         <Button
             android:id="@+id/btnCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create Account" />
+            android:text="Utwórz Konto" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Build 3.2"
+            android:text="Build 3.3"
             android:textAlignment="gravity"
             android:textColor="#BBBBBB"
             android:textSize="12dp" />
