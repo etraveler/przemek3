@@ -64,7 +64,7 @@ int liczba=0;
 
     @Override
     public void processFinish(String result) {
-      Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+
     }
 
 
@@ -74,9 +74,6 @@ int liczba=0;
 
 
                 String liczbastring=liczba +"";
-     //   Toast.makeText(this, liczbastring, Toast.LENGTH_SHORT).show();
-     //   Toast.makeText(this, idbusa, Toast.LENGTH_SHORT).show();
-     //   Toast.makeText(this, idprzedmiotu, Toast.LENGTH_SHORT).show();
 
               HashMap postData = new HashMap();
                 postData.put("ile", liczbastring);

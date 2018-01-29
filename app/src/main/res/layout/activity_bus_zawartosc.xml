@@ -17,28 +17,35 @@
             android:id="@+id/tekst1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".06"
-            android:text="TextView" />
+            android:layout_weight=".04"
+            android:text="TextView"
+            android:textSize="10dp" />
 
         <TextView
             android:id="@+id/tekst2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".06"
+            android:layout_weight=".07"
+            android:gravity="center"
+            android:textColor="#00A9A5"
+            android:textSize="23dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tekst3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".06"
+            android:layout_weight=".07"
+            android:gravity="center"
+            android:textColor="#00A9A5"
+            android:textSize="23dp"
             android:text="TextView" />
 
         <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".72" />
+            android:layout_weight=".82" />
 
     <LinearLayout
         android:layout_width="match_parent"

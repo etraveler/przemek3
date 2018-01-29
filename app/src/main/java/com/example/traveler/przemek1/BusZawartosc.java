@@ -48,8 +48,8 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
             value1 = extras.getString("tekst1");
             value2 = extras.getString("tekst2");
             value3 = extras.getString("tekst3");
-            tekst1.setText("Bus o id: " + value1);
-            tekst2.setText("Marka: " + value2);
+            tekst1.setText("ID: " + value1);
+            tekst2.setText(value2);
             tekst3.setText("Rejestracja: " + value3);
         }
 
@@ -73,13 +73,13 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
                 final Wiersz12 bus = new Wiersz12("", "", "");
                 for (String retval2 : retval1.split("-")) {
                     if (i == 1) {
-                        bus.setPrawyDol(retval2);
+                        bus.setPrawyDol("Kod: "+retval2);
                     }
                     if (i == 2) {
-                        bus.setPrawyGora(retval2);
+                        bus.setLewy(retval2);
                     }
                     if (i == 3) {
-                        bus.setLewy(retval2);
+                        bus.setPrawyGora("Ilość: "+retval2);
                     }
                     if (i == 4) {
                         bus.setDodatkowy(retval2);
@@ -100,8 +100,8 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                     Wiersz12 transporter = BusList.get(position);
-                    String nazwa = transporter.getPrawyGora();
-                    String ilosc = transporter.getLewy();
+                    String nazwa = transporter.getLewy();
+                    String ilosc = transporter.getPrawyGora();
                     String kod = transporter.getPrawyDol();
                     idprzedmiotu = transporter.getDodatkowy();
 
