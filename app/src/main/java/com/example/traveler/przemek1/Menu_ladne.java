@@ -11,7 +11,7 @@ import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
 import java.util.HashMap;
 
-public class Menu_ladne extends AppCompatActivity implements View.OnClickListener{
+public class Menu_ladne extends AppCompatActivity implements AsyncResponse, View.OnClickListener{
 
 
 Button btnwyloguj;
@@ -38,7 +38,10 @@ Button btnlistabusow;
 
 
     }
+    @Override
+    public void processFinish(String result) {
 
+    }
     @Override
     public void onClick(View v) {
 
@@ -47,6 +50,13 @@ Button btnlistabusow;
 
 
             case R.id.btnwyloguj:
+                HashMap postData = new HashMap();
+                String token = ((tokenGlobal) this.getApplication()).getSomeVariable();
+                postData.put("txtToken", token);
+
+                PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
+                task.execute("http://traveler95.nazwa.pl/jeden/client/logout.php");
+
                 Intent in4 = new Intent(this, Logowanie.class);
                 startActivity(in4);
                 break;

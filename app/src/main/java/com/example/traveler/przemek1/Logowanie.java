@@ -62,7 +62,7 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
                 postData.put("txtToken", token);
 
                 PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
-                task.execute("http://traveler95.nazwa.pl/jeden/client/login2.php");
+                task.execute("http://traveler95.nazwa.pl/jeden/client/login3.php");
                 break;
 
             case R.id.btnCreate:
