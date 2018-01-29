@@ -16,9 +16,9 @@ package com.example.traveler.przemek1;
  * Created by User on 3/14/2017.
  */
 
-public class BusListAdapter extends ArrayAdapter<Autobus> {
+public class Wiersz12ListAdapter extends ArrayAdapter<Wiersz12> {
 
-    private static final String TAG = "BusListAdapter";
+    private static final String TAG = "Wiersz12ListAdapter";
 
     private Context mContext;
     private int mResource;
@@ -34,12 +34,12 @@ public class BusListAdapter extends ArrayAdapter<Autobus> {
     }
 
     /**
-     * Default constructor for the BusListAdapter
+     * Default constructor for the Wiersz12ListAdapter
      * @param context
      * @param resource
      * @param objects
      */
-    public BusListAdapter(Context context, int resource, ArrayList<Autobus> objects) {
+    public Wiersz12ListAdapter(Context context, int resource, ArrayList<Wiersz12> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -49,12 +49,12 @@ public class BusListAdapter extends ArrayAdapter<Autobus> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the persons information
-        String name = getItem(position).getMarka();
-        String birthday = getItem(position).getIdentyfikator();
-        String sex = getItem(position).getRejestracja();
+        String name = getItem(position).getLewy();
+        String birthday = getItem(position).getPrawyGora();
+        String sex = getItem(position).getPrawyDol();
 
-        //Create the autobus object with the information
-        Autobus autobus = new Autobus(name,birthday,sex);
+        //Create the wiersz12 object with the information
+        Wiersz12 wiersz12 = new Wiersz12(name,birthday,sex);
 
 
             LayoutInflater inflater = LayoutInflater.from(mContext);

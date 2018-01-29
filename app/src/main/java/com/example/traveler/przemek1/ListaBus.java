@@ -32,7 +32,7 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
 
     }
 
-    ArrayList<Autobus> BusList = new ArrayList<>();
+    ArrayList<Wiersz12> BusList = new ArrayList<>();
 
 
     @Override
@@ -43,16 +43,16 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
                 for (String retval1 : result.split(">"))
                 {
                     i=1;
-                    final Autobus bus = new Autobus("", "", "");
+                    final Wiersz12 bus = new Wiersz12("", "", "");
                     for (String retval2 : retval1.split("-")) {
                         if (i == 1) {
-                            bus.setRejestracja(retval2);
+                            bus.setPrawyDol(retval2);
                         }
                         if (i == 2) {
-                            bus.setIdentyfikator(retval2);
+                            bus.setPrawyGora(retval2);
                         }
                         if (i == 3) {
-                            bus.setMarka(retval2);
+                            bus.setLewy(retval2);
                         }
                         i++;
                     }
@@ -62,7 +62,7 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
 
 
 
-                    BusListAdapter adapter = new BusListAdapter(this, R.layout.adapter_view_layout, BusList);
+                    Wiersz12ListAdapter adapter = new Wiersz12ListAdapter(this, R.layout.adapter_view_layout, BusList);
                     mListView.setAdapter(adapter);
 
 
@@ -73,17 +73,17 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id)
                         {
 
-                            Autobus transporter=BusList.get(position);
-                            String idkogos=transporter.getIdentyfikator();
-                            String marka=transporter.getMarka();
-                            String rejestracja=transporter.getRejestracja();
+                            Wiersz12 transporter=BusList.get(position);
+                            String idkogos=transporter.getPrawyGora();
+                            String marka=transporter.getLewy();
+                            String rejestracja=transporter.getPrawyDol();
 
                             switch (position)
                             {
 
 
                                 default:
-                                    Intent in = new Intent(ListaBus.this, Bus.class);
+                                    Intent in = new Intent(ListaBus.this, BusZawartosc.class);
                                     in.putExtra("tekst1",idkogos);
                                     in.putExtra("tekst2",marka);
                                     in.putExtra("tekst3",rejestracja);

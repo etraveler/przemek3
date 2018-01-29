@@ -7,9 +7,15 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.kosalgeek.asynctask.AsyncResponse;
+import com.kosalgeek.asynctask.PostResponseAsyncTask;
+
+import java.util.HashMap;
 
 
-public class Zmien_ilosc extends AppCompatActivity implements View.OnClickListener {
+public class Zmien_ilosc extends AppCompatActivity implements AsyncResponse, View.OnClickListener {
 
 
 
@@ -17,9 +23,14 @@ public class Zmien_ilosc extends AppCompatActivity implements View.OnClickListen
     Button p1;
     Button m10;
     Button m1;
+    Button set;
     int ilosc=0;
     TextView textView9;
-
+    String iloscstring;
+    String iloscstara;
+    String kod;
+    String nazwa;
+    String idprzedmiotu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +46,11 @@ public class Zmien_ilosc extends AppCompatActivity implements View.OnClickListen
         m10.setOnClickListener(this);
         m1 = (Button) findViewById(R.id.m1);
         m1.setOnClickListener(this);
+        set = (Button) findViewById(R.id.set);
+        set.setOnClickListener(this);
         textView9 = (TextView)findViewById(R.id.textView9);
 
-        textView9.setText("wtff");
+        textView9.setText("0");
 
 
         //zmiana rozmiaru okienka
@@ -48,6 +61,24 @@ public class Zmien_ilosc extends AppCompatActivity implements View.OnClickListen
         getWindow().setLayout((int) (width * .8), (int) (height * .3));
 
 
+        Bundle extras = getIntent().getExtras();
+
+
+        if (extras != null) {
+            nazwa = extras.getString("nazwa");
+            iloscstara = extras.getString("ilosc");
+            kod = extras.getString("kod");
+            idprzedmiotu = extras.getString("idprzedmiotu");
+        }
+        Toast.makeText(this, nazwa, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, idprzedmiotu, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, kod, Toast.LENGTH_SHORT).show();
+
+    }
+
+
+    @Override
+    public void processFinish(String result) {
 
     }
     @Override
@@ -56,18 +87,32 @@ public class Zmien_ilosc extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.p10:
                 ilosc=ilosc+10;
-                String iloscstring = ilosc + "";
+                iloscstring = ilosc + "";
                 textView9.setText(iloscstring);
                 break;
-
             case R.id.p1:
-                textView9.setText("ss");
+                ilosc=ilosc+1;
+                iloscstring = ilosc + "";
+                textView9.setText(iloscstring);
                 break;
             case R.id.m10:
+                ilosc=ilosc-10;
+                iloscstring = ilosc + "";
+                textView9.setText(iloscstring);
                 break;
             case R.id.m1:
+                ilosc=ilosc-1;
+                iloscstring = ilosc + "";
+                textView9.setText(iloscstring);
                 break;
-
+            case R.id.set:
+                HashMap postData2 = new HashMap();
+                postData2.put("ilosc", iloscstring);
+                postData2.put("idbus", iloscstring);
+                postData2.put("idprzedmiot", iloscstring);
+                PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
+                task.execute("http://traveler95.nazwa.pl/jeden/client/zmien_ilosc.php");
+                break;
         }
     }
 }

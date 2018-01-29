@@ -33,7 +33,7 @@
             android:name=".okno_pop"
             android:theme="@style/AppTheme.pop_up_style" />
         <activity
-            android:name=".Bus"
+            android:name=".BusZawartosc"
             android:label="Bus" />
         <activity
             android:name=".ListaBus"

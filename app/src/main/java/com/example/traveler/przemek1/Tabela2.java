@@ -27,9 +27,9 @@ public class Tabela2 extends AppCompatActivity implements View.OnClickListener{
         btnback = (Button) findViewById(R.id.btnback);
         btnback.setOnClickListener((View.OnClickListener) this);
 
-        //Create the Autobus objects
+        //Create the Wiersz12 objects
 
-        ArrayList<Autobus> peopleList = new ArrayList<>();
+        ArrayList<Wiersz12> peopleList = new ArrayList<>();
         int number=1;
 
         while (number<10)
@@ -37,7 +37,7 @@ public class Tabela2 extends AppCompatActivity implements View.OnClickListener{
 
 
             String numerstring = number + "";
-            Autobus osoba = new Autobus("John", numerstring,"Male");
+            Wiersz12 osoba = new Wiersz12("John", numerstring,"Male");
             peopleList.add(osoba);
             number++;
         }
@@ -46,24 +46,24 @@ public class Tabela2 extends AppCompatActivity implements View.OnClickListener{
 
 
       /*
-        Autobus john = new Autobus("John","12-20-1998","Male");
-        Autobus steve = new Autobus("Steve","08-03-1987","Male");
-        Autobus stacy = new Autobus("Stacy","11-15-2000","Female");
-        Autobus ashley = new Autobus("Ashley","07-02-1999","Female");
-        Autobus matt = new Autobus("Matt","03-29-2001","Male");
-        Autobus matt2 = new Autobus("Matt2","03-29-2001","Male");
-        Autobus matt3 = new Autobus("Matt3","03-29-2001","Male");
-        Autobus matt4 = new Autobus("Matt4","03-29-2001","Male");
-        Autobus matt5 = new Autobus("Matt5","03-29-2001","Male");
-        Autobus matt6 = new Autobus("Matt6","03-29-2001","Male");
-        Autobus matt7 = new Autobus("Matt7","03-29-2001","Male");
-        Autobus matt8 = new Autobus("Matt8","03-29-2001","Male");
-        Autobus matt9 = new Autobus("Matt9","03-29-2001","Male");
-        Autobus matt10 = new Autobus("Matt10","03-29-2001","Male");
-        Autobus matt11 = new Autobus("Matt11","03-29-2001","Male");
+        Wiersz12 john = new Wiersz12("John","12-20-1998","Male");
+        Wiersz12 steve = new Wiersz12("Steve","08-03-1987","Male");
+        Wiersz12 stacy = new Wiersz12("Stacy","11-15-2000","Female");
+        Wiersz12 ashley = new Wiersz12("Ashley","07-02-1999","Female");
+        Wiersz12 matt = new Wiersz12("Matt","03-29-2001","Male");
+        Wiersz12 matt2 = new Wiersz12("Matt2","03-29-2001","Male");
+        Wiersz12 matt3 = new Wiersz12("Matt3","03-29-2001","Male");
+        Wiersz12 matt4 = new Wiersz12("Matt4","03-29-2001","Male");
+        Wiersz12 matt5 = new Wiersz12("Matt5","03-29-2001","Male");
+        Wiersz12 matt6 = new Wiersz12("Matt6","03-29-2001","Male");
+        Wiersz12 matt7 = new Wiersz12("Matt7","03-29-2001","Male");
+        Wiersz12 matt8 = new Wiersz12("Matt8","03-29-2001","Male");
+        Wiersz12 matt9 = new Wiersz12("Matt9","03-29-2001","Male");
+        Wiersz12 matt10 = new Wiersz12("Matt10","03-29-2001","Male");
+        Wiersz12 matt11 = new Wiersz12("Matt11","03-29-2001","Male");
 
-        //Add the Autobus objects to an ArrayList
-        ArrayList<Autobus> peopleList = new ArrayList<>();
+        //Add the Wiersz12 objects to an ArrayList
+        ArrayList<Wiersz12> peopleList = new ArrayList<>();
 
 
         peopleList.add(john);
@@ -80,7 +80,7 @@ public class Tabela2 extends AppCompatActivity implements View.OnClickListener{
         peopleList.add(matt10);
         peopleList.add(matt11);
 */
-        BusListAdapter adapter = new BusListAdapter(this, R.layout.adapter_view_layout, peopleList);
+        Wiersz12ListAdapter adapter = new Wiersz12ListAdapter(this, R.layout.adapter_view_layout, peopleList);
         mListView.setAdapter(adapter);
     }
 
