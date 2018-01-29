@@ -61,7 +61,7 @@ public class Bus extends AppCompatActivity implements AsyncResponse {
 
     }
 
-    ArrayList<Autobus> peopleList = new ArrayList<>();
+    ArrayList<Autobus> BusList = new ArrayList<>();
     int foo = 3;
 
 
@@ -80,20 +80,20 @@ public class Bus extends AppCompatActivity implements AsyncResponse {
             case 1:
                 wiersz++;
                 int i = 1;
-                final Autobus osoba = new Autobus("", "", "");
+                final Autobus bus = new Autobus("", "", "");
                 for (String retval : result.split("-")) {
                     if (i == 1) {
-                        osoba.setSex(retval);
+                        bus.setRejestracja(retval);
                     }
                     if (i == 2) {
-                        osoba.setIdentyfikator(retval);
+                        bus.setIdentyfikator(retval);
                     }
                     if (i == 3) {
-                        osoba.setName(retval);
+                        bus.setMarka(retval);
                     }
                     i++;
                 }
-                peopleList.add(osoba);
+                BusList.add(bus);
                 ListView mListView = (ListView) findViewById(R.id.listView);
                 number++;
 
@@ -109,7 +109,7 @@ public class Bus extends AppCompatActivity implements AsyncResponse {
 
 
                 if (wiersz == foo + 1) {
-                    BusListAdapter adapter = new BusListAdapter(this, R.layout.adapter_view_layout, peopleList);
+                    BusListAdapter adapter = new BusListAdapter(this, R.layout.adapter_view_layout, BusList);
                     mListView.setAdapter(adapter);
 
 
@@ -117,10 +117,10 @@ public class Bus extends AppCompatActivity implements AsyncResponse {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            Autobus transporter = peopleList.get(position);
+                            Autobus transporter = BusList.get(position);
                             String idkogos = transporter.getIdentyfikator();
-                            String marka = transporter.getName();
-                            String rejestracja = transporter.getSex();
+                            String marka = transporter.getMarka();
+                            String rejestracja = transporter.getRejestracja();
 
                             switch (position) {
 

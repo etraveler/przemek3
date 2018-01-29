@@ -6,37 +6,37 @@ package com.example.traveler.przemek1;
  */
 
 public class Autobus {
-    private String name;
-    private String birthday;
-    private String sex;
+    private String marka;
+    private String identyfikator;
+    private String rejestracja;
 
     public Autobus(String name, String birthday, String sex) {
-        this.birthday = birthday;
-        this.name = name;
-        this.sex = sex;
+        this.identyfikator = identyfikator;
+        this.marka = marka;
+        this.rejestracja = rejestracja;
     }
 
     public String getIdentyfikator() {
-        return birthday;
+        return identyfikator;
     }
 
-    public void setIdentyfikator(String birthday) {
-        this.birthday = birthday;
+    public void setIdentyfikator(String identyfikator) {
+        this.identyfikator = identyfikator;
     }
 
-    public String getName() {
-        return name;
+    public String getMarka() {
+        return marka;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMarka(String marka) {
+        this.marka = marka;
     }
 
-    public String getSex() {
-        return sex;
+    public String getRejestracja() {
+        return rejestracja;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setRejestracja(String rejestracja) {
+        this.rejestracja = rejestracja;
     }
 }

@@ -49,9 +49,9 @@ public class BusListAdapter extends ArrayAdapter<Autobus> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the persons information
-        String name = getItem(position).getName();
+        String name = getItem(position).getMarka();
         String birthday = getItem(position).getIdentyfikator();
-        String sex = getItem(position).getSex();
+        String sex = getItem(position).getRejestracja();
 
         //Create the autobus object with the information
         Autobus autobus = new Autobus(name,birthday,sex);
