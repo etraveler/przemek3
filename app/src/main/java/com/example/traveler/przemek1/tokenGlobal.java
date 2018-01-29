@@ -21,9 +21,8 @@ class MyApplication extends Application{
         this.someVariable = someVariable;
 
     }
-    public String getToken(){
 
-    }
+
 
 
 }
