@@ -21,7 +21,6 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
     Button btnLogin;
     Button btnCreate;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +38,9 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
     public void processFinish(String result) {
 
         if (result.equals("success")) {
-            ((tokenGlobal) this.getApplication()).generateString();
-            String token = ((tokenGlobal) this.getApplication()).getSomeVariable();
-            Toast.makeText(this,token , Toast.LENGTH_SHORT).show();
+           // ((tokenGlobal) this.getApplication()).generateString();
+          //  String token = ((tokenGlobal) this.getApplication()).getSomeVariable();
+            Toast.makeText(this, result , Toast.LENGTH_SHORT).show();
             Intent in = new Intent(this, Menu_ladne.class);
             startActivity(in);
         } else {
@@ -54,15 +53,16 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnLogin:
-
+                ((tokenGlobal) this.getApplication()).generateString();
+                String token = ((tokenGlobal) this.getApplication()).getSomeVariable();
                 HashMap postData = new HashMap();
                 postData.put("mobile", "android");
                 postData.put("txtUsername", etUsername.getText().toString());
                 postData.put("txtPassword", etPassword.getText().toString());
-                postData.put("txt", etPassword.getText().toString());
+                postData.put("txtToken", token);
 
                 PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
-                task.execute("http://traveler95.nazwa.pl/jeden/client/login.php");
+                task.execute("http://traveler95.nazwa.pl/jeden/client/login2.php");
                 break;
 
             case R.id.btnCreate:

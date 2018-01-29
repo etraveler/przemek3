@@ -26,7 +26,6 @@ public class tokenGlobal extends Application{
         public String generateString() {
 
             someVariable = UUID.randomUUID().toString();
-            someVariable.replace("-", "");
             return someVariable;
 
         }
