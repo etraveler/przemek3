@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -40,7 +41,7 @@ Button btnlistabusow;
     }
     @Override
     public void processFinish(String result) {
-
+        Toast.makeText(this, "Wylogowano prawidłowo", Toast.LENGTH_LONG).show();
     }
     @Override
     public void onClick(View v) {
