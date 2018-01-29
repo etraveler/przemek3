@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -14,10 +15,9 @@ import com.kosalgeek.asynctask.PostResponseAsyncTask;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ListaBus extends AppCompatActivity implements AsyncResponse, View.OnClickListener{
+public class ListaBus extends AppCompatActivity implements AsyncResponse{
 
 
-    Button btnwczytaj;
     int number=1;
     String ile_pozycji="3";
     int zapytanie=0;
@@ -28,10 +28,6 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse, View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_bus);
-
-
-        btnwczytaj = (Button) findViewById(R.id.btnwczytaj);
-        btnwczytaj.setOnClickListener((View.OnClickListener) this);
 
 
         HashMap postData1 = new HashMap();
@@ -51,8 +47,7 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse, View.O
     }
 
     ArrayList<Autobus> peopleList = new ArrayList<>();
-    int foo=3;
-
+    int foo=0;
 
 
     @Override
@@ -108,15 +103,19 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse, View.O
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            Autobus ktos=peopleList.get(position);
-                            String idkogos=ktos.getIdentyfikator();
+                            Autobus transporter=peopleList.get(position);
+                            String idkogos=transporter.getIdentyfikator();
+                            String marka=transporter.getName();
+                            String rejestracja=transporter.getSex();
 
                             switch (position) {
 
 
                                 default:
-                                    Intent in = new Intent(ListaBus.this, okno_pop.class);
-                                    in.putExtra("tekst",idkogos);
+                                    Intent in = new Intent(ListaBus.this, Bus.class);
+                                    in.putExtra("tekst1",idkogos);
+                                    in.putExtra("tekst2",marka);
+                                    in.putExtra("tekst3",rejestracja);
                                     startActivity(in);
                                     break;
                             }
@@ -124,27 +123,6 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse, View.O
                     });
                 }
                 break;
-        }
-    }
-
-
-    @Override
-    public void onClick(View v)
-    {
-
-
-        switch (v.getId()) {
-
-
-            case R.id.btnwczytaj:
-                HashMap postData1 = new HashMap();
-                postData1.put("tabela", "tbl_bus");
-                PostResponseAsyncTask task1 = new PostResponseAsyncTask(this, postData1);
-                task1.execute("http://traveler95.nazwa.pl/jeden/client/ilosc_pozycji.php");
-                zapytanie=0;
-                break;
-
-
         }
     }
 }
