@@ -1,10 +1,12 @@
 package com.example.traveler.przemek1;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +17,7 @@ import com.kosalgeek.asynctask.PostResponseAsyncTask;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class BusZawartosc extends AppCompatActivity implements AsyncResponse {
+public class BusZawartosc extends AppCompatActivity implements AsyncResponse, View.OnClickListener {
 
     TextView tekst1;
     TextView tekst2;
@@ -23,13 +25,16 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse {
     String value1;
     String value2;
     String value3;
-
+    Button btnodswiez;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bus);
+        setContentView(R.layout.activity_bus_zawartosc);
 
+
+        btnodswiez = (Button) findViewById(R.id.btnodswiez);
+        btnodswiez.setOnClickListener(this);
         tekst1 = (TextView) findViewById(R.id.tekst1);
         tekst2 = (TextView) findViewById(R.id.tekst2);
         tekst3 = (TextView) findViewById(R.id.tekst3);
@@ -78,44 +83,80 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse {
                         bus.setDodatkowy(retval2);
                     }
                     i++;
-                    }
-                    BusList.add(bus);
                 }
-                ListView mListView = (ListView) findViewById(R.id.listView);
-
-
-                Wiersz12ListAdapter adapter = new Wiersz12ListAdapter(this, R.layout.adapter_view_layout, BusList);
-                mListView.setAdapter(adapter);
-
-
-                mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                        Wiersz12 transporter = BusList.get(position);
-                        String nazwa = transporter.getPrawyGora();
-                        String ilosc = transporter.getLewy();
-                        String kod = transporter.getPrawyDol();
-                        String idprzedmiotu = transporter.getDodatkowy();
-
-                        switch (position) {
-
-
-                            default:
-                                Intent in = new Intent(BusZawartosc.this, Zmien_ilosc.class);
-                                in.putExtra("nazwa", nazwa);
-                                in.putExtra("ilosc", ilosc);
-                                in.putExtra("kod", kod);
-                                in.putExtra("idprzedmiotu", idprzedmiotu);
-                                in.putExtra("idbusa", value1);
-                                startActivity(in);
-                                break;
-                        }
-                    }
-                });
+                BusList.add(bus);
             }
+            ListView mListView = (ListView) findViewById(R.id.listView);
+
+
+            Wiersz12ListAdapter adapter = new Wiersz12ListAdapter(this, R.layout.adapter_view_layout, BusList);
+            mListView.setAdapter(adapter);
+
+
+            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    Wiersz12 transporter = BusList.get(position);
+                    String nazwa = transporter.getPrawyGora();
+                    String ilosc = transporter.getLewy();
+                    String kod = transporter.getPrawyDol();
+                    String idprzedmiotu = transporter.getDodatkowy();
+
+                    switch (position) {
+
+
+                        default:
+                            Intent in = new Intent(BusZawartosc.this, Zmien_ilosc.class);
+                            in.putExtra("nazwa", nazwa);
+                            in.putExtra("ilosc", ilosc);
+                            in.putExtra("kod", kod);
+                            in.putExtra("idprzedmiotu", idprzedmiotu);
+                            in.putExtra("idbusa", value1);
+                            startActivity(in);
+                            break;
+                    }
+
+                }
+            });
         }
     }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.btnodswiez:
+                finish();
+                startActivity(getIntent());
+                break;
+        }
+
+    }
+
+
+
+    int i=0;
+
+
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+        if (i==1) {
+            finish();
+            startActivity(getIntent());
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        i=1;
+        super.onPause();
+    }
+}
+
+
 
 
 

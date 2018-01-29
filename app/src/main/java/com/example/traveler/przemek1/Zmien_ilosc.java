@@ -3,6 +3,7 @@ package com.example.traveler.przemek1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telecom.Call;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
@@ -60,7 +61,7 @@ public class Zmien_ilosc extends AppCompatActivity implements AsyncResponse, Vie
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-        getWindow().setLayout((int) (width * .8), (int) (height * .3));
+        getWindow().setLayout((int) (width * .8), (int) (height * .4));
 
 
         Bundle extras = getIntent().getExtras();
@@ -79,8 +80,9 @@ public class Zmien_ilosc extends AppCompatActivity implements AsyncResponse, Vie
 
     @Override
     public void processFinish(String result) {
-        Toast.makeText(this, "Zmieniono", Toast.LENGTH_SHORT).show();
-        
+
+        textView9.setText("GOTOWE");
+        ilosc=0;
     }
     @Override
     public void onClick(View v) {
@@ -110,13 +112,29 @@ public class Zmien_ilosc extends AppCompatActivity implements AsyncResponse, Vie
                 HashMap postData2 = new HashMap();
                 int intiloscstara = Integer.parseInt(iloscstara);
                 ilosc = intiloscstara+ilosc;
-                iloscstring = ilosc + "";
-                postData2.put("ilosc", iloscstring);
-                postData2.put("idbus", idbusa);
-                postData2.put("idprzedmiot", idprzedmiotu);
-                PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
-                task.execute("http://traveler95.nazwa.pl/jeden/client/zmien_ilosc.php");
+                if (ilosc>0 || ilosc==0) {
+                    iloscstring = ilosc + "";
+                    postData2.put("ilosc", iloscstring);
+                    postData2.put("idbus", idbusa);
+                    postData2.put("idprzedmiot", idprzedmiotu);
+                    PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
+                    task.execute("http://traveler95.nazwa.pl/jeden/client/zmien_ilosc.php");
+                }
+                else
+                {
+                    Toast.makeText(this, "Ilość nie może być mniejsza od zera", Toast.LENGTH_SHORT).show();
+                }
+               // this.finish();
                 break;
+
         }
+
+    }
+
+
+    @Override
+    protected void onDestroy() {
+
+        super.onDestroy();
     }
 }
