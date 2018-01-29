@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
-public class Bus_zmien extends AppCompatActivity {
+public class Zmien_ilosc extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

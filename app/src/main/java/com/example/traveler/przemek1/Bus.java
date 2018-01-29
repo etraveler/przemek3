@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -20,10 +19,10 @@ public class Bus extends AppCompatActivity implements AsyncResponse {
     TextView tekst1;
     TextView tekst2;
     TextView tekst3;
-    int wiersz = 1;
-    int zapytanie = 0;
-    String ile_pozycji = "3";
-    int number = 1;
+    String value1;
+    String value2;
+    String value3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,121 +34,89 @@ public class Bus extends AppCompatActivity implements AsyncResponse {
         tekst3 = (TextView) findViewById(R.id.tekst3);
 
         Bundle extras = getIntent().getExtras();
+
+
         if (extras != null) {
-            String value1 = extras.getString("tekst1");
-            String value2 = extras.getString("tekst2");
-            String value3 = extras.getString("tekst3");
+            value1 = extras.getString("tekst1");
+            value2 = extras.getString("tekst2");
+            value3 = extras.getString("tekst3");
             tekst1.setText("Bus o id: " + value1);
             tekst2.setText("Marka: " + value2);
             tekst3.setText("Rejestracja: " + value3);
         }
 
 
-        HashMap postData1 = new HashMap();
-        postData1.put("tabela", "tbl_bus");
-        PostResponseAsyncTask task1 = new PostResponseAsyncTask(this, postData1);
-        task1.execute("http://traveler95.nazwa.pl/jeden/client/ilosc_pozycji.php");
-
-
-        String wierszstring = wiersz + "";
         HashMap postData2 = new HashMap();
         postData2.put("mobile1", "android1");
-        postData2.put("numerwiersza", wierszstring);
+        postData2.put("idbusa", value1);
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
-        task.execute("http://traveler95.nazwa.pl/jeden/client/bustester.php");
+        task.execute("http://traveler95.nazwa.pl/jeden/client/zawartoscbus.php");
 
 
     }
 
     ArrayList<Autobus> BusList = new ArrayList<>();
-    int foo = 3;
 
 
     @Override
-    public void processFinish(String result) {
+    public void processFinish(String result)
+    {
 
-        switch (zapytanie) {
-            case 0:
-                ile_pozycji = result;
-                foo = Integer.parseInt(ile_pozycji);
-                zapytanie = 1;
-                String fooo = foo + "";
-                Toast.makeText(this, fooo, Toast.LENGTH_SHORT).show();
-                break;
-
-            case 1:
-                wiersz++;
-                int i = 1;
-                final Autobus bus = new Autobus("", "", "");
-                for (String retval : result.split("-")) {
-                    if (i == 1) {
-                        bus.setRejestracja(retval);
-                    }
-                    if (i == 2) {
-                        bus.setIdentyfikator(retval);
-                    }
-                    if (i == 3) {
-                        bus.setMarka(retval);
-                    }
-                    i++;
+        int i = 1;
+        for (String retval1 : result.split(">"))
+        {
+            i=1;
+            final Autobus bus = new Autobus("", "", "");
+            for (String retval2 : retval1.split("-")) {
+                if (i == 1) {
+                    bus.setRejestracja(retval2);
                 }
-                BusList.add(bus);
-                ListView mListView = (ListView) findViewById(R.id.listView);
-                number++;
-
-
-                if (wiersz <= foo) {
-                    String wierszstring = wiersz + "";
-                    HashMap postData2 = new HashMap();
-                    postData2.put("mobile1", "android1");
-                    postData2.put("numerwiersza", wierszstring);
-                    PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
-                    task.execute("http://traveler95.nazwa.pl/jeden/client/bustester.php");
+                if (i == 2) {
+                    bus.setIdentyfikator(retval2);
                 }
-
-
-                if (wiersz == foo + 1) {
-                    BusListAdapter adapter = new BusListAdapter(this, R.layout.adapter_view_layout, BusList);
-                    mListView.setAdapter(adapter);
-
-
-                    mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                            Autobus transporter = BusList.get(position);
-                            String idkogos = transporter.getIdentyfikator();
-                            String marka = transporter.getMarka();
-                            String rejestracja = transporter.getRejestracja();
-
-                            switch (position) {
-
-
-                                default:
-                                    Intent in = new Intent(Bus.this, Bus_zmien.class);
-                                    in.putExtra("tekst1", idkogos);
-                                    in.putExtra("tekst2", marka);
-                                    in.putExtra("tekst3", rejestracja);
-                                    startActivity(in);
-                                    break;
-                            }
-                        }
-                    });
+                if (i == 3) {
+                    bus.setMarka(retval2);
                 }
-                break;
+                i++;
+            }
+            BusList.add(bus);
         }
+        ListView mListView = (ListView) findViewById(R.id.listView);
+
+
+
+        BusListAdapter adapter = new BusListAdapter(this, R.layout.adapter_view_layout, BusList);
+        mListView.setAdapter(adapter);
+
+
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+
+                Autobus transporter=BusList.get(position);
+                String idkogos=transporter.getIdentyfikator();
+                String marka=transporter.getMarka();
+                String rejestracja=transporter.getRejestracja();
+
+                switch (position)
+                {
+
+
+                    default:
+                        Intent in = new Intent(Bus.this, Zmien_ilosc.class);
+                        in.putExtra("tekst1",idkogos);
+                        in.putExtra("tekst2",marka);
+                        in.putExtra("tekst3",rejestracja);
+                        startActivity(in);
+                        break;
+                }
+            }
+        });
     }
-
-
 }
-
-
-
-
-
-
-
-
 
 
 

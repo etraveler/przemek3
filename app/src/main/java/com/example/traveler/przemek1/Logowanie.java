@@ -38,11 +38,11 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
     @Override
     public void processFinish(String result) {
         if (result.equals("success")) {
-            Toast.makeText(this, "Login Succesfully", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Login Succesfully", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(this, Menu_ladne.class);
             startActivity(in);
         } else {
-            Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -39,7 +39,7 @@
             android:name=".ListaBus"
             android:label="LISTA BUSÓW" />
         <activity
-            android:name=".Bus_zmien"
+            android:name=".Zmien_ilosc"
             android:label="Zmień ilość"
             android:theme="@style/AppTheme.pop_up_style" />
         <activity
@@ -47,7 +47,8 @@
             android:label="MENU GŁÓWNE" />
         <activity
             android:name=".Menu_nowe"
-            android:label="@string/title_activity_menu_nowe"></activity>
+            android:label="@string/title_activity_menu_nowe">
+        </activity>
     </application>
 
 </manifest>

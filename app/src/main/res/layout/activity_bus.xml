@@ -19,18 +19,21 @@
             android:id="@+id/tekst1"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:textSize="20dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tekst2"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
+            android:textSize="20dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tekst3"
             android:layout_width="match_parent"
-            android:layout_height="29dp"
+            android:layout_height="35dp"
+            android:textSize="20dp"
             android:text="TextView" />
 
         <ListView
