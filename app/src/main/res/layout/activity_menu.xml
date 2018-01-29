@@ -62,11 +62,11 @@
                     android:layout_height="wrap_content"
                     android:text="Tabela2" />
 
-            <Button
-                android:id="@+id/btnpopup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="popup" />
+                <Button
+                    android:id="@+id/btnpopup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="popup" />
 
             <Button
                 android:id="@+id/btnlistabus"

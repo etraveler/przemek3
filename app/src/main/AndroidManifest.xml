@@ -32,16 +32,19 @@
         <activity
             android:name=".okno_pop"
             android:theme="@style/AppTheme.pop_up_style" />
-        <activity android:name=".Bus"
-            android:label="Bus"/>
-        <activity android:name=".ListaBus"
-            android:label="LISTA BUSÓW"
-            />
-        <activity android:name=".Bus_zmien"
+        <activity
+            android:name=".Bus"
+            android:label="Bus" />
+        <activity
+            android:name=".ListaBus"
+            android:label="LISTA BUSÓW" />
+        <activity
+            android:name=".Bus_zmien"
             android:label="Zmien ilosc"
-            android:theme="@style/AppTheme.pop_up_style">
-
-        </activity>
+            android:theme="@style/AppTheme.pop_up_style"></activity>
+        <activity android:name=".Menu_ladne"
+            android:label="MENU GŁÓWNE"
+            ></activity>
     </application>
 
 </manifest>
