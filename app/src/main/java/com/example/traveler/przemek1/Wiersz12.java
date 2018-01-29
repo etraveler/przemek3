@@ -10,6 +10,7 @@ public class Wiersz12 {
     private String prawygora;
     private String prawydol;
     private String dodatkowy;
+    private String dodatkowy2;
 
     public Wiersz12(String lewy, String prawygora, String prawydol) {
         this.prawygora = prawygora;
@@ -52,5 +53,13 @@ public class Wiersz12 {
 
     public void setDodatkowy(String identyfikator) {
         this.dodatkowy = identyfikator;
+    }
+
+    public String getDodatkowy2() {
+        return dodatkowy2;
+    }
+
+    public void setDodatkowy2(String dodatkowy2) {
+        this.dodatkowy2 = dodatkowy2;
     }
 }

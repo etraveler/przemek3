@@ -80,6 +80,7 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
                     }
                     if (i == 3) {
                         bus.setPrawyGora("Ilość: "+retval2);
+                        bus.setDodatkowy2(retval2);
                     }
                     if (i == 4) {
                         bus.setDodatkowy(retval2);
@@ -101,7 +102,7 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
 
                     Wiersz12 transporter = BusList.get(position);
                     String nazwa = transporter.getLewy();
-                    String ilosc = transporter.getPrawyGora();
+                    String ilosc = transporter.getDodatkowy2();
                     String kod = transporter.getPrawyDol();
                     idprzedmiotu = transporter.getDodatkowy();
 
