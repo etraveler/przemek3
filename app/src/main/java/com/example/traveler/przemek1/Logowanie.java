@@ -19,7 +19,7 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
     EditText etUsername, etPassword;
     Button btnLogin;
     Button btnCreate;
-
+    String s;
 
 
     @Override
@@ -33,12 +33,17 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
         btnLogin.setOnClickListener(this);
         btnCreate = (Button) findViewById(R.id.btnCreate);
         btnCreate.setOnClickListener(this);
+        ((tokenGlobal) this.getApplication()).generateString();
     }
 
     @Override
     public void processFinish(String result) {
+
         if (result.equals("success")) {
-            Toast.makeText(this, "Login Succesfully", Toast.LENGTH_SHORT).show();
+           // ((tokenGlobal) this.getApplication()).generateString();
+            String token = ((tokenGlobal) this.getApplication()).getSomeVariable();
+            Toast.makeText(this,token , Toast.LENGTH_SHORT).show();
+          // Toast.makeText(this,"Login succesfully" , Toast.LENGTH_SHORT).show();
             Intent in = new Intent(this, Menu_ladne.class);
             startActivity(in);
         } else {

@@ -2,14 +2,15 @@ package com.example.traveler.przemek1;
 
 import android.app.Application;
 
+import java.util.UUID;
+
 /**
  * Created by Przemek on 28.01.2018.
  */
 
-class MyApplication extends Application{
+public class tokenGlobal extends Application{
 
     private String someVariable;
-
 
     public String getSomeVariable() {
 
@@ -22,7 +23,13 @@ class MyApplication extends Application{
 
     }
 
+        public String generateString() {
+            String uuid = UUID.randomUUID().toString();
+            uuid = someVariable;
+            return someVariable;
 
+        }
+        public void show(String someVariable){
+        System.out.print(someVariable);}
 
-
-}
+    }
