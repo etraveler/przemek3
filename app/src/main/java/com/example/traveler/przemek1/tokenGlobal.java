@@ -24,12 +24,11 @@ public class tokenGlobal extends Application{
     }
 
         public String generateString() {
-            String uuid = UUID.randomUUID().toString();
-            uuid = someVariable;
+
+            someVariable = UUID.randomUUID().toString();
+            someVariable.replace("-", "");
             return someVariable;
 
         }
-        public void show(String someVariable){
-        System.out.print(someVariable);}
 
     }

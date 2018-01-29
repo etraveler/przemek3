@@ -12,6 +12,7 @@ import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 public class Logowanie extends AppCompatActivity implements AsyncResponse, View.OnClickListener {
 
@@ -19,7 +20,6 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
     EditText etUsername, etPassword;
     Button btnLogin;
     Button btnCreate;
-    String s;
 
 
     @Override
@@ -33,17 +33,15 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
         btnLogin.setOnClickListener(this);
         btnCreate = (Button) findViewById(R.id.btnCreate);
         btnCreate.setOnClickListener(this);
-        ((tokenGlobal) this.getApplication()).generateString();
     }
 
     @Override
     public void processFinish(String result) {
 
         if (result.equals("success")) {
-           // ((tokenGlobal) this.getApplication()).generateString();
+            ((tokenGlobal) this.getApplication()).generateString();
             String token = ((tokenGlobal) this.getApplication()).getSomeVariable();
             Toast.makeText(this,token , Toast.LENGTH_SHORT).show();
-          // Toast.makeText(this,"Login succesfully" , Toast.LENGTH_SHORT).show();
             Intent in = new Intent(this, Menu_ladne.class);
             startActivity(in);
         } else {
@@ -61,6 +59,7 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
                 postData.put("mobile", "android");
                 postData.put("txtUsername", etUsername.getText().toString());
                 postData.put("txtPassword", etPassword.getText().toString());
+                postData.put("txt", etPassword.getText().toString());
 
                 PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
                 task.execute("http://traveler95.nazwa.pl/jeden/client/login.php");
