@@ -26,6 +26,7 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
     String value2;
     String value3;
     Button btnodswiez;
+    Button btndodaj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,9 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
 
         btnodswiez = (Button) findViewById(R.id.btnodswiez);
         btnodswiez.setOnClickListener(this);
+        btndodaj = (Button) findViewById(R.id.btndodaj);
+        btndodaj.setOnClickListener(this);
+
         tekst1 = (TextView) findViewById(R.id.tekst1);
         tekst2 = (TextView) findViewById(R.id.tekst2);
         tekst3 = (TextView) findViewById(R.id.tekst3);
@@ -129,6 +133,11 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
             case R.id.btnodswiez:
                 finish();
                 startActivity(getIntent());
+                break;
+
+            case R.id.btndodaj:
+                Intent in1 = new Intent(BusZawartosc.this, DodajDoBusa.class);
+                startActivity(in1);
                 break;
         }
 

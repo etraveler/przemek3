@@ -80,7 +80,7 @@ public class Menu extends AppCompatActivity implements AsyncResponse,  View.OnCl
                 break;
 
             case R.id.btnlogout:
-                Intent in3 = new Intent(this, Logowanie.class);
+                Intent in3 = new Intent(this, Menu_ladne.class);
                 startActivity(in3);
                 break;
             case R.id.btnbus2:

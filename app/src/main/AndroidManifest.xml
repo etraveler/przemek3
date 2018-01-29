@@ -30,9 +30,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Tabela2" />
         <activity
-            android:name=".okno_pop"
-            android:theme="@style/AppTheme.pop_up_style" />
-        <activity
             android:name=".BusZawartosc"
             android:label="Bus" />
         <activity
@@ -47,8 +44,8 @@
             android:label="MENU GŁÓWNE" />
         <activity
             android:name=".Menu_nowe"
-            android:label="@string/title_activity_menu_nowe">
-        </activity>
+            android:label="@string/title_activity_menu_nowe"></activity>
+        <activity android:name=".DodajDoBusa"></activity>
     </application>
 
 </manifest>

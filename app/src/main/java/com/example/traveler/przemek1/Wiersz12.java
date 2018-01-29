@@ -11,7 +11,7 @@ public class Wiersz12 {
     private String prawydol;
     private String dodatkowy;
 
-    public Wiersz12(String name, String birthday, String sex) {
+    public Wiersz12(String lewy, String prawygora, String prawydol) {
         this.prawygora = prawygora;
         this.lewy = lewy;
         this.prawydol = prawydol;

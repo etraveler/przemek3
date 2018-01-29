@@ -37,12 +37,12 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
     @Override
     public void processFinish(String result) {
 
-        if (result.equals("success")) {
+        if (result.equals("Success")) {
             Toast.makeText(this, result , Toast.LENGTH_SHORT).show();
             Intent in = new Intent(this, Menu_ladne.class);
             startActivity(in);
         } else {
-            Toast.makeText(this, "Login Failedd", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -59,7 +59,7 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
                 postData.put("txtPassword", etPassword.getText().toString());
                 postData.put("txtToken", token);
                 PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
-                task.execute("http://traveler95.nazwa.pl/jeden/client/login3.php");
+                task.execute("http://traveler95.nazwa.pl/jeden/client/login.php");
                 break;
 
             case R.id.btnCreate:

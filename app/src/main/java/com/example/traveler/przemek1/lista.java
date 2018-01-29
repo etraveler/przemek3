@@ -69,7 +69,7 @@ cars[2]=zwierzak;
             case R.id.btngetpass:
 
 
-                while (wiersz<11) {
+                while (wiersz<15) {
                     String wierszstring = wiersz + "";
                     HashMap postData = new HashMap();
                     postData.put("mobile1", "android1");

@@ -82,19 +82,8 @@ public class Tabela1 extends Activity {
                         Intent in2 = new Intent(Tabela1.this, lista.class);
                         startActivity(in2);
                         break;
-                    case 3:
-                        Intent in3 = new Intent(Tabela1.this, okno_pop.class);
-                        in3.putExtra("tekst",fruits[position]);
-                        in3.putExtra("tekst2",fruits[1]);
-                        startActivity(in3);
-                        break;
-                    case 4:
-                        Intent in4 = new Intent(Tabela1.this, okno_pop.class);
-                        in4.putExtra("tekst",fruits[position]);
-                        startActivity(in4);
-                        break;
                     default:
-                        Intent in5 = new Intent(Tabela1.this, okno_pop.class);
+                        Intent in5 = new Intent(Tabela1.this, Zmien_ilosc.class);
                         in5.putExtra("tekst",fruits[position]);
                         startActivity(in5);
                         break;
