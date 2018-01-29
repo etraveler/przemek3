@@ -12,7 +12,6 @@ import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
 import java.util.HashMap;
-import java.util.UUID;
 
 public class Logowanie extends AppCompatActivity implements AsyncResponse, View.OnClickListener {
 

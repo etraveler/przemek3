@@ -1,6 +1,5 @@
 package com.example.traveler.przemek1;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -27,7 +25,7 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
     String value3;
     Button btnodswiez;
     Button btndodaj;
-
+    String idprzedmiotu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +103,7 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
                     String nazwa = transporter.getPrawyGora();
                     String ilosc = transporter.getLewy();
                     String kod = transporter.getPrawyDol();
-                    String idprzedmiotu = transporter.getDodatkowy();
+                    idprzedmiotu = transporter.getDodatkowy();
 
                     switch (position) {
 
@@ -137,6 +135,7 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
 
             case R.id.btndodaj:
                 Intent in1 = new Intent(BusZawartosc.this, DodajDoBusa.class);
+                in1.putExtra("idbusa", value1);
                 startActivity(in1);
                 break;
         }

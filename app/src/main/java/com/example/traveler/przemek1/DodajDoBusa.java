@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -29,8 +28,7 @@ public class DodajDoBusa extends AppCompatActivity implements AsyncResponse {
         Bundle extras = getIntent().getExtras();
         if (extras != null)
         {
-                idbusa = extras.getString("tekst1");
-                idprzedmiotu = extras.getString("tekst2");
+                idbusa = extras.getString("idbusa");
         }
 
 
@@ -53,13 +51,16 @@ public class DodajDoBusa extends AppCompatActivity implements AsyncResponse {
         for (String retval1 : result.split(">"))
         {
             i=1;
-            final Wiersz12 bus = new Wiersz12("", "");
+            final Wiersz12 bus = new Wiersz12("", "","");
             for (String retval2 : retval1.split("-")) {
                 if (i == 1) {
                     bus.setLewy(retval2);
                 }
                 if (i == 2) {
                     bus.setPrawyGora(retval2);
+                }
+                if (i == 3) {
+                    bus.setPrawyDol(retval2);
                 }
                 i++;
             }
@@ -80,10 +81,12 @@ public class DodajDoBusa extends AppCompatActivity implements AsyncResponse {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
 
+                Wiersz12 transporter = BusList.get(position);
+                idprzedmiotu = transporter.getPrawyDol();
+
+
                 switch (position)
                 {
-
-
                     default:
                         Intent in = new Intent(DodajDoBusa.this, DodajDoBusaPopup.class);
                         in.putExtra("idbusa",idbusa);
