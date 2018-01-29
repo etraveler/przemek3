@@ -17,6 +17,11 @@ public class Wiersz12 {
         this.prawydol = prawydol;
     }
 
+    public Wiersz12(String lewy, String prawygora) {
+        this.prawygora = prawygora;
+        this.lewy = lewy;
+    }
+
     public String getPrawyGora() {
         return prawygora;
     }

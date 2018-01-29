@@ -44,8 +44,9 @@
             android:label="MENU GŁÓWNE" />
         <activity
             android:name=".Menu_nowe"
-            android:label="@string/title_activity_menu_nowe"></activity>
-        <activity android:name=".DodajDoBusa"></activity>
+            android:label="@string/title_activity_menu_nowe" />
+        <activity android:name=".DodajDoBusa" />
+        <activity android:name=".DodajDoBusaPopup"></activity>
     </application>
 
 </manifest>
