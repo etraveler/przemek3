@@ -34,6 +34,7 @@ public class DodajDoBusa extends AppCompatActivity implements AsyncResponse {
 
 
         HashMap postData2 = new HashMap();
+        postData2.put("busid", idbusa);
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
         task.execute("http://traveler95.nazwa.pl/jeden/client/dodaj_do_busa.php");
 
@@ -91,11 +92,29 @@ public class DodajDoBusa extends AppCompatActivity implements AsyncResponse {
                         Intent in = new Intent(DodajDoBusa.this, DodajDoBusaPopup.class);
                         in.putExtra("idbusa",idbusa);
                         in.putExtra("idprzedmiotu",idprzedmiotu);
+
                         startActivity(in);
                         break;
                 }
             }
         });
+    }
+
+    int i=0;
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+        if (i==1) {
+            finish();
+            startActivity(getIntent());
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        i=1;
+        super.onPause();
     }
 }
 

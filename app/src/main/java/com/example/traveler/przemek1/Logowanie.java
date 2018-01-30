@@ -43,6 +43,7 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
         } else {
             Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
         }
+        finish();
     }
 
 
