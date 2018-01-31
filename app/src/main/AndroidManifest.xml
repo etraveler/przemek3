@@ -31,10 +31,10 @@
         <activity android:name=".Tabela2" />
         <activity
             android:name=".BusZawartosc"
-            android:label="Bus" />
+            android:label="Zawartość busa:" />
         <activity
             android:name=".ListaBus"
-            android:label="LISTA BUSÓW" />
+            android:label="Lista busów:" />
         <activity
             android:name=".Zmien_ilosc"
             android:label="Zmień ilość"
@@ -45,9 +45,15 @@
         <activity
             android:name=".Menu_nowe"
             android:label="@string/title_activity_menu_nowe" />
-        <activity android:name=".DodajDoBusa" />
-        <activity android:name=".DodajDoBusaPopup"
+        <activity android:name=".DodajDoBusa"
+            android:label="Co chcesz dodać??"/>
+        <activity
+            android:name=".DodajDoBusaPopup"
             android:theme="@style/AppTheme.pop_up_style"
+            android:label="Ile sztuk?"/>
+        <activity
+            android:name=".DodajBusa"
+            android:label="Dodaj busa"
             ></activity>
     </application>
 

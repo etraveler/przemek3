@@ -18,8 +18,7 @@ public class Menu_ladne extends AppCompatActivity implements AsyncResponse, View
 Button btnwyloguj;
 Button btnmenurobocze;
 Button btnlistabusow;
-
-
+Button btndodajbusa;
 
 
     @Override
@@ -33,6 +32,8 @@ Button btnlistabusow;
         btnmenurobocze.setOnClickListener(this);
         btnlistabusow = (Button) findViewById(R.id.btnlistabusow);
         btnlistabusow.setOnClickListener(this);
+        btndodajbusa = (Button) findViewById(R.id.btndodajbusa);
+        btndodajbusa.setOnClickListener(this);
 
 
 
@@ -68,6 +69,10 @@ Button btnlistabusow;
             case R.id.btnlistabusow:
                 Intent in6 = new Intent(this, ListaBus.class);
                 startActivity(in6);
+                break;
+            case R.id.btndodajbusa:
+                Intent in7 = new Intent(this, DodajBusa.class);
+                startActivity(in7);
                 break;
         }
     }

@@ -63,7 +63,6 @@ public class CreateAccount extends AppCompatActivity implements AsyncResponse, V
 
 
 
-                 //   String text = createName.getText().toString();
                 int namedl = createName.getText().length();
                 int logindl = createUsername.getText().length();
                 int passdl = createPassword.getText().length();
