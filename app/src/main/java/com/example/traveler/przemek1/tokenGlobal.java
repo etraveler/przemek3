@@ -8,7 +8,7 @@ import java.util.UUID;
  * Created by Przemek on 28.01.2018.
  */
 
-public class tokenGlobal extends Application{
+public class tokenGlobal extends Application {
 
     private String someVariable;
 

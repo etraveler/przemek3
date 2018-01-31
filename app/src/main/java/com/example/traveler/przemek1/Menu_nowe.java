@@ -5,11 +5,16 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class Menu_nowe extends AppCompatActivity {
+public class Menu_nowe extends AppCompatActivity{
 
     private TextView mTextMessage;
+
+    int gdzie=0;
+    Button btnlistabusow;
+    Button btndodajbusa;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -18,13 +23,19 @@ public class Menu_nowe extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    mTextMessage.setText("Busy");
+                    gdzie=1;
+
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
+                    gdzie=2;
+
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    mTextMessage.setText("Kalendarz");
+                    gdzie=3;
+
                     return true;
             }
             return false;
@@ -36,9 +47,15 @@ public class Menu_nowe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_nowe);
 
+      //  btnlistabusow = (Button) findViewById(R.id.btnlistabusow);
+      //  btnlistabusow.setOnClickListener(this);
+      //  btndodajbusa = (Button) findViewById(R.id.btndodajbusa);
+      //  btndodajbusa.setOnClickListener(this);
+
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
     }
 
 }
