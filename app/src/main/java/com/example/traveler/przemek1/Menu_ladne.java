@@ -35,9 +35,10 @@ Button btndodajbusa;
         btnlistabusow.setOnClickListener(this);
         btndodajbusa = (Button) findViewById(R.id.btndodajbusa);
         btndodajbusa.setOnClickListener(this);
-
-
-
+        Intent in8 = new Intent(this, checkToken.class);
+        startActivity(in8);
+        String token = ((tokenGlobal) this.getApplication()).getSomeVariable2();
+        Toast.makeText(this, token, Toast.LENGTH_LONG).show();
 
     }
     @Override
@@ -71,10 +72,8 @@ Button btndodajbusa;
                 startActivity(in6);
                 break;
             case R.id.btndodajbusa:
-               // Intent in7 = new Intent(this, DodajBusa.class);
-                //startActivity(in7);
-                token = ((tokenGlobal) this.getApplication()).getSomeVariable();
-                Toast.makeText(this, token, Toast.LENGTH_SHORT).show();
+               Intent in7 = new Intent(this, DodajBusa.class);
+                startActivity(in7);
                 break;
         }
     }
