@@ -43,7 +43,7 @@ Button btndodajbusa;
     }
     @Override
     public void processFinish(String result) {
-        Toast.makeText(this, "Wylogowano prawidłowo", Toast.LENGTH_LONG).show();
+
     }
     @Override
     public void onClick(View v) {
