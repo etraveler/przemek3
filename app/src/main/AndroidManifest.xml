@@ -45,16 +45,17 @@
         <activity
             android:name=".Menu_nowe"
             android:label="@string/title_activity_menu_nowe" />
-        <activity android:name=".DodajDoBusa"
-            android:label="Co chcesz dodać??"/>
+        <activity
+            android:name=".DodajDoBusa"
+            android:label="Co chcesz dodać??" />
         <activity
             android:name=".DodajDoBusaPopup"
-            android:theme="@style/AppTheme.pop_up_style"
-            android:label="Ile sztuk?"/>
+            android:label="Ile sztuk?"
+            android:theme="@style/AppTheme.pop_up_style" />
         <activity
             android:name=".DodajBusa"
-            android:label="Dodaj busa"
-            ></activity>
+            android:label="Dodaj busa" />
+        <activity android:name=".checkToken"></activity>
     </application>
 
 </manifest>

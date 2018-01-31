@@ -39,7 +39,6 @@ Button btndodajbusa;
 
 
 
-
     }
     @Override
     public void processFinish(String result) {
@@ -72,8 +71,10 @@ Button btndodajbusa;
                 startActivity(in6);
                 break;
             case R.id.btndodajbusa:
-                Intent in7 = new Intent(this, DodajBusa.class);
-                startActivity(in7);
+               // Intent in7 = new Intent(this, DodajBusa.class);
+                //startActivity(in7);
+                token = ((tokenGlobal) this.getApplication()).getSomeVariable();
+                Toast.makeText(this, token, Toast.LENGTH_SHORT).show();
                 break;
         }
     }
