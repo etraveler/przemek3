@@ -1,20 +1,13 @@
 package com.example.traveler.przemek1;
 
 import android.app.Application;
-import android.content.Intent;
-import android.widget.Toast;
 
-import com.kosalgeek.asynctask.AsyncResponse;
-import com.kosalgeek.asynctask.PostResponseAsyncTask;
-
-import java.util.HashMap;
 import java.util.UUID;
 
-/**
- * Created by Przemek on 28.01.2018.
- */
 
-public class tokenGlobal extends Application implements AsyncResponse {
+
+
+public class tokenGlobal extends Application {
 
     private String someVariable;
     private String someVariable2;
@@ -54,16 +47,4 @@ public class tokenGlobal extends Application implements AsyncResponse {
         return someVariable2;
 
     }
-/*
-    public String Check() {
-        PostResponseAsyncTask readData = new PostResponseAsyncTask(this,
-                new AsyncResponse() {
-                    @Override
-                    public void processFinish(String s) {
-                        //TO-DO do something with s
-                    }
-                });
-        readData.execute("http://yoursite.com/getdata.php");
-*/
-    //}
 }

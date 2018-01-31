@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -16,7 +15,7 @@ public class Menu_ladne extends AppCompatActivity implements AsyncResponse, View
 
 
 Button btnwyloguj;
-Button btnmenurobocze;
+Button btndodajprzedmiot;
 Button btnlistabusow;
 Button btndodajbusa;
 
@@ -29,29 +28,26 @@ Button btndodajbusa;
 
         btnwyloguj = (Button) findViewById(R.id.btnwyloguj);
         btnwyloguj.setOnClickListener(this);
-        btnmenurobocze = (Button) findViewById(R.id.btnmenurobocze);
-        btnmenurobocze.setOnClickListener(this);
+        btndodajprzedmiot = (Button) findViewById(R.id.btndodajprzedmiot);
+        btndodajprzedmiot.setOnClickListener(this);
         btnlistabusow = (Button) findViewById(R.id.btnlistabusow);
         btnlistabusow.setOnClickListener(this);
         btndodajbusa = (Button) findViewById(R.id.btndodajbusa);
         btndodajbusa.setOnClickListener(this);
-        Intent in8 = new Intent(this, checkToken.class);
-        startActivity(in8);
-        String token = ((tokenGlobal) this.getApplication()).getSomeVariable2();
-        Toast.makeText(this, token, Toast.LENGTH_LONG).show();
+
 
     }
+
     @Override
     public void processFinish(String result) {
-
     }
+
+
     @Override
     public void onClick(View v) {
 
 
         switch (v.getId()) {
-
-
             case R.id.btnwyloguj:
                 HashMap postData = new HashMap();
                 String token = ((tokenGlobal) this.getApplication()).getSomeVariable();
@@ -63,16 +59,14 @@ Button btndodajbusa;
                 Intent in4 = new Intent(this, Logowanie.class);
                 startActivity(in4);
                 break;
-            case R.id.btnmenurobocze:
-                Intent in5 = new Intent(this, Menu.class);
-                startActivity(in5);
+            case R.id.btndodajprzedmiot:
                 break;
             case R.id.btnlistabusow:
                 Intent in6 = new Intent(this, ListaBus.class);
                 startActivity(in6);
                 break;
             case R.id.btndodajbusa:
-               Intent in7 = new Intent(this, DodajBusa.class);
+                Intent in7 = new Intent(this, DodajBusa.class);
                 startActivity(in7);
                 break;
         }

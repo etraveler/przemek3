@@ -64,7 +64,8 @@ int liczba=0;
 
     @Override
     public void processFinish(String result) {
-
+        Toast.makeText(this, "prawdopodobnie dodano xD", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
 

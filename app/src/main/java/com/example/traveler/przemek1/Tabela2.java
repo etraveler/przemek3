@@ -55,7 +55,7 @@ public class Tabela2 extends AppCompatActivity implements View.OnClickListener{
 
 
             case R.id.btnback:
-                Intent in = new Intent(this, Menu.class);
+                Intent in = new Intent(this, Menu_robocze.class);
                 startActivity(in);
                 break;
 

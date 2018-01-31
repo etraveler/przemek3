@@ -75,7 +75,7 @@ public class Tabela1 extends Activity {
                     case 0:
                         break;
                     case 1:
-                        Intent in1 = new Intent(Tabela1.this, Menu.class);
+                        Intent in1 = new Intent(Tabela1.this, Menu_robocze.class);
                         startActivity(in1);
                         break;
                     case 2:

@@ -27,7 +27,6 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
         postData2.put("mobile1", "android1");
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
         task.execute("http://traveler95.nazwa.pl/jeden/client/listabus.php");
-        Toast.makeText(this, "wow", Toast.LENGTH_LONG).show();
 
     }
 

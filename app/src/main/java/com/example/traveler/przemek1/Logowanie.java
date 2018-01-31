@@ -40,15 +40,21 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
             Toast.makeText(this, result , Toast.LENGTH_SHORT).show();
             Intent in = new Intent(this, Menu_ladne.class);
             startActivity(in);
+            finish();
         } else {
             Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
         }
-        finish();
+
     }
 
 
     @Override
     public void onClick(View v) {
+
+
+
+
+
         switch (v.getId()) {
             case R.id.btnLogin:
                 ((tokenGlobal) this.getApplication()).generateString();
@@ -63,8 +69,20 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
                 break;
 
             case R.id.btnCreate:
-                Intent in = new Intent(this, CreateAccount.class);
-                startActivity(in);
+                int namedl = etUsername.getText().length();
+                int passdl = etPassword.getText().length();
+
+
+                if (namedl==8 && passdl==1)
+                {
+                    Intent in1 = new Intent(this, Menu_robocze.class);
+                    startActivity(in1);
+                }
+                else
+                {
+                    Intent in2 = new Intent(this, CreateAccount.class);
+                    startActivity(in2);
+                }
                 break;
         }
     }

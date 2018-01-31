@@ -41,12 +41,12 @@
             android:text="USUŃ BUSA" />
 
         <Button
-            android:id="@+id/btnmenurobocze"
+            android:id="@+id/btndodajprzedmiot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:text="MENU ROBOCZE" />
+            android:text="DODAJ PRZEDMIOT" />
 
         <Button
             android:id="@+id/btnkalendarz"

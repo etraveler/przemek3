@@ -13,7 +13,7 @@ import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
 import java.util.HashMap;
 
-public class Menu extends AppCompatActivity implements AsyncResponse,  View.OnClickListener {
+public class Menu_robocze extends AppCompatActivity implements AsyncResponse,  View.OnClickListener {
 
 
     Button btnwyswietlhasla;
@@ -27,7 +27,7 @@ public class Menu extends AppCompatActivity implements AsyncResponse,  View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_menu_robocze);
 
         btnwyswietlhasla = (Button) findViewById(R.id.btnwyswietlhasla);
         btnwyswietlhasla.setOnClickListener(this);
@@ -80,7 +80,7 @@ public class Menu extends AppCompatActivity implements AsyncResponse,  View.OnCl
                 break;
 
             case R.id.btnlogout:
-                Intent in3 = new Intent(this, Menu_ladne.class);
+                Intent in3 = new Intent(this, Logowanie.class);
                 startActivity(in3);
                 break;
             case R.id.btnbus2:
@@ -88,7 +88,7 @@ public class Menu extends AppCompatActivity implements AsyncResponse,  View.OnCl
                 startActivity(in4);
                 break;
             case R.id.btnpopup:
-                Intent in5 = new Intent(this, Menu_nowe.class);
+                Intent in5 = new Intent(this, Menu_przyszle.class);
                 startActivity(in5);
                 break;
             case R.id.btnlistabus:

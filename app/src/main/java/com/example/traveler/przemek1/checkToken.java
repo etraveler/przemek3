@@ -16,14 +16,17 @@ public class checkToken extends AppCompatActivity implements AsyncResponse {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_token);
+
         String token = ((tokenGlobal) this.getApplication()).getSomeVariable();
+
         HashMap postData = new HashMap();
         postData.put("txtToken", token);
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
         task.execute("http://traveler95.nazwa.pl/jeden/client/tokenCheck.php");
+
         String token2 = ((tokenGlobal) this.getApplication()).getSomeVariable2();
         Toast.makeText(this, token2, Toast.LENGTH_LONG).show();
-        // finish();
+        finish();
     }
 
     @Override

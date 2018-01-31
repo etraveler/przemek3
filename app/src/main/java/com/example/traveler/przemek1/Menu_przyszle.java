@@ -5,16 +5,16 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
 import android.widget.TextView;
 
-public class Menu_nowe extends AppCompatActivity{
+public class Menu_przyszle extends AppCompatActivity implements View.OnClickListener{
 
     private TextView mTextMessage;
 
     int gdzie=0;
-    Button btnlistabusow;
-    Button btndodajbusa;
+  //  Button btnlistabusow;
+   // Button btndodajbusa;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -45,12 +45,12 @@ public class Menu_nowe extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_nowe);
+        setContentView(R.layout.activity_menu_przyszle);
 
-      //  btnlistabusow = (Button) findViewById(R.id.btnlistabusow);
+       // btnlistabusow = (Button) findViewById(R.id.btnlistabusow);
       //  btnlistabusow.setOnClickListener(this);
       //  btndodajbusa = (Button) findViewById(R.id.btndodajbusa);
-      //  btndodajbusa.setOnClickListener(this);
+       // btndodajbusa.setOnClickListener(this);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -58,4 +58,9 @@ public class Menu_nowe extends AppCompatActivity{
 
     }
 
+    @Override
+    public void onClick(View view) {
+
+
+    }
 }
