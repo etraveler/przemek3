@@ -20,6 +20,7 @@ Button btndodajprzedmiot;
 Button btnlistabusow;
 Button btndodajbusa;
 Button btnedytujprzedmiot;
+Button btnemployees;
 
 
 
@@ -38,6 +39,8 @@ Button btnedytujprzedmiot;
         btndodajbusa.setOnClickListener(this);
         btnedytujprzedmiot = (Button) findViewById(R.id.btnedytujprzedmiot);
         btnedytujprzedmiot.setOnClickListener(this);
+        btnemployees = (Button) findViewById(R.id.btnemployees);
+        btnemployees.setOnClickListener(this);
 
         Intent in8 = new Intent(this, checkToken.class);
         startActivity(in8);
@@ -80,6 +83,10 @@ Button btnedytujprzedmiot;
             case R.id.btndodajbusa:
                 Intent in8 = new Intent(this, DodajBusa.class);
                 startActivity(in8);
+                break;
+            case R.id.btnemployees:
+                Intent in9 = new Intent(this, Employees.class);
+                startActivity(in9);
                 break;
         }
     }

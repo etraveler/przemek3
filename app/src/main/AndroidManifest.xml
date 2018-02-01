@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:name=".tokenGlobal"
         android:allowBackup="true"
@@ -13,10 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <service
-            android:enabled="true"
             android:name=".MyService"
+            android:enabled="true"
             android:exported="false"
             android:stopWithTask="false" />
 
@@ -64,10 +62,12 @@
             android:name=".DodajBusa"
             android:label="Dodaj busa" />
         <activity android:name=".checkToken" />
-        <activity android:name=".add_Items"></activity>
+        <activity android:name=".add_Items" />
         <activity android:name=".EdytujPrzedmiot" />
-        <activity android:name=".EdytujPrzedmiot2"
-            android:theme="@style/AppTheme.pop_up_style"></activity>
+        <activity
+            android:name=".EdytujPrzedmiot2"
+            android:theme="@style/AppTheme.pop_up_style" />
+        <activity android:name=".Employees"></activity>
     </application>
 
 </manifest>

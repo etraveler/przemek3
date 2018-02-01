@@ -71,6 +71,13 @@
             android:textColor="#ffffff"
             android:backgroundTint="?android:attr/colorPrimaryDark"
             android:text="SKLEP" />
+        <Button
+            android:id="@+id/btnemployees"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:backgroundTint="?android:attr/colorPrimaryDark"
+            android:text="PRACOWNICY" />
 
 
         <RelativeLayout android:id="@+id/RelativeLayout01"

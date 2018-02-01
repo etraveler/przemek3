@@ -3,10 +3,14 @@ package com.example.traveler.przemek1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.kosalgeek.asynctask.AsyncResponse;
@@ -58,12 +62,17 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
         postData2.put("idbusa", value1);
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
         task.execute("http://traveler95.nazwa.pl/jeden/client/zawartoscbus.php");
+
+
     }
+
+
 
     ArrayList<Wiersz12> BusList = new ArrayList<>();
 
     @Override
     public void processFinish(String result) {
+
         if (result == "") {
 
         } else {
@@ -124,6 +133,7 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
             });
         }
     }
+
 
     @Override
     public void onClick(View v) {

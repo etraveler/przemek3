@@ -8,4 +8,22 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_bus1">Bus1</string>
     <string name="title_activity_menu_nowe">Menu_nowe</string>
+    <string-array name="array_emp" >
+        <item>Przemek</item>
+        <subitem></subitem>
+        <item>Miłosz</item>
+        <item>Brutal</item>
+        <item>Grzesiek</item>
+        <item>Wilu</item>
+        <item>Iwona</item>
+        <item>Dagmara</item>
+        <item>Bartek</item>
+        <item>Józek</item>
+        <item>Franek</item>
+        <item>Zdzichu</item>
+        <item>Cycek</item>
+        <item>Adolf</item>
+        <item>Korek</item>
+        <item>Zibi</item>
+    </string-array>
 </resources>
