@@ -62,12 +62,17 @@
             android:name=".DodajBusa"
             android:label="Dodaj busa" />
         <activity android:name=".checkToken" />
-        <activity android:name=".add_Items" />
-        <activity android:name=".EdytujPrzedmiot" />
+        <activity
+            android:name=".add_Items"
+            android:label="Dodaj dodatek" />
+        <activity
+            android:name=".EdytujPrzedmiot"
+            android:label="Wybierz dodatek" />
         <activity
             android:name=".EdytujPrzedmiot2"
+            android:label="Edytuj dodatek"
             android:theme="@style/AppTheme.pop_up_style" />
-        <activity android:name=".Employees"></activity>
+        <activity android:name=".Dodatki"></activity>
     </application>
 
 </manifest>
