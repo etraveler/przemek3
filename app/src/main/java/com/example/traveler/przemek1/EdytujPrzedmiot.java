@@ -77,7 +77,7 @@ public class EdytujPrzedmiot extends AppCompatActivity implements AsyncResponse 
                     String nazwa = transporter.getLewy();
                     String rodzaj = transporter.getDodatkowy2();
                     String cena = transporter.getDodatkowy();
-                    String kod = transporter.getDodatkowy2();
+                    String kod = transporter.getPrawyGora();
 
                     switch (position) {
 

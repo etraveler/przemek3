@@ -48,10 +48,10 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Build 3.6.1"
+            android:text="Build 3.7.0"
             android:textAlignment="gravity"
-            android:textColor="#BBBBBB"
-            android:textSize="12dp" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="#BBBBBB" />
 
 
     </LinearLayout>

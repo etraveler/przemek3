@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -47,6 +48,10 @@ public class DodajDoBusa extends AppCompatActivity implements AsyncResponse {
     @Override
     public void processFinish(String result)
     {
+        if(result.equals(""))
+        {
+            Toast.makeText(this, "Nie ma nic do dodania", Toast.LENGTH_SHORT).show();
+        }
 
         int i = 1;
         for (String retval1 : result.split(">"))

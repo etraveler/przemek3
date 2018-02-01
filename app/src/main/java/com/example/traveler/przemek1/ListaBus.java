@@ -52,7 +52,8 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
                             bus.setPrawyDol(retval2);
                         }
                         if (i == 2) {
-                            bus.setPrawyGora(retval2);
+                            bus.setPrawyGora("Rejestracja:");
+                            bus.setDodatkowy(retval2);
                         }
                         if (i == 3) {
                             bus.setLewy(retval2);
@@ -77,8 +78,8 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
                         {
 
                             Wiersz12 transporter=BusList.get(position);
-                            String idkogos=transporter.getPrawyGora();
-                            String marka=transporter.getLewy();
+                            String idbusa=transporter.getDodatkowy();
+                            String nazwabusa=transporter.getLewy();
                             String rejestracja=transporter.getPrawyDol();
 
                             switch (position)
@@ -87,8 +88,8 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
 
                                 default:
                                     Intent in = new Intent(ListaBus.this, BusZawartosc.class);
-                                    in.putExtra("tekst1",idkogos);
-                                    in.putExtra("tekst2",marka);
+                                    in.putExtra("tekst1",idbusa);
+                                    in.putExtra("tekst2",nazwabusa);
                                     in.putExtra("tekst3",rejestracja);
                                     startActivity(in);
                                     break;
