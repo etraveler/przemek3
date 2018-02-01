@@ -36,7 +36,7 @@ public class checkToken extends AppCompatActivity implements AsyncResponse {
         }
         else
         {
-            Toast.makeText(this, "hahaha słabiak", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "hahaha Miłosz słabiak xd", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(this, Logowanie.class);
             startActivity(in);
         }
