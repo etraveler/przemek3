@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -18,6 +19,7 @@ Button btnwyloguj;
 Button btndodajprzedmiot;
 Button btnlistabusow;
 Button btndodajbusa;
+Button btnedytujprzedmiot;
 
 
 
@@ -34,7 +36,11 @@ Button btndodajbusa;
         btnlistabusow.setOnClickListener(this);
         btndodajbusa = (Button) findViewById(R.id.btndodajbusa);
         btndodajbusa.setOnClickListener(this);
+        btnedytujprzedmiot = (Button) findViewById(R.id.btnedytujprzedmiot);
+        btnedytujprzedmiot.setOnClickListener(this);
 
+        Intent in8 = new Intent(this, checkToken.class);
+        startActivity(in8);
 
     }
 
@@ -67,9 +73,13 @@ Button btndodajbusa;
                 Intent in6 = new Intent(this, ListaBus.class);
                 startActivity(in6);
                 break;
-            case R.id.btndodajbusa:
-                Intent in7 = new Intent(this, DodajBusa.class);
+            case R.id.btnedytujprzedmiot:
+                Intent in7 = new Intent(this, EdytujPrzedmiot.class);
                 startActivity(in7);
+                break;
+            case R.id.btndodajbusa:
+                Intent in8 = new Intent(this, DodajBusa.class);
+                startActivity(in8);
                 break;
         }
     }

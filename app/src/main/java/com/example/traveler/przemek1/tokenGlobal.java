@@ -2,6 +2,9 @@ package com.example.traveler.przemek1;
 
 import android.app.Application;
 
+import com.kosalgeek.asynctask.AsyncResponse;
+import com.kosalgeek.asynctask.PostResponseAsyncTask;
+
 import java.util.UUID;
 
 
@@ -9,6 +12,7 @@ import java.util.UUID;
 
 public class tokenGlobal extends Application {
 
+    String wynik;
     private String someVariable;
     private String someVariable2;
 
@@ -47,4 +51,23 @@ public class tokenGlobal extends Application {
         return someVariable2;
 
     }
+
+
+    public void check()
+    {
+
+
+        PostResponseAsyncTask readData = new PostResponseAsyncTask(this,
+                new AsyncResponse() {
+                    @Override
+                    public void processFinish(String s) {
+
+                    }
+                });
+        readData.execute("http://traveler95.nazwa.pl/jeden/client/tokenCheck.php");
+
+
+    }
+
+
 }

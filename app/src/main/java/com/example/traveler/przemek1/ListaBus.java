@@ -28,6 +28,11 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
         task.execute("http://traveler95.nazwa.pl/jeden/client/listabus.php");
 
+        Intent check = new Intent(this, checkToken.class);
+        startActivity(check);
+
+
+
     }
 
     ArrayList<Wiersz12> BusList = new ArrayList<>();

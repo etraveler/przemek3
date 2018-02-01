@@ -1,5 +1,6 @@
 package com.example.traveler.przemek1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -24,17 +25,22 @@ public class checkToken extends AppCompatActivity implements AsyncResponse {
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
         task.execute("http://traveler95.nazwa.pl/jeden/client/tokenCheck.php");
 
-        String token2 = ((tokenGlobal) this.getApplication()).getSomeVariable2();
-        Toast.makeText(this, token2, Toast.LENGTH_LONG).show();
         finish();
     }
 
     @Override
     public void processFinish(String result) {
-        if (result == "success") {
+
+        if (result.equals("success")) {
             ((tokenGlobal) this.getApplication()).setSomeVariable2("1");
-        } else {
-            ((tokenGlobal) this.getApplication()).setSomeVariable2("0");
+        }
+        else
+        {
+            Toast.makeText(this, "hahaha słabiak", Toast.LENGTH_SHORT).show();
+            Intent in = new Intent(this, Logowanie.class);
+            startActivity(in);
         }
     }
+
 }
+
