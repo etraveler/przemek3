@@ -7,8 +7,17 @@
     tools:context="com.example.traveler.przemek1.EdytujPrzedmiot2">
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".2"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
@@ -17,40 +26,72 @@
             android:id="@+id/txtnazwa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/txtrodzaj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/txtcena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/txtkod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:text="TextView" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".8"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".80"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
         <EditText
             android:id="@+id/editnazwa"
+            android:enabled="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="none"
+            android:textColorHint="@color/colorPrimary"
             android:hint="Nazwa produktu"/>
 
         <EditText
             android:id="@+id/editrodzaj"
+            android:enabled="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:textColorHint="@color/colorPrimary"
+            android:inputType="none"
             android:hint="Rodzaj produktu"/>
 
         <EditText
@@ -58,16 +99,58 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:enabled="false"
+            android:textColorHint="@color/colorPrimary"
+            android:inputType="none"
             android:hint="Cena produktu"/>
-
         <EditText
             android:id="@+id/editkod"
+            android:enabled="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimary"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Kod produktu" />
+            android:hint="Kod produktu"
+            android:inputType="none" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".20"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <Switch
+            android:id="@+id/switchnazwa"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp" />
+
+        <Switch
+            android:id="@+id/switchrodzaj"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp" />
+
+        <Switch
+            android:id="@+id/switchcena"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp" />
+
+        <Switch
+            android:id="@+id/switchkod"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp" />
+    </LinearLayout>
+    </LinearLayout>
+
+
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
