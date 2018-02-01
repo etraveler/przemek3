@@ -32,11 +32,11 @@ public class checkToken extends AppCompatActivity implements AsyncResponse {
     public void processFinish(String result) {
 
         if (result.equals("success")) {
-            ((tokenGlobal) this.getApplication()).setSomeVariable2("1");
+
         }
         else
         {
-            Toast.makeText(this, "hahaha słabiak", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "hahaha Miłosz słabiak xd", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(this, Logowanie.class);
             startActivity(in);
         }
