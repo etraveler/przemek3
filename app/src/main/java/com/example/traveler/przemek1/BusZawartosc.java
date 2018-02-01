@@ -17,7 +17,6 @@ import java.util.HashMap;
 
 public class BusZawartosc extends AppCompatActivity implements AsyncResponse, View.OnClickListener {
 
-    TextView tekst1;
     TextView tekst2;
     TextView tekst3;
     String value1;
@@ -37,7 +36,6 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
         btndodaj = (Button) findViewById(R.id.btndodaj);
         btndodaj.setOnClickListener(this);
 
-        tekst1 = (TextView) findViewById(R.id.tekst1);
         tekst2 = (TextView) findViewById(R.id.tekst2);
         tekst3 = (TextView) findViewById(R.id.tekst3);
 
@@ -48,7 +46,6 @@ public class BusZawartosc extends AppCompatActivity implements AsyncResponse, Vi
             value1 = extras.getString("tekst1");
             value2 = extras.getString("tekst2");
             value3 = extras.getString("tekst3");
-            tekst1.setText("ID: " + value1);
             tekst2.setText(value2);
             tekst3.setText("Rejestracja: " + value3);
         }
