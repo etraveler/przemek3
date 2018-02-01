@@ -32,7 +32,7 @@ public class checkToken extends AppCompatActivity implements AsyncResponse {
     public void processFinish(String result) {
 
         if (result.equals("success")) {
-            ((tokenGlobal) this.getApplication()).setSomeVariable2("1");
+
         }
         else
         {
