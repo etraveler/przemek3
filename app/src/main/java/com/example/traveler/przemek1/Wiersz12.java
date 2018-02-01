@@ -9,6 +9,8 @@ public class Wiersz12 {
     private String lewy;
     private String prawygora;
     private String prawydol;
+    private String lewydol;
+    private String lewygora;
     private String dodatkowy;
     private String dodatkowy2;
 
@@ -18,9 +20,11 @@ public class Wiersz12 {
         this.prawydol = prawydol;
     }
 
-    public Wiersz12(String lewy, String prawygora) {
+    public Wiersz12(String lewydol, String lewygora, String prawygora, String prawydol) {
         this.prawygora = prawygora;
-        this.lewy = lewy;
+        this.lewygora = lewygora;
+        this.lewydol = lewydol;
+        this.prawydol= prawydol;
     }
 
     public String getPrawyGora() {
@@ -37,6 +41,22 @@ public class Wiersz12 {
 
     public void setLewy(String lewy) {
         this.lewy = lewy;
+    }
+
+    public String getLewydol() {
+        return lewydol;
+    }
+
+    public void setLewydol(String lewydol) {
+        this.lewydol = lewydol;
+    }
+
+    public String getLewygora() {
+        return lewygora;
+    }
+
+    public void setLewygora(String lewygora) {
+        this.lewygora = lewygora;
     }
 
     public String getPrawyDol() {

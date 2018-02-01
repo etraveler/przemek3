@@ -16,10 +16,9 @@ public class Menu_ladne extends AppCompatActivity implements AsyncResponse, View
 
 
 Button btnwyloguj;
-Button btndodajprzedmiot;
 Button btnlistabusow;
 Button btndodajbusa;
-Button btnedytujprzedmiot;
+Button btndodatki;
 
 
 
@@ -30,17 +29,15 @@ Button btnedytujprzedmiot;
 
         btnwyloguj = (Button) findViewById(R.id.btnwyloguj);
         btnwyloguj.setOnClickListener(this);
-        btndodajprzedmiot = (Button) findViewById(R.id.btndodajprzedmiot);
-        btndodajprzedmiot.setOnClickListener(this);
+        btndodatki = (Button) findViewById(R.id.btndodatki);
+        btndodatki.setOnClickListener(this);
         btnlistabusow = (Button) findViewById(R.id.btnlistabusow);
         btnlistabusow.setOnClickListener(this);
         btndodajbusa = (Button) findViewById(R.id.btndodajbusa);
         btndodajbusa.setOnClickListener(this);
-        btnedytujprzedmiot = (Button) findViewById(R.id.btnedytujprzedmiot);
-        btnedytujprzedmiot.setOnClickListener(this);
 
-        Intent in8 = new Intent(this, checkToken.class);
-        startActivity(in8);
+        Intent check = new Intent(this, checkToken.class);
+        startActivity(check);
 
     }
 
@@ -62,24 +59,20 @@ Button btnedytujprzedmiot;
                 PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
                 task.execute("http://traveler95.nazwa.pl/jeden/client/logout.php");
 
-                Intent in4 = new Intent(this, Logowanie.class);
-                startActivity(in4);
-                break;
-            case R.id.btndodajprzedmiot:
-                Intent in5 = new Intent(this, add_Items.class);
-                startActivity(in5);
+                Intent in1 = new Intent(this, Logowanie.class);
+                startActivity(in1);
                 break;
             case R.id.btnlistabusow:
-                Intent in6 = new Intent(this, ListaBus.class);
-                startActivity(in6);
-                break;
-            case R.id.btnedytujprzedmiot:
-                Intent in7 = new Intent(this, EdytujPrzedmiot.class);
-                startActivity(in7);
+                Intent in2 = new Intent(this, ListaBus.class);
+                startActivity(in2);
                 break;
             case R.id.btndodajbusa:
-                Intent in8 = new Intent(this, DodajBusa.class);
-                startActivity(in8);
+                Intent in3 = new Intent(this, DodajBusa.class);
+                startActivity(in3);
+                break;
+            case R.id.btndodatki:
+                Intent in4 = new Intent(this, Dodatki.class);
+                startActivity(in4);
                 break;
         }
     }

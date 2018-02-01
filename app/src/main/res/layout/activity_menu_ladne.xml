@@ -41,28 +41,28 @@
             android:text="USUŃ BUSA" />
 
         <Button
-            android:id="@+id/btndodajprzedmiot"
+            android:id="@+id/btndodatki"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:text="DODAJ PRZEDMIOT" />
-
-        <Button
-            android:id="@+id/btnedytujprzedmiot"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="?android:attr/colorPrimaryDark"
-            android:text="EDYTUJ PRZEDMIOT"
+            android:text="DODATKI"
             android:textColor="#ffffff" />
 
         <Button
-        android:id="@+id/btnmagazyn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ffffff"
-        android:backgroundTint="?android:attr/colorPrimaryDark"
-        android:text="MAGAZYN" />
+            android:id="@+id/btnkalendarz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?android:attr/colorPrimaryDark"
+            android:text="KALENDARZ"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btnmagazyn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?android:attr/colorPrimaryDark"
+            android:text="MAGAZYN"
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/btnsklep"

@@ -46,12 +46,13 @@ public class EdytujPrzedmiot extends AppCompatActivity implements AsyncResponse 
                 final Wiersz12 bus = new Wiersz12("", "", "");
                 for (String retval2 : retval1.split("-")) {
                     if (i == 1) {
-                        bus.setLewy(retval2);
+                        bus.setLewygora(retval2);
                     }
                     if (i == 2) {
-                        bus.setPrawyGora(retval2);
+                        bus.setLewydol(retval2);
                     }
                     if (i == 3) {
+                        bus.setPrawyGora("Rodzaj: "+retval2);
                         bus.setDodatkowy2(retval2);
                     }
                     if (i == 4) {
@@ -65,7 +66,7 @@ public class EdytujPrzedmiot extends AppCompatActivity implements AsyncResponse 
             ListView mListView = (ListView) findViewById(R.id.listView);
 
 
-            Wiersz12ListAdapter adapter = new Wiersz12ListAdapter(this, R.layout.adapter_view_layout, BusList);
+            Wiersz22ListAdapter adapter = new Wiersz22ListAdapter(this, R.layout.adapter_view_layout2, BusList);
             mListView.setAdapter(adapter);
 
 
@@ -74,10 +75,10 @@ public class EdytujPrzedmiot extends AppCompatActivity implements AsyncResponse 
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                     Wiersz12 transporter = BusList.get(position);
-                    String nazwa = transporter.getLewy();
+                    String nazwa = transporter.getLewygora();
                     String rodzaj = transporter.getDodatkowy2();
                     String cena = transporter.getDodatkowy();
-                    String kod = transporter.getPrawyGora();
+                    String kod = transporter.getLewydol();
 
                     switch (position) {
 
