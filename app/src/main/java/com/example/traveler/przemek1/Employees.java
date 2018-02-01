@@ -13,7 +13,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Employees extends AppCompatActivity {
-ArrayAdapter<String> adapter;
+
+    ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

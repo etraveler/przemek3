@@ -10,7 +10,6 @@
     <string name="title_activity_menu_nowe">Menu_nowe</string>
     <string-array name="array_emp" >
         <item>Przemek</item>
-        <subitem></subitem>
         <item>Miłosz</item>
         <item>Brutal</item>
         <item>Grzesiek</item>
