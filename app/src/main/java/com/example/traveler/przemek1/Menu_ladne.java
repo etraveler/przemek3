@@ -19,7 +19,7 @@ Button btnwyloguj;
 Button btnlistabusow;
 Button btndodajbusa;
 Button btndodatki;
-
+Button btnemployees;
 
 
     @Override
@@ -35,6 +35,8 @@ Button btndodatki;
         btnlistabusow.setOnClickListener(this);
         btndodajbusa = (Button) findViewById(R.id.btndodajbusa);
         btndodajbusa.setOnClickListener(this);
+        btnemployees = (Button) findViewById(R.id.btnemployees);
+        btnemployees.setOnClickListener(this);
 
         Intent check = new Intent(this, checkToken.class);
         startActivity(check);
@@ -74,8 +76,13 @@ Button btndodatki;
                 Intent in4 = new Intent(this, Dodatki.class);
                 startActivity(in4);
                 break;
-        }
+            case R.id.btnemployees:
+                Intent in5 = new Intent(this, Employees.class);
+                startActivity(in5);
+                 break;
     }
+    }
+
 
 
 

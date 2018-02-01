@@ -73,6 +73,9 @@
             android:label="Edytuj dodatek"
             android:theme="@style/AppTheme.pop_up_style" />
         <activity android:name=".Dodatki"></activity>
+        <activity
+            android:name=".Employees"
+            android:label="Pracownicy" />
     </application>
 
 </manifest>
