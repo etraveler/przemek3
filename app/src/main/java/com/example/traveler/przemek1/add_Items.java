@@ -34,8 +34,9 @@ public class add_Items extends AppCompatActivity implements View.OnClickListener
 
 
     @Override
-    public void processFinish(String result) { finish();
-        Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+    public void processFinish(String result) {
+        finish();
+        startActivity(getIntent());
     }
 
     @Override
