@@ -60,6 +60,8 @@ Button btndodajbusa;
                 startActivity(in4);
                 break;
             case R.id.btndodajprzedmiot:
+                Intent in5 = new Intent(this, add_Items.class);
+                startActivity(in5);
                 break;
             case R.id.btnlistabusow:
                 Intent in6 = new Intent(this, ListaBus.class);
