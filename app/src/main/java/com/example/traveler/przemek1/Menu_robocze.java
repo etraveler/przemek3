@@ -88,7 +88,7 @@ public class Menu_robocze extends AppCompatActivity implements AsyncResponse,  V
                 startActivity(in4);
                 break;
             case R.id.btnpopup:
-                Intent in5 = new Intent(this, Menu_przyszle.class);
+                Intent in5 = new Intent(this, Skaner.class);
                 startActivity(in5);
                 break;
             case R.id.btnlistabus:

@@ -72,10 +72,11 @@
             android:name=".EdytujPrzedmiot2"
             android:label="Edytuj dodatek"
             android:theme="@style/AppTheme.pop_up_style" />
-        <activity android:name=".Dodatki"></activity>
+        <activity android:name=".Dodatki" />
         <activity
             android:name=".Employees"
             android:label="Pracownicy" />
+        <activity android:name=".Skaner"></activity>
     </application>
 
 </manifest>
