@@ -1,4 +1,4 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Glowne;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.traveler.przemek1.R;
+import com.example.traveler.przemek1.SearchFragment;
 
 
 public class Menu_przyszle extends AppCompatActivity implements View.OnClickListener{

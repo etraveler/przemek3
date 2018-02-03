@@ -1,20 +1,22 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Bus;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.traveler.przemek1.Inne.Wiersz12;
+import com.example.traveler.przemek1.Inne.Wiersz12ListAdapter;
+import com.example.traveler.przemek1.R;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ListaBus extends AppCompatActivity implements AsyncResponse{
+public class UsunBus extends AppCompatActivity implements AsyncResponse{
 
 
 
@@ -22,14 +24,14 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_bus);
+        setContentView(R.layout.activity_usun_bus);
         HashMap postData2 = new HashMap();
         postData2.put("mobile1", "android1");
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
         task.execute("http://traveler95.nazwa.pl/jeden/client/listabus.php");
 
-        Intent check = new Intent(this, checkToken.class);
-        startActivity(check);
+      //  Intent check = new Intent(this, checkToken.class);
+      //  startActivity(check);
 
 
 
@@ -87,7 +89,7 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
 
 
                                 default:
-                                    Intent in = new Intent(ListaBus.this, BusZawartosc.class);
+                                    Intent in = new Intent(UsunBus.this, UsunBusPopup.class);
                                     in.putExtra("tekst1",idbusa);
                                     in.putExtra("tekst2",nazwabusa);
                                     in.putExtra("tekst3",rejestracja);

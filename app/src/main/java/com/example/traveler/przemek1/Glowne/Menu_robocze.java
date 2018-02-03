@@ -1,4 +1,4 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Glowne;
 
 
 import android.content.Intent;
@@ -8,6 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.traveler.przemek1.Bus.ListaBus;
+import com.example.traveler.przemek1.R;
+import com.example.traveler.przemek1.Skaner;
+import com.example.traveler.przemek1.Tabela1;
+import com.example.traveler.przemek1.Tabela2;
+import com.example.traveler.przemek1.lista;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 

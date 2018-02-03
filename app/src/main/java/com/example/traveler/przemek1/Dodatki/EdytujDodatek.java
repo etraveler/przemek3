@@ -1,21 +1,22 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Dodatki;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
+import com.example.traveler.przemek1.Inne.Wiersz12;
+import com.example.traveler.przemek1.Inne.Wiersz22ListAdapter;
+import com.example.traveler.przemek1.R;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class EdytujPrzedmiot extends AppCompatActivity implements AsyncResponse {
+public class EdytujDodatek extends AppCompatActivity implements AsyncResponse {
 
 
     @Override
@@ -84,7 +85,7 @@ public class EdytujPrzedmiot extends AppCompatActivity implements AsyncResponse 
 
 
                         default:
-                            Intent in = new Intent(EdytujPrzedmiot.this, EdytujPrzedmiot2.class);
+                            Intent in = new Intent(EdytujDodatek.this, EdytujDodatek2.class);
                             in.putExtra("nazwa", nazwa);
                             in.putExtra("rodzaj", rodzaj);
                             in.putExtra("cena", cena);

@@ -10,6 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.traveler.przemek1.Bus.Zmien_ilosc;
+import com.example.traveler.przemek1.Glowne.Menu_robocze;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

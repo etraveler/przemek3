@@ -1,4 +1,4 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Bus;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.traveler.przemek1.Inne.Wiersz12;
+import com.example.traveler.przemek1.Inne.Wiersz12ListAdapter;
+import com.example.traveler.przemek1.R;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 

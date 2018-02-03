@@ -1,4 +1,4 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Dodatki;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,11 +9,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.traveler.przemek1.R;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
 import java.util.HashMap;
 
-public class EdytujPrzedmiot2 extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
+public class EdytujDodatek2 extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
 
     String nazwa, rodzaj, cena, kod;

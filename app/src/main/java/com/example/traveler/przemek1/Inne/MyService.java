@@ -1,9 +1,8 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Inne;
 
 import android.content.Intent;
 import android.app.Service;
 import android.os.IBinder;
-import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;

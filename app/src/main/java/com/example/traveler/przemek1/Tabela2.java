@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.traveler.przemek1.Glowne.Menu_robocze;
+import com.example.traveler.przemek1.Inne.Wiersz12;
+import com.example.traveler.przemek1.Inne.Wiersz12ListAdapter;
+
 import java.util.ArrayList;
 
 public class Tabela2 extends AppCompatActivity implements View.OnClickListener{

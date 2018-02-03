@@ -1,10 +1,12 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Inne;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.traveler.przemek1.Glowne.Logowanie;
+import com.example.traveler.przemek1.R;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 

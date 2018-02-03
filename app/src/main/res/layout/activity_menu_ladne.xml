@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.traveler.przemek1.Menu_ladne">
+    tools:context="com.example.traveler.przemek1.Glowne.Menu_ladne">
 
     <LinearLayout
         android:layout_width="match_parent"

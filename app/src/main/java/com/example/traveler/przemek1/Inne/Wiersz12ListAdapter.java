@@ -1,21 +1,24 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Inne;
 
 
-import android.content.Context;
-import android.support.annotation.NonNull;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
-import java.util.ArrayList;
+        import android.content.Context;
+        import android.support.annotation.NonNull;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.ArrayAdapter;
+        import android.widget.TextView;
+
+        import com.example.traveler.przemek1.R;
+
+        import java.util.ArrayList;
 
 /**
  * Created by User on 3/14/2017.
  */
 
-public class Wiersz22ListAdapter extends ArrayAdapter<Wiersz12> {
+public class Wiersz12ListAdapter extends ArrayAdapter<Wiersz12> {
 
     private static final String TAG = "Wiersz12ListAdapter";
 
@@ -30,7 +33,6 @@ public class Wiersz22ListAdapter extends ArrayAdapter<Wiersz12> {
         TextView name;
         TextView birthday;
         TextView sex;
-        TextView sex2;
     }
 
     /**
@@ -39,7 +41,7 @@ public class Wiersz22ListAdapter extends ArrayAdapter<Wiersz12> {
      * @param resource
      * @param objects
      */
-    public Wiersz22ListAdapter(Context context, int resource, ArrayList<Wiersz12> objects) {
+    public Wiersz12ListAdapter(Context context, int resource, ArrayList<Wiersz12> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -49,13 +51,12 @@ public class Wiersz22ListAdapter extends ArrayAdapter<Wiersz12> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the persons information
-        String name = getItem(position).getLewydol();
+        String name = getItem(position).getLewy();
         String birthday = getItem(position).getPrawyGora();
         String sex = getItem(position).getPrawyDol();
-        String sex2 = getItem(position).getLewygora();
 
         //Create the wiersz12 object with the information
-        Wiersz12 wiersz12 = new Wiersz12(name,birthday,sex,sex2);
+        Wiersz12 wiersz12 = new Wiersz12(name,birthday,sex);
 
 
             LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -64,13 +65,13 @@ public class Wiersz22ListAdapter extends ArrayAdapter<Wiersz12> {
 TextView tvName = (TextView) convertView.findViewById(R.id.textView1);
 TextView tvBirthday = (TextView) convertView.findViewById(R.id.textView2);
 TextView tvSex = (TextView) convertView.findViewById(R.id.textView3);
-TextView tvSex2 = (TextView) convertView.findViewById(R.id.textView4);
+
 
 
         tvName.setText(name);
         tvBirthday.setText(birthday);
         tvSex.setText(sex);
-        tvSex2.setText(sex2);
+
 
         return convertView;
     }

@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".tokenGlobal"
+        android:name=".Inne.tokenGlobal"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="OPUS"
@@ -13,12 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
-            android:name=".MyService"
+            android:name=".Inne.MyService"
             android:enabled="true"
             android:exported="false"
             android:stopWithTask="false" />
 
-        <activity android:name=".Logowanie">
+        <activity android:name=".Glowne.Logowanie">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,9 +26,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Menu_robocze"
+            android:name=".Glowne.Menu_robocze"
             android:label="Menu" />
-        <activity android:name=".CreateAccount" />
+        <activity android:name=".Glowne.CreateAccount" />
         <activity android:name=".lista" />
         <activity
             android:name=".Tabela1"
@@ -36,47 +36,51 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Tabela2" />
         <activity
-            android:name=".BusZawartosc"
+            android:name=".Bus.BusZawartosc"
             android:label="Zawartość busa:" />
         <activity
-            android:name=".ListaBus"
+            android:name=".Bus.ListaBus"
             android:label="Lista busów:" />
         <activity
-            android:name=".Zmien_ilosc"
+            android:name=".Bus.Zmien_ilosc"
             android:label="Zmień ilość"
             android:theme="@style/AppTheme.pop_up_style" />
         <activity
-            android:name=".Menu_ladne"
+            android:name=".Glowne.Menu_ladne"
             android:label="MENU GŁÓWNE" />
         <activity
-            android:name=".Menu_przyszle"
+            android:name=".Glowne.Menu_przyszle"
             android:label="@string/title_activity_menu_nowe" />
         <activity
-            android:name=".DodajDoBusa"
+            android:name=".Bus.DodajDoBusa"
             android:label="Co chcesz dodać??" />
         <activity
-            android:name=".DodajDoBusaPopup"
+            android:name=".Bus.DodajDoBusaPopup"
             android:label="Ile sztuk?"
             android:theme="@style/AppTheme.pop_up_style" />
         <activity
-            android:name=".DodajBusa"
+            android:name=".Bus.DodajBusa"
             android:label="Dodaj busa" />
-        <activity android:name=".checkToken" />
+        <activity android:name=".Inne.checkToken" />
         <activity
-            android:name=".add_Items"
+            android:name=".Dodatki.add_Items"
             android:label="Dodaj dodatek" />
         <activity
-            android:name=".EdytujPrzedmiot"
+            android:name=".Dodatki.EdytujDodatek"
             android:label="Wybierz dodatek" />
         <activity
-            android:name=".EdytujPrzedmiot2"
+            android:name=".Bus.UsunBus"
+            android:label="Usuń busa" />
+        <activity
+            android:name=".Dodatki.EdytujDodatek2"
             android:label="Edytuj dodatek"
             android:theme="@style/AppTheme.pop_up_style" />
-        <activity android:name=".Dodatki" />
+        <activity android:name=".Dodatki.Dodatki" />
         <activity
             android:name=".Employees"
             android:label="Pracownicy" />
-        <activity android:name=".Skaner"></activity>
+        <activity android:name=".Skaner" />
+        <activity android:name=".Bus.UsunBusPopup"></activity>
     </application>
 
 </manifest>
