@@ -30,6 +30,7 @@ public class Menu_robocze extends AppCompatActivity implements AsyncResponse,  V
     Button btnpopup;
     Button btnlistabus;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,10 +97,6 @@ public class Menu_robocze extends AppCompatActivity implements AsyncResponse,  V
             case R.id.btnpopup:
                 Intent in5 = new Intent(this, Skaner.class);
                 startActivity(in5);
-                break;
-            case R.id.btnlistabus:
-                Intent in6 = new Intent(this, ListaBus.class);
-                startActivity(in6);
                 break;
 
         }
