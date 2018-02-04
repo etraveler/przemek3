@@ -7,13 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.traveler.przemek1.Bus.DodajBusa;
+import com.example.traveler.przemek1.Bus.Busy;
 import com.example.traveler.przemek1.Dodatki.Dodatki;
 import com.example.traveler.przemek1.Nieposortowane.Employees;
 import com.example.traveler.przemek1.Inne.checkToken;
-import com.example.traveler.przemek1.Bus.ListaBus;
 import com.example.traveler.przemek1.R;
-import com.example.traveler.przemek1.Bus.UsunBus;
 import com.example.traveler.przemek1.Inne.tokenGlobal;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -24,12 +22,10 @@ public class Menu_ladne extends AppCompatActivity implements AsyncResponse, View
 
 
 
-Button btnlistabusow;
-Button btndodajbusa;
+Button btnbusy;
 Button btndodatki;
 Button btnemployees;
 Button btnwyloguj;
-Button btnusunbusa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +35,8 @@ Button btnusunbusa;
 
         btndodatki = (Button) findViewById(R.id.btndodatki);
         btndodatki.setOnClickListener(this);
-        btnlistabusow = (Button) findViewById(R.id.btnlistabusow);
-        btnlistabusow.setOnClickListener(this);
-        btndodajbusa = (Button) findViewById(R.id.btndodajbusa);
-        btndodajbusa.setOnClickListener(this);
-        btnusunbusa = (Button) findViewById(R.id.btnusunbusa);
-        btnusunbusa.setOnClickListener(this);
+        btnbusy = (Button) findViewById(R.id.btnbusy);
+        btnbusy.setOnClickListener(this);
         btnemployees = (Button) findViewById(R.id.btnemployees);
         btnemployees.setOnClickListener(this);
         btnwyloguj = (Button) findViewById(R.id.btnwyloguj);
@@ -78,17 +70,9 @@ Button btnusunbusa;
                 Intent in1 = new Intent(this, Logowanie.class);
                 startActivity(in1);
                 break;
-            case R.id.btnlistabusow:
-                Intent in2 = new Intent(this, ListaBus.class);
+            case R.id.btnbusy:
+                Intent in2 = new Intent(this, Busy.class);
                 startActivity(in2);
-                break;
-            case R.id.btndodajbusa:
-                Intent in3 = new Intent(this, DodajBusa.class);
-                startActivity(in3);
-                break;
-            case R.id.btnusunbusa:
-                Intent in4 = new Intent(this, UsunBus.class);
-                startActivity(in4);
                 break;
             case R.id.btndodatki:
                 Intent in5 = new Intent(this, Dodatki.class);

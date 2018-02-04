@@ -80,8 +80,10 @@
             android:name=".Nieposortowane.Employees"
             android:label="Pracownicy" />
         <activity android:name=".Nieposortowane.Skaner" />
-        <activity android:name=".Bus.UsunBusPopup"
-            android:theme="@style/AppTheme.pop_up_style"></activity>
+        <activity
+            android:name=".Bus.UsunBusPopup"
+            android:theme="@style/AppTheme.pop_up_style" />
+        <activity android:name=".Bus.Busy"></activity>
     </application>
 
 </manifest>

@@ -16,29 +16,12 @@
 
 
         <Button
-            android:id="@+id/btnlistabusow"
+            android:id="@+id/btnbusy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="?attr/colorPrimaryDark"
-            android:text="LISTA BUSÓW"
+            android:text="BUSY"
             android:textColor="#ffffff" />
-
-        <Button
-            android:id="@+id/btndodajbusa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:backgroundTint="?android:attr/colorPrimaryDark"
-            android:text="DODAJ BUSA" />
-
-        <Button
-            android:id="@+id/btnusunbusa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_centerHorizontal="true"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:text="USUŃ BUSA" />
 
         <Button
             android:id="@+id/btndodatki"
