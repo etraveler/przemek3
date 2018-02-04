@@ -4,14 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.traveler.przemek1.Bus.BusZawartosc;
-import com.example.traveler.przemek1.Bus.Busy;
-import com.example.traveler.przemek1.Bus.ListaBus;
 import com.example.traveler.przemek1.Inne.Wiersz12;
 import com.example.traveler.przemek1.Inne.Wiersz12ListAdapter;
 import com.example.traveler.przemek1.Inne.checkToken;
@@ -22,20 +17,22 @@ import com.kosalgeek.asynctask.PostResponseAsyncTask;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 public class Chat extends AppCompatActivity implements View.OnClickListener, AsyncResponse{
 
 
-    Button btnwyslij;
-
+    Button btnwyslij, btnodswiez;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-
         btnwyslij = (Button) findViewById(R.id.btnwyslij);
         btnwyslij.setOnClickListener(this);
+        btnodswiez = (Button) findViewById(R.id.btnodswiez);
+        btnodswiez.setOnClickListener(this);
+
 
         HashMap postData2 = new HashMap();
         postData2.put("mobile1", "android1");
@@ -55,13 +52,14 @@ public class Chat extends AppCompatActivity implements View.OnClickListener, Asy
     public void processFinish(String result)
     {
 
-
         if (result.equals("pusto"))
         {
 
         }
         else
         {
+            ListView mListView = (ListView) findViewById(R.id.listView);
+            BusList.clear();
             int i = 1;
             for (String retval1 : result.split(">"))
             {
@@ -82,50 +80,27 @@ public class Chat extends AppCompatActivity implements View.OnClickListener, Asy
                 }
                 BusList.add(bus);
             }
-            ListView mListView = (ListView) findViewById(R.id.listView);
-
 
             Wiersz12ListAdapter adapter = new Wiersz12ListAdapter(this, R.layout.adapter_view_layout_chat, BusList);
             mListView.setAdapter(adapter);
-
-
-
-            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-            {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-                {
-
-                    Wiersz12 transporter=BusList.get(position);
-                    String idbusa=transporter.getDodatkowy();
-                    String nazwabusa=transporter.getLewy();
-                    String rejestracja=transporter.getPrawyDol();
-
-                    switch (position)
-                    {
-                        default:
-                            Intent in = new Intent(Chat.this, BusZawartosc.class);
-                            in.putExtra("tekst1",idbusa);
-                            in.putExtra("tekst2",nazwabusa);
-                            in.putExtra("tekst3",rejestracja);
-                            startActivity(in);
-                            break;
-                    }
-                }
-            });
         }
-
     }
 
 
 
     @Override
     public void onClick(View view) {
-
-        Intent in = new Intent(this, DodajWiadomosc.class);
-        startActivity(in);
-
+        switch (view.getId()) {
+            case R.id.btnwyslij:
+                Intent in = new Intent(this, DodajWiadomosc.class);
+                startActivity(in);
+                break;
+            case R.id.btnodswiez:
+                startActivity(getIntent());
+                break;
+        }
     }
+
 
     int i=0;
     @Override

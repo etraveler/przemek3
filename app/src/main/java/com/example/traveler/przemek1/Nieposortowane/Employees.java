@@ -22,13 +22,12 @@ public class Employees extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employees);
         ListView lv = (ListView)findViewById(R.id.ListViewEmp);
+
         ArrayList<String> arrayEmployees = new ArrayList<>();
+
         arrayEmployees.addAll(Arrays.asList(getResources().getStringArray(R.array.array_emp)));
 
-        adapter = new ArrayAdapter<String>(
-                Employees.this,
-                android.R.layout.simple_list_item_1,
-                arrayEmployees);
+        adapter = new ArrayAdapter<String>(Employees.this, android.R.layout.simple_list_item_1, arrayEmployees);
         lv.setAdapter(adapter);
 
     }

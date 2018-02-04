@@ -89,7 +89,7 @@ Button btnchat;
                 startActivity(in3);
                 break;
             case R.id.btnemployees:
-                Intent in4 = new Intent(this, Employees2.class);
+                Intent in4 = new Intent(this, Employees.class);
                 startActivity(in4);
                  break;
             case R.id.btnkalendarz:
