@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.traveler.przemek1.Bus.DodajBusa;
 import com.example.traveler.przemek1.Dodatki.Dodatki;
@@ -51,6 +52,9 @@ Button btnusunbusa;
         Intent check = new Intent(this, checkToken.class);
         startActivity(check);
 
+
+        String uprawnienia = ((tokenGlobal) this.getApplication()).getSomeVariable2();
+        Toast.makeText(this, "Poziom uprawnień: "+uprawnienia, Toast.LENGTH_SHORT).show();
     }
 
     @Override

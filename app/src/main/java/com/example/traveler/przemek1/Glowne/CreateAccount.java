@@ -41,9 +41,29 @@ public class CreateAccount extends AppCompatActivity implements AsyncResponse, V
 
     @Override
     public void processFinish(String result) {
-        if (result.equals("success")) {
+        if (result.equals("success"))
+        {
             Toast.makeText(this, "account created", Toast.LENGTH_LONG).show();
         }
+        else
+        {
+            if (result.equals("failed"))
+            {
+                Toast.makeText(this, "NIE dodano konta", Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                if (result.equals("istnieje"))
+                {
+                    Toast.makeText(this, "Konto o podanej nazwie użytkownika istnieje", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(this, "nieznany błąd", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+
     }
 
 
@@ -75,7 +95,7 @@ public class CreateAccount extends AppCompatActivity implements AsyncResponse, V
                 }
                 else {
                     PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
-                    task.execute("http://traveler95.nazwa.pl/jeden/client/create.php");
+                    task.execute("http://traveler95.nazwa.pl/jeden/client/create_account.php");
                 }
                 break;
 

@@ -34,6 +34,7 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
         btnCreate = (Button) findViewById(R.id.btnCreate);
         btnCreate.setOnClickListener(this);
     }
+    String upr;
 
     @Override
     public void processFinish(String result) {
@@ -41,6 +42,7 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
 
         if (result.equals("0") || result.equals("1") || result.equals("2") || result.equals("3"))
         {
+            ((tokenGlobal) this.getApplication()).setSomeVariable2(result);
             Intent in = new Intent(this, Menu_ladne.class);
             startActivity(in);
             finish();
@@ -62,8 +64,6 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
 
     @Override
     public void onClick(View v) {
-
-
 
 
 
