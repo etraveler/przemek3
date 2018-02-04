@@ -92,7 +92,7 @@
             android:theme="@style/AppTheme.pop_up_style"/>
         <activity
             android:name=".Nieposortowane.Employees2"
-            android:label="Pracownicy" >
+            android:label="Pracownicy" > 
           </activity>
     </application>
 
