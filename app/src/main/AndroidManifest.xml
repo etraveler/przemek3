@@ -89,11 +89,11 @@
             android:label="@string/title_activity_kalendarz2" />
         <activity android:name=".Chat.Chat" />
         <activity android:name=".Chat.DodajWiadomosc"
-            android:theme="@style/AppTheme.pop_up_style"></activity>
-          <activity  android:label="@string/title_activity_kalendarz2"></activity>
+            android:theme="@style/AppTheme.pop_up_style"/>
         <activity
             android:name=".Nieposortowane.Employees2"
-            android:label="Pracownicy" />
+            android:label="Pracownicy" >
+          </activity>
     </application>
 
 </manifest>
