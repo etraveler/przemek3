@@ -40,7 +40,8 @@ public class DodajBusa extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void processFinish(String result) {
-finish();
+
+    finish();
     }
 
 

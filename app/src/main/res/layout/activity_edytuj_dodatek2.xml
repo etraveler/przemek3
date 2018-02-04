@@ -114,10 +114,12 @@
             android:inputType="none" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnedytuj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="#FFFFFF"
+            android:text="Edytuj" />
 
     </LinearLayout>
     <LinearLayout

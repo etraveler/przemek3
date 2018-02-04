@@ -80,7 +80,8 @@
             android:name=".Employees"
             android:label="Pracownicy" />
         <activity android:name=".Skaner" />
-        <activity android:name=".Bus.UsunBusPopup"></activity>
+        <activity android:name=".Bus.UsunBusPopup"
+            android:theme="@style/AppTheme.pop_up_style"></activity>
     </application>
 
 </manifest>

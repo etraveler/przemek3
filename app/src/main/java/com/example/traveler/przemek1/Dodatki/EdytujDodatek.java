@@ -25,7 +25,7 @@ public class EdytujDodatek extends AppCompatActivity implements AsyncResponse {
 
 
 
-        setContentView(R.layout.activity_edytuj_przedmiot);
+        setContentView(R.layout.activity_edytuj_dodatek);
 
 
 

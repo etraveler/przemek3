@@ -6,4 +6,40 @@
     android:layout_height="match_parent"
     tools:context="com.example.traveler.przemek1.Bus.UsunBusPopup">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#DDDDDD"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".33"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:text='Aby usunąć busa wpisz "usun busa"' />
+
+        <EditText
+            android:id="@+id/txtusunbusa"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".33"
+            android:ems="10"
+            android:hint="tekst"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btnusunbusa"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".34"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Usuń" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

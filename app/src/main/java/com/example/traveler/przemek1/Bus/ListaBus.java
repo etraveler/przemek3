@@ -44,7 +44,12 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
     @Override
     public void processFinish(String result)
     {
+        if (result.equals("pusto"))
+        {
 
+        }
+        else
+        {
                 int i = 1;
                 for (String retval1 : result.split(">"))
                 {
@@ -99,6 +104,7 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
                             }
                         }
                     });
+    }
     }
 }
 
