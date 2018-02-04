@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.traveler.przemek1.Bus.Busy;
+import com.example.traveler.przemek1.Chat.Chat;
 import com.example.traveler.przemek1.Dodatki.Dodatki;
 import com.example.traveler.przemek1.Kalendarz.Kalendarz;
 import com.example.traveler.przemek1.Nieposortowane.Employees;
@@ -28,6 +29,7 @@ Button btndodatki;
 Button btnemployees;
 Button btnwyloguj;
 Button btnkalendarz;
+Button btnchat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ Button btnkalendarz;
         btnwyloguj.setOnClickListener(this);
         btnkalendarz = (Button) findViewById(R.id.btnkalendarz);
         btnkalendarz.setOnClickListener(this);
+        btnchat = (Button) findViewById(R.id.btnchat);
+        btnchat.setOnClickListener(this);
 
         Intent check = new Intent(this, checkToken.class);
         startActivity(check);
@@ -90,6 +94,10 @@ Button btnkalendarz;
             case R.id.btnkalendarz:
                 Intent in5 = new Intent(this, Kalendarz.class);
                 startActivity(in5);
+                break;
+            case R.id.btnchat:
+                Intent in6 = new Intent(this, Chat.class);
+                startActivity(in6);
                 break;
     }
     }

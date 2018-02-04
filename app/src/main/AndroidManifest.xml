@@ -86,7 +86,10 @@
         <activity android:name=".Bus.Busy" />
         <activity
             android:name=".Kalendarz.Kalendarz"
-            android:label="@string/title_activity_kalendarz2"></activity>
+            android:label="@string/title_activity_kalendarz2" />
+        <activity android:name=".Chat.Chat" />
+        <activity android:name=".Chat.DodajWiadomosc"
+            android:theme="@style/AppTheme.pop_up_style"></activity>
     </application>
 
 </manifest>
