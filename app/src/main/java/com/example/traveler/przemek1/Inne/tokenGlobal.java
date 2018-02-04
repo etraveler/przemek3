@@ -1,7 +1,11 @@
 package com.example.traveler.przemek1.Inne;
 
 import android.app.Application;
+import android.content.Intent;
+import android.widget.Toast;
 
+import com.example.traveler.przemek1.Glowne.Logowanie;
+import com.example.traveler.przemek1.Glowne.Menu_ladne;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
@@ -53,19 +57,17 @@ public class tokenGlobal extends Application {
     }
 
 
-    public void check()
+    public void checkupr(int uprawnienia)
     {
 
 
-        PostResponseAsyncTask readData = new PostResponseAsyncTask(this,
-                new AsyncResponse() {
-                    @Override
-                    public void processFinish(String s) {
-
-                    }
-                });
-        readData.execute("http://traveler95.nazwa.pl/jeden/client/tokenCheck.php");
-
+        int intsomeVariable2 = Integer.parseInt(someVariable2);
+        if (intsomeVariable2<uprawnienia)
+        {
+            Toast.makeText(this, "Brak uprawnień", Toast.LENGTH_SHORT).show();
+            Intent check2 = new Intent(this, Menu_ladne.class);
+            startActivity(check2);
+        }
 
     }
 

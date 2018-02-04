@@ -35,7 +35,6 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
         startActivity(check);
 
 
-
     }
 
     ArrayList<Wiersz12> BusList = new ArrayList<>();
@@ -92,8 +91,6 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
 
                             switch (position)
                             {
-
-
                                 default:
                                     Intent in = new Intent(ListaBus.this, BusZawartosc.class);
                                     in.putExtra("tekst1",idbusa);

@@ -26,4 +26,5 @@
         <item>Korek</item>
         <item>Zibi</item>
     </string-array>
+    <string name="title_activity_kalendarz2">Kalendarz2</string>
 </resources>

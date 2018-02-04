@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.traveler.przemek1.Bus.Busy;
 import com.example.traveler.przemek1.Dodatki.Dodatki;
+import com.example.traveler.przemek1.Kalendarz.Kalendarz;
 import com.example.traveler.przemek1.Nieposortowane.Employees;
 import com.example.traveler.przemek1.Inne.checkToken;
 import com.example.traveler.przemek1.R;
@@ -26,6 +27,7 @@ Button btnbusy;
 Button btndodatki;
 Button btnemployees;
 Button btnwyloguj;
+Button btnkalendarz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,9 @@ Button btnwyloguj;
         btnemployees.setOnClickListener(this);
         btnwyloguj = (Button) findViewById(R.id.btnwyloguj);
         btnwyloguj.setOnClickListener(this);
+        btnkalendarz = (Button) findViewById(R.id.btnkalendarz);
+        btnkalendarz.setOnClickListener(this);
+
         Intent check = new Intent(this, checkToken.class);
         startActivity(check);
 
@@ -75,13 +80,17 @@ Button btnwyloguj;
                 startActivity(in2);
                 break;
             case R.id.btndodatki:
-                Intent in5 = new Intent(this, Dodatki.class);
-                startActivity(in5);
+                Intent in3 = new Intent(this, Dodatki.class);
+                startActivity(in3);
                 break;
             case R.id.btnemployees:
-                Intent in6 = new Intent(this, Employees.class);
-                startActivity(in6);
+                Intent in4 = new Intent(this, Employees.class);
+                startActivity(in4);
                  break;
+            case R.id.btnkalendarz:
+                Intent in5 = new Intent(this, Kalendarz.class);
+                startActivity(in5);
+                break;
     }
     }
 

@@ -83,7 +83,10 @@
         <activity
             android:name=".Bus.UsunBusPopup"
             android:theme="@style/AppTheme.pop_up_style" />
-        <activity android:name=".Bus.Busy"></activity>
+        <activity android:name=".Bus.Busy" />
+        <activity
+            android:name=".Kalendarz.Kalendarz"
+            android:label="@string/title_activity_kalendarz2"></activity>
     </application>
 
 </manifest>

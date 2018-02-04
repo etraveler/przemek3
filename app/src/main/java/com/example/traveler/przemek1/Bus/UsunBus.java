@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.example.traveler.przemek1.Inne.Wiersz12;
 import com.example.traveler.przemek1.Inne.Wiersz12ListAdapter;
+import com.example.traveler.przemek1.Inne.checkToken;
+import com.example.traveler.przemek1.Inne.tokenGlobal;
 import com.example.traveler.przemek1.R;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -26,14 +28,17 @@ public class UsunBus extends AppCompatActivity implements AsyncResponse{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usun_bus);
+
+        ((tokenGlobal) this.getApplication()).checkupr(1);
+
         HashMap postData2 = new HashMap();
         postData2.put("mobile1", "android1");
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
         task.execute("http://traveler95.nazwa.pl/jeden/client/listabus.php");
 
-      //  Intent check = new Intent(this, checkToken.class);
-      //  startActivity(check);
 
+        Intent check = new Intent(this, checkToken.class);
+        startActivity(check);
 
 
     }
@@ -102,14 +107,15 @@ public class UsunBus extends AppCompatActivity implements AsyncResponse{
     }
 
 
-    int i=0;
+    int k=0;
 
 
     @Override
     protected void onResume() {
 
         super.onResume();
-        if (i==1) {
+        if (k>1)
+        {
             finish();
             startActivity(getIntent());
         }
@@ -117,7 +123,7 @@ public class UsunBus extends AppCompatActivity implements AsyncResponse{
 
     @Override
     protected void onPause() {
-        i=1;
+        k++;
         super.onPause();
     }
 }
