@@ -38,13 +38,23 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
     @Override
     public void processFinish(String result) {
 
-        if (result.equals("Success")) {
-            Toast.makeText(this, result , Toast.LENGTH_SHORT).show();
+
+        if (result.equals("0") || result.equals("1") || result.equals("2") || result.equals("3"))
+        {
             Intent in = new Intent(this, Menu_ladne.class);
             startActivity(in);
             finish();
-        } else {
-            Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            if (result.equals("failed"))
+            {
+                Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Toast.makeText(this, "Nieznany błąd", Toast.LENGTH_SHORT).show();
+            }
         }
 
     }
@@ -62,7 +72,6 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
                 ((tokenGlobal) this.getApplication()).generateString();
                 String token = ((tokenGlobal) this.getApplication()).getSomeVariable();
                 HashMap postData = new HashMap();
-                postData.put("mobile", "android");
                 postData.put("txtUsername", etUsername.getText().toString());
                 postData.put("txtPassword", etPassword.getText().toString());
                 postData.put("txtToken", token);

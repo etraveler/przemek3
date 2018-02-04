@@ -29,12 +29,12 @@
             android:name=".Glowne.Menu_robocze"
             android:label="Menu" />
         <activity android:name=".Glowne.CreateAccount" />
-        <activity android:name=".lista" />
+        <activity android:name=".Nieposortowane.lista" />
         <activity
-            android:name=".Tabela1"
+            android:name=".Nieposortowane.Tabela1"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Tabela2" />
+        <activity android:name=".Nieposortowane.Tabela2" />
         <activity
             android:name=".Bus.BusZawartosc"
             android:label="Zawartość busa:" />
@@ -77,9 +77,9 @@
             android:theme="@style/AppTheme.pop_up_style" />
         <activity android:name=".Dodatki.Dodatki" />
         <activity
-            android:name=".Employees"
+            android:name=".Nieposortowane.Employees"
             android:label="Pracownicy" />
-        <activity android:name=".Skaner" />
+        <activity android:name=".Nieposortowane.Skaner" />
         <activity android:name=".Bus.UsunBusPopup"
             android:theme="@style/AppTheme.pop_up_style"></activity>
     </application>

@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.traveler.przemek1.R;
-import com.example.traveler.przemek1.SearchFragment;
+import com.example.traveler.przemek1.Nieposortowane.SearchFragment;
 
 
 public class Menu_przyszle extends AppCompatActivity implements View.OnClickListener{

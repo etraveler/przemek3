@@ -1,4 +1,4 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Nieposortowane;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import com.example.traveler.przemek1.Glowne.Menu_robocze;
+import com.example.traveler.przemek1.R;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 

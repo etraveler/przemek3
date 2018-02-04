@@ -1,4 +1,4 @@
-package com.example.traveler.przemek1;
+package com.example.traveler.przemek1.Nieposortowane;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.example.traveler.przemek1.Glowne.Menu_robocze;
 import com.example.traveler.przemek1.Inne.Wiersz12;
 import com.example.traveler.przemek1.Inne.Wiersz12ListAdapter;
+import com.example.traveler.przemek1.R;
 
 import java.util.ArrayList;
 
