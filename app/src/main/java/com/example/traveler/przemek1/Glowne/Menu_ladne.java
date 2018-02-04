@@ -13,6 +13,7 @@ import com.example.traveler.przemek1.Dodatki.Dodatki;
 import com.example.traveler.przemek1.Kalendarz.Kalendarz;
 import com.example.traveler.przemek1.Nieposortowane.Employees;
 import com.example.traveler.przemek1.Inne.checkToken;
+import com.example.traveler.przemek1.Nieposortowane.Employees2;
 import com.example.traveler.przemek1.R;
 import com.example.traveler.przemek1.Inne.tokenGlobal;
 import com.kosalgeek.asynctask.AsyncResponse;
@@ -88,7 +89,7 @@ Button btnchat;
                 startActivity(in3);
                 break;
             case R.id.btnemployees:
-                Intent in4 = new Intent(this, Employees.class);
+                Intent in4 = new Intent(this, Employees2.class);
                 startActivity(in4);
                  break;
             case R.id.btnkalendarz:

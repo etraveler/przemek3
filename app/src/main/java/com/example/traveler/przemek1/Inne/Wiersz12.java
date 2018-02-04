@@ -63,7 +63,7 @@ public class Wiersz12 {
         return prawydol;
     }
 
-    public void setPrawyDol(String rejestracja) {
+    public void setPrawyDol( String rejestracja) {
         this.prawydol = rejestracja;
     }
 

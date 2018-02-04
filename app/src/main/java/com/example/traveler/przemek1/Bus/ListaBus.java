@@ -31,7 +31,7 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
         task.execute("http://traveler95.nazwa.pl/jeden/client/listabus.php");
 
-        Intent check = new Intent(this, checkToken.class);
+        Intent check = new Intent(this, checkToken.class); // sprawdzanie tokena
         startActivity(check);
 
 
@@ -59,7 +59,7 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
                             bus.setPrawyDol(retval2);
                         }
                         if (i == 2) {
-                            bus.setPrawyGora("Rejestracja:");
+                            bus.setPrawyGora("Rejestracja: ");
                             bus.setDodatkowy(retval2);
                         }
                         if (i == 3) {
@@ -70,7 +70,6 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse{
                     BusList.add(bus);
                 }
                      ListView mListView = (ListView) findViewById(R.id.listView);
-
 
 
                     Wiersz12ListAdapter adapter = new Wiersz12ListAdapter(this, R.layout.adapter_view_layout, BusList);
