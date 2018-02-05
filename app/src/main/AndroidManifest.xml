@@ -76,9 +76,6 @@
             android:label="Edytuj dodatek"
             android:theme="@style/AppTheme.pop_up_style" />
         <activity android:name=".Dodatki.Dodatki" />
-        <activity
-            android:name=".Nieposortowane.Employees"
-            android:label="Pracownicy" />
         <activity android:name=".Nieposortowane.Skaner" />
         <activity
             android:name=".Bus.UsunBusPopup"
@@ -88,12 +85,12 @@
             android:name=".Kalendarz.Kalendarz"
             android:label="@string/title_activity_kalendarz2" />
         <activity android:name=".Chat.Chat" />
-        <activity android:name=".Chat.DodajWiadomosc"
-            android:theme="@style/AppTheme.pop_up_style"/>
         <activity
-            android:name=".Nieposortowane.Employees2"
-            android:label="Pracownicy" >
-          </activity>
+            android:name=".Chat.DodajWiadomosc"
+            android:theme="@style/AppTheme.pop_up_style" />
+        <activity
+            android:name=".Nieposortowane.Pracownicy"
+            android:label="Pracownicy"></activity>
     </application>
 
 </manifest>

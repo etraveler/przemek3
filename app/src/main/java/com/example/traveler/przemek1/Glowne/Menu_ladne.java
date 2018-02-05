@@ -11,9 +11,8 @@ import com.example.traveler.przemek1.Bus.Busy;
 import com.example.traveler.przemek1.Chat.Chat;
 import com.example.traveler.przemek1.Dodatki.Dodatki;
 import com.example.traveler.przemek1.Kalendarz.Kalendarz;
-import com.example.traveler.przemek1.Nieposortowane.Employees;
 import com.example.traveler.przemek1.Inne.checkToken;
-import com.example.traveler.przemek1.Nieposortowane.Employees2;
+import com.example.traveler.przemek1.Nieposortowane.Pracownicy;
 import com.example.traveler.przemek1.R;
 import com.example.traveler.przemek1.Inne.tokenGlobal;
 import com.kosalgeek.asynctask.AsyncResponse;
@@ -37,7 +36,6 @@ Button btnchat;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_ladne);
 
-
         btndodatki = (Button) findViewById(R.id.btndodatki);
         btndodatki.setOnClickListener(this);
         btnbusy = (Button) findViewById(R.id.btnbusy);
@@ -54,7 +52,6 @@ Button btnchat;
         Intent check = new Intent(this, checkToken.class);
         startActivity(check);
 
-
         String uprawnienia = ((tokenGlobal) this.getApplication()).getSomeVariable2();
         Toast.makeText(this, "Poziom uprawnień: "+uprawnienia, Toast.LENGTH_SHORT).show();
     }
@@ -66,7 +63,6 @@ Button btnchat;
 
     @Override
     public void onClick(View v) {
-
 
         switch (v.getId()) {
             case R.id.btnwyloguj:
@@ -89,7 +85,7 @@ Button btnchat;
                 startActivity(in3);
                 break;
             case R.id.btnemployees:
-                Intent in4 = new Intent(this, Employees.class);
+                Intent in4 = new Intent(this, Pracownicy.class);
                 startActivity(in4);
                  break;
             case R.id.btnkalendarz:
@@ -102,8 +98,4 @@ Button btnchat;
                 break;
     }
     }
-
-
-
-
 }

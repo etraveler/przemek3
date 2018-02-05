@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.Toast;
 
 import com.example.traveler.przemek1.Inne.Wiersz12;
 import com.example.traveler.przemek1.Inne.Wiersz12ListAdapter;
@@ -26,7 +25,7 @@ import java.util.HashMap;
 public class ListaBus extends AppCompatActivity implements AsyncResponse, View.OnClickListener{
 
 
-    String wyszukaj;
+    String wyszukaj="";
     Button btnwyszukaj;
 
 
@@ -130,9 +129,9 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse, View.O
             public boolean onQueryTextChange(String s) {
                 wyszukaj=s;
                 btnwyszukaj.callOnClick();
-                Toast.makeText(ListaBus.this, "!!", Toast.LENGTH_SHORT).show();
                 return false;
             }
+
         });
         return super.onCreateOptionsMenu(menu);
     }
@@ -141,12 +140,15 @@ public class ListaBus extends AppCompatActivity implements AsyncResponse, View.O
     @Override
     public void onClick(View view) {
 
-
-        HashMap postData2 = new HashMap();
-        postData2.put("wyszukaj", wyszukaj);
-        PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
-        task.execute("http://traveler95.nazwa.pl/jeden/client/listabus_wyszukaj.php");
-
+    if (! wyszukaj.equals(""))
+    {
+          HashMap postData2 = new HashMap();
+         postData2.put("wyszukaj", wyszukaj);
+         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
+          task.execute("http://traveler95.nazwa.pl/jeden/client/listabus_wyszukaj.php");
+       // Intent in2 = new Intent(this, Loading.class);
+      //  startActivity(in2);
+    }
     }
 }
 
