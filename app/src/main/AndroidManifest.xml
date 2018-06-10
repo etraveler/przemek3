@@ -54,6 +54,10 @@
         <activity
             android:name=".Bus.DodajDoBusa"
             android:label="Co chcesz dodać??" />
+
+        <activity
+            android:name=".Nieposortowane.Employees2"
+            android:label="Co chcesz dodać??" />
         <activity
             android:name=".Bus.DodajDoBusaPopup"
             android:label="Ile sztuk?"
