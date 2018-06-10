@@ -54,6 +54,7 @@
             android:textColor="#ffffff"
             android:backgroundTint="?android:attr/colorPrimaryDark"
             android:text="SKLEP" />
+
         <Button
             android:id="@+id/btnemployees"
             android:layout_width="match_parent"

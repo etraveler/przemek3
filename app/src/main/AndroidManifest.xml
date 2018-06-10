@@ -49,6 +49,9 @@
             android:name=".Glowne.Menu_ladne"
             android:label="MENU GŁÓWNE" />
         <activity
+            android:name=".Glowne.Menu_pogoda"
+            android:label="MENU POGODA" />
+        <activity
             android:name=".Glowne.Menu_przyszle"
             android:label="@string/title_activity_menu_nowe" />
         <activity

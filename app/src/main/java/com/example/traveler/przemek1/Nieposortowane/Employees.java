@@ -32,12 +32,33 @@ public class Employees extends AppCompatActivity {
 
         barChart = (BarChart) findViewById(R.id.barGraph);
         int n = 6;
+        float m = 4;
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         barEntries.add(new BarEntry(1f, 23f));
         barEntries.add(new BarEntry(2f, 25f));
         barEntries.add(new BarEntry(3f, 28f));
-        barEntries.add(new BarEntry(4f, 18f));
+        barEntries.add(new BarEntry(m, 18f));
         barEntries.add(new BarEntry(5f, 17f));
+        barEntries.add(new BarEntry(6f, 9f));
+        barEntries.add(new BarEntry(7f, 11f));
+        barEntries.add(new BarEntry(8f, 18f));
+        barEntries.add(new BarEntry(9f, 17f));
+        barEntries.add(new BarEntry(10f, 29f));
+        barEntries.add(new BarEntry(11f, 28f));
+        barEntries.add(new BarEntry(12f, 6f));
+        barEntries.add(new BarEntry(13f, 9f));
+        barEntries.add(new BarEntry(14f, 12f));
+        barEntries.add(new BarEntry(15f, 24f));
+        barEntries.add(new BarEntry(16f, 18f));
+        barEntries.add(new BarEntry(17f, 17f));
+        barEntries.add(new BarEntry(18f, 21f));
+        barEntries.add(new BarEntry(19f, 11f));
+        barEntries.add(new BarEntry(20f, 18f));
+        barEntries.add(new BarEntry(21f, 17f));
+        barEntries.add(new BarEntry(22f, 20f));
+        barEntries.add(new BarEntry(23f, 13f));
+        barEntries.add(new BarEntry(24f, 18f));
+
 
         BarDataSet set = new BarDataSet(barEntries, "Temperatura w ℃");
 
@@ -45,7 +66,8 @@ public class Employees extends AppCompatActivity {
         barChart.setDescription(null);
         barChart.invalidate();
         barChart.setData(data);
-        data.setBarWidth(0.8f); // set custom bar width
+        data.setBarWidth(0.5f); // set custom bar width
+        data.setValueTextSize(8f); // set custom text size
         barChart.setFitBars(true); // make the x-axis fit exactly all bars
 
         barChart.setTouchEnabled(true);  // do dotykania
@@ -68,7 +90,7 @@ public class Employees extends AppCompatActivity {
         Toast.makeText(this,napis,Toast.LENGTH_LONG).show();
 
         // the labels that should be drawn on the XAxis
-        final String[] quarters = new String[] { "q","09/06/18", "10/06/18", "11/06/18", "12/06/18", "13/06/18" };
+        final String[] quarters = new String[] { "q","09/06/18", "10/06/18", "11/06/18", "04:00", "13/06/18","Q","Q","08:00","Q","Q","Q","12:00","Q","Q","Q","16:00","Q","Q","Q","20:00","Q","Q","Q","00:00" };
 
         IAxisValueFormatter formatter = new IAxisValueFormatter() {
 

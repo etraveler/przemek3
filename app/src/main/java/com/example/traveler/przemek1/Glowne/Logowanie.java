@@ -43,7 +43,7 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
         if (result.equals("0") || result.equals("1") || result.equals("2") || result.equals("3"))
         {
             ((tokenGlobal) this.getApplication()).setSomeVariable2(result);
-            Intent in = new Intent(this, Menu_ladne.class);
+            Intent in = new Intent(this, Menu_pogoda.class);
             startActivity(in);
             finish();
         }
