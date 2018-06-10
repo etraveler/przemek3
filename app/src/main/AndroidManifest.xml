@@ -59,7 +59,7 @@
             android:label="Co chcesz dodać??" />
 
         <activity
-            android:name=".Nieposortowane.Employees2"
+            android:name=".Nieposortowane.Temperatura"
             android:label="Co chcesz dodać??" />
         <activity
             android:name=".Bus.DodajDoBusaPopup"

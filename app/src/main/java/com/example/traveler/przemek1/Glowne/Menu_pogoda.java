@@ -7,13 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.traveler.przemek1.Bus.Busy;
-import com.example.traveler.przemek1.Chat.Chat;
-import com.example.traveler.przemek1.Dodatki.Dodatki;
-import com.example.traveler.przemek1.Kalendarz.Kalendarz;
 import com.example.traveler.przemek1.Nieposortowane.Employees;
 import com.example.traveler.przemek1.Inne.checkToken;
-import com.example.traveler.przemek1.Nieposortowane.Employees2;
+import com.example.traveler.przemek1.Nieposortowane.Temperatura;
 import com.example.traveler.przemek1.R;
 import com.example.traveler.przemek1.Inne.tokenGlobal;
 import com.kosalgeek.asynctask.AsyncResponse;
@@ -71,7 +67,7 @@ public class Menu_pogoda extends AppCompatActivity implements AsyncResponse, Vie
                 break;
 
             case R.id.btntemperature:
-                Intent in2 = new Intent(this, Employees.class);
+                Intent in2 = new Intent(this, Temperatura.class);
                 startActivity(in2);
                 break;
 

@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-public class Employees2 extends AppCompatActivity implements AsyncResponse{
+public class Temperatura extends AppCompatActivity implements AsyncResponse{
 
     BarChart barChart;
     // the labels that should be drawn on the XAxis
