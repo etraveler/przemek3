@@ -77,7 +77,7 @@ Button btnchat;
                 startActivity(in1);
                 break;
             case R.id.btnbusy:
-                Intent in2 = new Intent(this, Busy.class);
+                Intent in2 = new Intent(this, Busy.class)    ; // asdasd
                 startActivity(in2);
                 break;
             case R.id.btndodatki:
