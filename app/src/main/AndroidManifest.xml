@@ -18,7 +18,7 @@
             android:exported="false"
             android:stopWithTask="false" />
 
-        <activity android:name=".Glowne.Logowanie">
+        <activity android:name=".Glowne.Logowanie"> //asdasd
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
