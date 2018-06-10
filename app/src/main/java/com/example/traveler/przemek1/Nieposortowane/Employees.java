@@ -1,55 +1,159 @@
 package com.example.traveler.przemek1.Nieposortowane;
 
+
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.traveler.przemek1.R;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Date;
 
 public class Employees extends AppCompatActivity {
 
-    ArrayAdapter<String> adapter;
+    BarChart barChart;
+    // the labels that should be drawn on the XAxis
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employees);
-        ListView lv = (ListView)findViewById(R.id.ListViewEmp);
 
-        ArrayList<String> arrayEmployees = new ArrayList<>();
+        barChart = (BarChart) findViewById(R.id.barGraph);
+        int n = 6;
+        ArrayList<BarEntry> barEntries = new ArrayList<>();
+        barEntries.add(new BarEntry(1f, 23f));
+        barEntries.add(new BarEntry(2f, 25f));
+        barEntries.add(new BarEntry(3f, 28f));
+        barEntries.add(new BarEntry(4f, 18f));
+        barEntries.add(new BarEntry(5f, 17f));
 
-     //   arrayEmployees.addAll(Arrays.asList(getResources().getStringArray(R.array.array_emp)));
+        BarDataSet set = new BarDataSet(barEntries, "Temperatura w ℃");
 
-        adapter = new ArrayAdapter<String>(Employees.this, android.R.layout.simple_list_item_1, arrayEmployees);
-        lv.setAdapter(adapter);
+        BarData data = new BarData(set);
+        barChart.setDescription(null);
+        barChart.invalidate();
+        barChart.setData(data);
+        data.setBarWidth(0.8f); // set custom bar width
+        barChart.setFitBars(true); // make the x-axis fit exactly all bars
 
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_search, menu);
-        MenuItem item = menu.findItem(R.id.menuSearch);
-        SearchView searchView = (SearchView)item.getActionView();
+        barChart.setTouchEnabled(true);  // do dotykania
+        barChart.setDragEnabled(true);  // do przesuwania
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        Legend legend = barChart.getLegend();
+        legend.setEnabled(true);
+        legend.setFormSize(10f); // set the size of the legend forms/shapes
+        legend.setForm(Legend.LegendForm.CIRCLE); // set what type of form/shape should be used
+        legend.setPosition(Legend.LegendPosition.BELOW_CHART_LEFT);
+        legend.setTextSize(12f);
+        legend.setTextColor(Color.BLACK);
+        legend.setXEntrySpace(5f); // set the space between the legend entries on the x-axis
+        legend.setYEntrySpace(5f); // set the space between the legend entries on the y-axis
+
+
+        String napis;
+        Date date = new Date();
+        napis = date.toString();
+        Toast.makeText(this,napis,Toast.LENGTH_LONG).show();
+
+        // the labels that should be drawn on the XAxis
+        final String[] quarters = new String[] { "q","09/06/18", "10/06/18", "11/06/18", "12/06/18", "13/06/18" };
+
+        IAxisValueFormatter formatter = new IAxisValueFormatter() {
+
             @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
+            public String getFormattedValue(float value, AxisBase axis) {
+                return quarters[(int) value];
             }
 
+            // we don't draw numbers, so no decimal digits needed
+
+            public int getDecimalDigits() {  return 0; }
+        };
+
+        XAxis xAxis = barChart.getXAxis();
+        xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
+        xAxis.setValueFormatter(formatter);
+
+
+
+        barChart.invalidate(); // refresh
+    }
+
+      /*  GraphView graph = (GraphView) findViewById(R.id.graph);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
+                new DataPoint(0, 1),
+                new DataPoint(1, 5),
+                new DataPoint(2, 3),
+                new DataPoint(3, 2),
+                new DataPoint(4, 6)
+        });
+        graph.addSeries(series); */
+    /*int number = 5;
+        // generate Dates
+        Calendar calendar = getInstance();
+        Date d1 = calendar.getTime();
+        calendar.add(DATE, 1);
+        Date d2 = calendar.getTime();
+        calendar.add(DATE,1 );
+        Date d3 = calendar.getTime();
+        calendar.add(DATE, 1);
+        Date d4 = calendar.getTime();
+
+
+
+
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[] {
+                new DataPoint(d1, 1),
+                new DataPoint(d2, 10),
+                new DataPoint(d3, 3),
+                new DataPoint(d4, 2)
+
+        });
+        graph.addSeries(series);
+
+// set date label formatter
+        graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(this));
+        graph.getGridLabelRenderer().setNumHorizontalLabels(4); // only 4 because of the space
+
+// set manual x bounds to have nice steps
+       // graph.getViewport().setMinX(d1.getTime());
+       // graph.getViewport().setMinX(d2.getTime());
+       // graph.getViewport().setMaxX(d3.getTime());
+      //  graph.getViewport().setXAxisBoundsManual(true);
+
+// as we use dates as labels, the human rounding to nice readable numbers
+// is not necessary
+        graph.getGridLabelRenderer().setHumanRounding(false);
+        series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
             @Override
-            public boolean onQueryTextChange(String s) {
-                adapter.getFilter().filter(s);
-                return false;
+            public int get(DataPoint data) {
+                return Color.rgb((int) data.getX()*255/4, (int) Math.abs(data.getY()*255/6), 100);
             }
         });
-    return super.onCreateOptionsMenu(menu);
+
+        series.setSpacing(70);
+
+
+// draw values on top
+        series.setDrawValuesOnTop(true);
+        series.setValuesOnTopColor(Color.RED);
+
+*/
+
     }
-}
+
+
+
