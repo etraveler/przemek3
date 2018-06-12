@@ -49,7 +49,7 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
     public void processFinish(String result) {
 
         result = result.substring(0, result.length() - 1);
-        Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+
 
 
         barChart = (BarChart) findViewById(R.id.barGraph);
