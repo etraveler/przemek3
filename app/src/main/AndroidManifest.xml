@@ -8,7 +8,7 @@
         android:name=".Inne.tokenGlobal"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="OPUS"
+        android:label="Pogoda"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -51,7 +51,7 @@
             android:label="MENU GŁÓWNE" />
         <activity
             android:name=".Glowne.Menu_pogoda"
-            android:label="MENU POGODA" />
+            android:label="Pogoda we Wrocławiu" />
         <activity
             android:name=".Glowne.Menu_przyszle"
             android:label="@string/title_activity_menu_nowe" />
@@ -60,7 +60,7 @@
             android:label="Co chcesz dodać??" />
         <activity
             android:name=".Nieposortowane.Temperature"
-            android:label="Co chcesz dodać??" />
+            android:label="Temp. we Wrocławiu, czujnik #1" />
         <activity
             android:name=".Bus.DodajDoBusaPopup"
             android:label="Ile sztuk?"
@@ -98,8 +98,12 @@
         <activity
             android:name=".Nieposortowane.Pracownicy"
             android:label="Pracownicy" />
-        <activity android:name=".Nieposortowane.Rain" />
-        <activity android:name=".Nieposortowane.Pollution"></activity>
+        <activity android:name=".Nieposortowane.Rain"
+            android:label="Opady we Wrocławiu"
+            />
+        <activity android:name=".Nieposortowane.Pollution"
+            android:label="PM2.5 | Pył zawieszony - Wrocław"
+        />
     </application>
 
 </manifest>
