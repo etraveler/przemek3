@@ -48,7 +48,7 @@ public class Pollution extends AppCompatActivity implements AsyncResponse{
     @Override
     public void processFinish(String result) {
 
-
+        result = result.substring(0, result.length() - 1);
 
 
         barChart = (BarChart) findViewById(R.id.barGraph);
