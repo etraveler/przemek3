@@ -23,6 +23,8 @@ public class Menu_pogoda extends AppCompatActivity implements AsyncResponse, Vie
 
     Button btntemperature;
     Button btnwyloguj;
+    Button btnzanieczyszczenie;
+    Button btndeszcz;
 
 
     @Override
@@ -30,7 +32,10 @@ public class Menu_pogoda extends AppCompatActivity implements AsyncResponse, Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_pogoda);
 
-
+        btndeszcz = (Button) findViewById(R.id.btndeszcz);
+        btndeszcz.setOnClickListener(this);
+        btnzanieczyszczenie = (Button) findViewById(R.id.btnzanieczyszczenie );
+        btnzanieczyszczenie .setOnClickListener(this);
         btntemperature = (Button) findViewById(R.id.btntemperature);
         btntemperature.setOnClickListener(this);
         btnwyloguj = (Button) findViewById(R.id.btnwyloguj);
@@ -69,6 +74,14 @@ public class Menu_pogoda extends AppCompatActivity implements AsyncResponse, Vie
             case R.id.btntemperature:
                 Intent in2 = new Intent(this, Temperatura.class);
                 startActivity(in2);
+                break;
+            case R.id.btndeszcz:
+                Intent in3 = new Intent(this, Temperatura.class);
+                startActivity(in3);
+                break;
+            case R.id.btnzanieczyszczenie:
+                Intent in4 = new Intent(this, Temperatura.class);
+                startActivity(in4);
                 break;
 
 

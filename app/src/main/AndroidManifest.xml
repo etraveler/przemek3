@@ -18,7 +18,8 @@
             android:exported="false"
             android:stopWithTask="false" />
 
-        <activity android:name=".Glowne.Logowanie"> //asdasd
+        <activity android:name=".Glowne.Logowanie">
+            //asdasd
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -57,7 +58,6 @@
         <activity
             android:name=".Bus.DodajDoBusa"
             android:label="Co chcesz dodać??" />
-
         <activity
             android:name=".Nieposortowane.Temperatura"
             android:label="Co chcesz dodać??" />
@@ -97,7 +97,9 @@
             android:theme="@style/AppTheme.pop_up_style" />
         <activity
             android:name=".Nieposortowane.Pracownicy"
-            android:label="Pracownicy"></activity>
+            android:label="Pracownicy" />
+        <activity android:name=".Nieposortowane.deszcz" />
+        <activity android:name=".Nieposortowane.zanieczyszczenie"></activity>
     </application>
 
 </manifest>
