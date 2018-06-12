@@ -27,13 +27,13 @@ import java.util.HashMap;
 
 public class Pollution extends AppCompatActivity implements AsyncResponse{
 
-    BarChart barChart;
+    BarChart barChart2;
     // the labels that should be drawn on the XAxis
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employees);
+        setContentView(R.layout.activity_pollution);
 
 
         HashMap postData2 = new HashMap();
@@ -51,7 +51,7 @@ public class Pollution extends AppCompatActivity implements AsyncResponse{
 
 
 
-        barChart = (BarChart) findViewById(R.id.barGraph);
+        barChart2 = (BarChart) findViewById(R.id.barGraph);
         int n = 6;
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         int kot=1;
@@ -108,16 +108,16 @@ public class Pollution extends AppCompatActivity implements AsyncResponse{
         BarDataSet set = new BarDataSet(barEntries, "Temperature w ℃");
 
         BarData data = new BarData(set);
-        barChart.setDescription(null);
-        barChart.invalidate();
-        barChart.setData(data);
+        barChart2.setDescription(null);
+        barChart2.invalidate();
+        barChart2.setData(data);
         data.setBarWidth(0.5f); // set custom bar width
-        barChart.setFitBars(true); // make the x-axis fit exactly all bars
+        barChart2.setFitBars(true); // make the x-axis fit exactly all bars
 
-        barChart.setTouchEnabled(true);  // do dotykania
-        barChart.setDragEnabled(true);  // do przesuwania
+        barChart2.setTouchEnabled(true);  // do dotykania
+        barChart2.setDragEnabled(true);  // do przesuwania
 
-        Legend legend = barChart.getLegend();
+        Legend legend = barChart2.getLegend();
         legend.setEnabled(true);
         legend.setFormSize(10f); // set the size of the legend forms/shapes
         legend.setForm(Legend.LegendForm.CIRCLE); // set what type of form/shape should be used
@@ -149,12 +149,12 @@ public class Pollution extends AppCompatActivity implements AsyncResponse{
         };
 
 
-        XAxis xAxis = barChart.getXAxis();
+        XAxis xAxis = barChart2.getXAxis();
         xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
         xAxis.setValueFormatter(formatter);
 
 
-        barChart.invalidate(); // refresh
+        barChart2.invalidate(); // refresh
 
 
 
