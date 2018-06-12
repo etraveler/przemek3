@@ -69,7 +69,7 @@ public class Menu_pogoda extends AppCompatActivity implements AsyncResponse, Vie
 
                 Intent in1 = new Intent(this, Logowanie.class);
                 startActivity(in1);
-                break;
+                break; 
 
             case R.id.btntemperature:
                 Intent in2 = new Intent(this, Temperatura.class);
