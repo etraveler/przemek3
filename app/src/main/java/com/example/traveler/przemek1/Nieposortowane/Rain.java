@@ -27,7 +27,7 @@ import java.util.HashMap;
 
 public class Rain extends AppCompatActivity implements AsyncResponse{
 
-    BarChart barChart1;
+    BarChart barChart;
     // the labels that should be drawn on the XAxis
 
     @Override
@@ -51,7 +51,7 @@ public class Rain extends AppCompatActivity implements AsyncResponse{
         Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
 
 
-        barChart1 = (BarChart) findViewById(R.id.barGraph);
+        barChart = (BarChart) findViewById(R.id.barGraph);
         int n = 6;
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         int kot=1;
@@ -108,16 +108,16 @@ public class Rain extends AppCompatActivity implements AsyncResponse{
         BarDataSet set = new BarDataSet(barEntries, "Temperature w ℃");
 
         BarData data = new BarData(set);
-        barChart1.setDescription(null);
-        barChart1.invalidate();
-        barChart1.setData(data);
+        barChart.setDescription(null);
+        barChart.invalidate();
+        barChart.setData(data);
         data.setBarWidth(0.5f); // set custom bar width
-        barChart1.setFitBars(true); // make the x-axis fit exactly all bars
+        barChart.setFitBars(true); // make the x-axis fit exactly all bars
 
-        barChart1.setTouchEnabled(true);  // do dotykania
-        barChart1.setDragEnabled(true);  // do przesuwania
+        barChart.setTouchEnabled(true);  // do dotykania
+        barChart.setDragEnabled(true);  // do przesuwania
 
-        Legend legend = barChart1.getLegend();
+        Legend legend = barChart.getLegend();
         legend.setEnabled(true);
         legend.setFormSize(10f); // set the size of the legend forms/shapes
         legend.setForm(Legend.LegendForm.CIRCLE); // set what type of form/shape should be used
@@ -149,12 +149,12 @@ public class Rain extends AppCompatActivity implements AsyncResponse{
         };
 
 
-        XAxis xAxis = barChart1.getXAxis();
+        XAxis xAxis = barChart.getXAxis();
         xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
         xAxis.setValueFormatter(formatter);
 
 
-        barChart1.invalidate(); // refresh
+        barChart.invalidate(); // refresh
 
 
 
