@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.traveler.przemek1.Nieposortowane.Employees;
 import com.example.traveler.przemek1.Inne.checkToken;
-import com.example.traveler.przemek1.Nieposortowane.Temperatura;
+import com.example.traveler.przemek1.Nieposortowane.Pollution;
+import com.example.traveler.przemek1.Nieposortowane.Rain;
+import com.example.traveler.przemek1.Nieposortowane.Temperature;
 import com.example.traveler.przemek1.R;
 import com.example.traveler.przemek1.Inne.tokenGlobal;
 import com.kosalgeek.asynctask.AsyncResponse;
@@ -69,18 +70,18 @@ public class Menu_pogoda extends AppCompatActivity implements AsyncResponse, Vie
 
                 Intent in1 = new Intent(this, Logowanie.class);
                 startActivity(in1);
-                break; 
+                break;
 
             case R.id.btntemperature:
-                Intent in2 = new Intent(this, Temperatura.class);
+                Intent in2 = new Intent(this, Temperature.class);
                 startActivity(in2);
                 break;
             case R.id.btndeszcz:
-                Intent in3 = new Intent(this, Temperatura.class);
+                Intent in3 = new Intent(this, Rain.class);
                 startActivity(in3);
                 break;
             case R.id.btnzanieczyszczenie:
-                Intent in4 = new Intent(this, Temperatura.class);
+                Intent in4 = new Intent(this, Pollution.class);
                 startActivity(in4);
                 break;
 

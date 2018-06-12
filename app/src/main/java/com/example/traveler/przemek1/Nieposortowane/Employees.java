@@ -60,7 +60,7 @@ public class Employees extends AppCompatActivity {
         barEntries.add(new BarEntry(24f, 18f));
 
 
-        BarDataSet set = new BarDataSet(barEntries, "Temperatura w ℃");
+        BarDataSet set = new BarDataSet(barEntries, "Temperature w ℃");
 
         BarData data = new BarData(set);
         barChart.setDescription(null);

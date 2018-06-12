@@ -59,7 +59,7 @@
             android:name=".Bus.DodajDoBusa"
             android:label="Co chcesz dodać??" />
         <activity
-            android:name=".Nieposortowane.Temperatura"
+            android:name=".Nieposortowane.Temperature"
             android:label="Co chcesz dodać??" />
         <activity
             android:name=".Bus.DodajDoBusaPopup"
@@ -98,8 +98,8 @@
         <activity
             android:name=".Nieposortowane.Pracownicy"
             android:label="Pracownicy" />
-        <activity android:name=".Nieposortowane.deszcz" />
-        <activity android:name=".Nieposortowane.zanieczyszczenie"></activity>
+        <activity android:name=".Nieposortowane.Rain" />
+        <activity android:name=".Nieposortowane.Pollution"></activity>
     </application>
 
 </manifest>

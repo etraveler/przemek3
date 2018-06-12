@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-public class deszcz extends AppCompatActivity implements AsyncResponse{
+public class Pollution extends AppCompatActivity implements AsyncResponse{
 
     BarChart barChart;
     // the labels that should be drawn on the XAxis
@@ -39,7 +39,7 @@ public class deszcz extends AppCompatActivity implements AsyncResponse{
         HashMap postData2 = new HashMap();
         postData2.put("mobile1", "android1");
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
-        task.execute("http://traveler95.nazwa.pl/jeden/client/pogoda.php");
+        task.execute("http://traveler95.nazwa.pl/jeden/client/pollution.php");
 
 
     }
@@ -105,7 +105,7 @@ public class deszcz extends AppCompatActivity implements AsyncResponse{
 
 
 
-        BarDataSet set = new BarDataSet(barEntries, "Temperatura w ℃");
+        BarDataSet set = new BarDataSet(barEntries, "Temperature w ℃");
 
         BarData data = new BarData(set);
         barChart.setDescription(null);
