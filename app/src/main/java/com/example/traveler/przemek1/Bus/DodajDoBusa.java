@@ -97,7 +97,7 @@ public class DodajDoBusa extends AppCompatActivity implements AsyncResponse {
                 switch (position)
                 {
                     default:
-                        Intent in = new Intent(DodajDoBusa.this, DodajDoBusaPopup.class);
+                        Intent in = new Intent(DodajDoBusa.this, DodajDoBusa.class);
                         in.putExtra("idbusa",idbusa);
                         in.putExtra("idprzedmiotu",idprzedmiotu);
 

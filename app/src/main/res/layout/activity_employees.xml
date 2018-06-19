@@ -14,5 +14,14 @@
         android:layout_height="400dp"
         android:id="@+id/barGraph"></com.github.mikephil.charting.charts.BarChart>
 
+    <Button
+        android:id="@+id/wstecz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/barGraph"
+        android:layout_marginTop="13dp"
+        android:text="Button" />
+
 </RelativeLayout>
 
