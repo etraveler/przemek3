@@ -56,6 +56,7 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
             else
             {
                 Toast.makeText(this, "Nieznany błąd", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -94,6 +95,9 @@ public class Logowanie extends AppCompatActivity implements AsyncResponse, View.
                     Intent in2 = new Intent(this, CreateAccount.class);
                     startActivity(in2);
                 }
+
+
+
                 break;
         }
     }

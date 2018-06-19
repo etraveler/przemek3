@@ -49,20 +49,25 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
 
         result = result.substring(0, result.length() - 1);
 
+        Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+
 
         barChart = (BarChart) findViewById(R.id.barGraph);
         int n = 6;
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         int kot=1;
-        int pies=0;
+        int pies=1;
         int licznikDaty=0;
-
+        int y=0;
         String godziny;
 
-        final String[] quarters = new String[30];
-        final String[] daty = new String[30];
 
-        if (result.equals("pusto"))
+       final String[] daty = new String[30];
+       final String[] quarters = new String[30];
+
+
+
+     if (result.equals("pusto"))
         {
 
         }
@@ -89,12 +94,14 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
                         {
                             pies++;
                         }
+
                     }
                     if (i == 3) {               // 3 iteracja i teraz bedzie temperatura
                         if (kot<25)
                         {
                         float f = Float.parseFloat(retval2);    // rzutowanie int na float, ale chyba juz niepotrzebne, bo w bazie sa floatmi
                         barEntries.add(new BarEntry(kot, f));  // przypisanie danych do wykresu. 'kot' jako wartosc X czyli liczba 1 , 2, 3, a 'f' jako wartość Y, czyli temperatura
+
                             kot++;
                         }
 
@@ -116,7 +123,6 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
                 }
             }
         }
-
 
 
         BarDataSet set = new BarDataSet(barEntries, "Temperatura w ℃");
