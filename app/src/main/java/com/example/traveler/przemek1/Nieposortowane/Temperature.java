@@ -131,7 +131,15 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
                     if (i==4){                  //teraz powinna byc data sama
                         String zmiennaDate = retval2;       // przypisanie samej daty z 'retval2' do 'zmiennaDate'
                         zmiennaDate = zmiennaDate.substring(8);  // do zmiennej 'zmiennaDate', powinno się zapisać po 8 znaku w dacie, czyli sam dzien np. 11, 15, 16 itd.
-                        data_wstecz_wyslana=retval2;
+                        int dzien = Integer.parseInt(zmiennaDate);
+                        int dzien2=dzien-1;
+                        String dzienstr = Integer.toString(dzien2);
+                        String zmiennaDate2 = retval2.substring(0,8);
+
+                        String koniec=zmiennaDate2+dzienstr;
+                        Toast.makeText(this, koniec, Toast.LENGTH_SHORT).show();
+
+                        data_wstecz_wyslana=koniec;
                         daty[licznikDaty]=zmiennaDate; // zapiszemy teraz kazdy dzien do zmiennej w tablicy
                          Toast.makeText(this, daty[licznikDaty], Toast.LENGTH_SHORT).show();
                         if(licznikDaty<24)
@@ -145,6 +153,7 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
                 }
             }
         }
+
 
 
         BarDataSet set = new BarDataSet(barEntries, "Temperatura w ℃");
@@ -211,8 +220,8 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
     public void onClick(View v) {
 
         Intent in = new Intent(Temperature.this, Temperature.class);
-        in.putExtra("idbusa",data_wstecz_wyslana);
-
+        in.putExtra("data_wstecz",data_wstecz_wyslana);
+        startActivity(in);
 
 
 
