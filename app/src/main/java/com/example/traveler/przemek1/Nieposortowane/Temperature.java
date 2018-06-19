@@ -1,14 +1,17 @@
 package com.example.traveler.przemek1.Nieposortowane;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.traveler.przemek1.Bus.DodajDoBusa;
 import com.example.traveler.przemek1.Inne.Wiersz12;
-import com.example.traveler.przemek1.Inne.Wiersz12ListAdapter;
 import com.example.traveler.przemek1.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.AxisBase;
@@ -25,9 +28,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-public class Temperature extends AppCompatActivity implements AsyncResponse{
+public class Temperature extends AppCompatActivity implements AsyncResponse, View.OnClickListener {
 
     BarChart barChart;
+    String data_wstecz_wyslana;
+    String data_wstecz_odebrana;
+    Button wstecz;
     // the labels that should be drawn on the XAxis
 
     @Override
@@ -35,11 +41,27 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employees);
 
+        wstecz = (Button) findViewById(R.id.wstecz);
+        wstecz.setOnClickListener(this);
 
-        HashMap postData2 = new HashMap();
-        postData2.put("mobile1", "android1");
-        PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
-        task.execute("http://traveler95.nazwa.pl/jeden/client/temperature.php");
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            Toast.makeText(this, "extrass!", Toast.LENGTH_SHORT).show();
+            data_wstecz_odebrana = extras.getString("data_wstecz");
+            HashMap postData = new HashMap();
+            postData.put("mobile1", "android1");
+            postData.put("data_wstecz", data_wstecz_odebrana);
+            PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
+            task.execute("http://traveler95.nazwa.pl/jeden/client/temperature3.php");
+
+        }
+        else {
+
+            HashMap postData2 = new HashMap();
+            postData2.put("mobile1", "android1");
+            PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
+            task.execute("http://traveler95.nazwa.pl/jeden/client/temperature.php");
+        }
 
     }
 
@@ -109,7 +131,7 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
                     if (i==4){                  //teraz powinna byc data sama
                         String zmiennaDate = retval2;       // przypisanie samej daty z 'retval2' do 'zmiennaDate'
                         zmiennaDate = zmiennaDate.substring(8);  // do zmiennej 'zmiennaDate', powinno się zapisać po 8 znaku w dacie, czyli sam dzien np. 11, 15, 16 itd.
-
+                        data_wstecz_wyslana=retval2;
                         daty[licznikDaty]=zmiennaDate; // zapiszemy teraz kazdy dzien do zmiennej w tablicy
                          Toast.makeText(this, daty[licznikDaty], Toast.LENGTH_SHORT).show();
                         if(licznikDaty<24)
@@ -183,6 +205,19 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
 
 
     }
+
+
+    @Override
+    public void onClick(View v) {
+
+        Intent in = new Intent(Temperature.this, Temperature.class);
+        in.putExtra("idbusa",data_wstecz_wyslana);
+
+
+
+
+    }
+
 
 
     }
