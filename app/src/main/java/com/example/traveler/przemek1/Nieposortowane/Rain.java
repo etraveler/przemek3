@@ -105,7 +105,7 @@ public class Rain extends AppCompatActivity implements AsyncResponse{
 
 
 
-        BarDataSet set = new BarDataSet(barEntries, "Temperature w ℃");
+        BarDataSet set = new BarDataSet(barEntries, "Opady deszczu w l/m²");
 
         BarData data = new BarData(set);
         barChart.setDescription(null);

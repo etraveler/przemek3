@@ -73,6 +73,7 @@ public class Employees extends AppCompatActivity {
         barChart.setTouchEnabled(true);  // do dotykania
         barChart.setDragEnabled(true);  // do przesuwania
 
+
         Legend legend = barChart.getLegend();
         legend.setEnabled(true);
         legend.setFormSize(10f); // set the size of the legend forms/shapes

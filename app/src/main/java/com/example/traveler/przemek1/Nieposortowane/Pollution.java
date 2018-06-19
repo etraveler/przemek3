@@ -105,12 +105,13 @@ public class Pollution extends AppCompatActivity implements AsyncResponse{
 
 
 
-        BarDataSet set = new BarDataSet(barEntries, "Temperature w ℃");
+        BarDataSet set = new BarDataSet(barEntries, "Pył zawieszony PM2.5 μg/m³ ");
 
         BarData data = new BarData(set);
         barChart.setDescription(null);
         barChart.invalidate();
         barChart.setData(data);
+        set.setColor(R.color.colorPrimaryDark);
         data.setBarWidth(0.5f); // set custom bar width
         barChart.setFitBars(true); // make the x-axis fit exactly all bars
 

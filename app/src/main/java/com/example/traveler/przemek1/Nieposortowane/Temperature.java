@@ -41,7 +41,6 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
         task.execute("http://traveler95.nazwa.pl/jeden/client/temperature.php");
 
-
     }
 
 
@@ -51,16 +50,17 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
         result = result.substring(0, result.length() - 1);
 
 
-
         barChart = (BarChart) findViewById(R.id.barGraph);
         int n = 6;
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         int kot=1;
         int pies=0;
+        int licznikDaty=0;
 
         String godziny;
 
         final String[] quarters = new String[30];
+        final String[] daty = new String[30];
 
         if (result.equals("pusto"))
         {
@@ -70,35 +70,48 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
         {
             ListView mListView = (ListView) findViewById(R.id.listView);
             int i = 1;
-            for (String retval1 : result.split(">"))
+            for (String retval1 : result.split(">")) // ten znak oddziela caly jeden wynik z bazy danych czyli: "id, time, date, temperature" od kolejnego wyniku, czyli dzieli stringa na wiersze
             {
                 i=1;
                 final Wiersz12 bus = new Wiersz12("", "", "");
-                for (String retval2 : retval1.split("<")) {
-                    if (i == 1) {
+                for (String retval2 : retval1.split("<")) {         // ten znak oddziela poszczegolne kolumny w tym jednym wyniku z bazy danych, czyli dzieli na kolumny
+                    if (i == 1) {               // pierwsza iteracja, ale to 'id', którego nigdzie nie używamy
 
                     }
-                    if (i == 2) {
+                    if (i == 2) {       //teraz bedzie wartosc 'time'
 
-                        String str = retval2;
+                        String str = retval2;               // tutaj sie zapisze do zmiennej 'str' string 'time', a potem skrocony o 3 ostatnie znaki, bo chyba ma styl np. 10:00:00
                         str = str.substring(0, str.length() - 3);
 
 
-                        quarters[pies]=str;
+                        quarters[pies]=str;             // do tablicy 'quarters' bedzie zapisywana po kolei godzina
                         if (pies<24)
                         {
                             pies++;
                         }
                     }
-                    if (i == 3) {
+                    if (i == 3) {               // 3 iteracja i teraz bedzie temperatura
                         if (kot<25)
                         {
-                        float f = Float.parseFloat(retval2);
-                        barEntries.add(new BarEntry(kot, f));
+                        float f = Float.parseFloat(retval2);    // rzutowanie int na float, ale chyba juz niepotrzebne, bo w bazie sa floatmi
+                        barEntries.add(new BarEntry(kot, f));  // przypisanie danych do wykresu. 'kot' jako wartosc X czyli liczba 1 , 2, 3, a 'f' jako wartość Y, czyli temperatura
                             kot++;
                         }
 
                     }
+                    if (i==4){                  //teraz powinna byc data sama
+                        String zmiennaDate = retval2;       // przypisanie samej daty z 'retval2' do 'zmiennaDate'
+                        zmiennaDate = zmiennaDate.substring(8);  // do zmiennej 'zmiennaDate', powinno się zapisać po 8 znaku w dacie, czyli sam dzien np. 11, 15, 16 itd.
+
+                        daty[licznikDaty]=zmiennaDate; // zapiszemy teraz kazdy dzien do zmiennej w tablicy
+                         Toast.makeText(this, daty[licznikDaty], Toast.LENGTH_SHORT).show();
+                        if(licznikDaty<24)
+                        {
+                            licznikDaty++;
+                        }
+
+                    }
+
                     i++;
                 }
             }
@@ -106,13 +119,14 @@ public class Temperature extends AppCompatActivity implements AsyncResponse{
 
 
 
-        BarDataSet set = new BarDataSet(barEntries, "Temperature w ℃");
+        BarDataSet set = new BarDataSet(barEntries, "Temperatura w ℃");
 
-        BarData data = new BarData(set);
+        BarData data = new BarData(set);    //tutaj sie rysuje wykres
         barChart.setDescription(null);
         barChart.invalidate();
         barChart.setData(data);
         data.setBarWidth(0.5f); // set custom bar width
+        set.setColor(R.color.blue);
         barChart.setFitBars(true); // make the x-axis fit exactly all bars
 
         barChart.setTouchEnabled(true);  // do dotykania
