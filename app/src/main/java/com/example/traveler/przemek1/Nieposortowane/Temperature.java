@@ -21,6 +21,7 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
@@ -199,16 +200,18 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
             }
         }
 
-
+        int lime=0xff721817;
 
         BarDataSet set = new BarDataSet(barEntries, "Temperatura w ℃");
-
+       // set.setColors(new int[] {R.color.colorAccent});
+        set.setColor(lime);
+       // set.setColors(ColorTemplate.VORDIPLOM_COLORS);
         BarData data = new BarData(set);    //tutaj sie rysuje wykres
         barChart.setDescription(null);
         barChart.invalidate();
         barChart.setData(data);
         data.setBarWidth(0.5f); // set custom bar width
-        set.setColor(R.color.blue);
+      //  set.setColor(R.color.blue);
         barChart.setFitBars(true); // make the x-axis fit exactly all bars
 
         barChart.setTouchEnabled(true);  // do dotykania

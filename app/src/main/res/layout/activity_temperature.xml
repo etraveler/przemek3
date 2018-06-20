@@ -42,10 +42,10 @@
                     android:id="@+id/btn_wstecz"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
                     android:layout_weight="1"
-                    android:layout_marginTop="20dp"
                     android:background="@android:drawable/ic_media_rew"
-                    android:backgroundTint="#721817" />
+                    android:backgroundTint="#353535" />
             </LinearLayout>
 
             <LinearLayout
@@ -58,10 +58,10 @@
                     android:id="@+id/btn_do_przodu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:background="@android:drawable/ic_media_ff"
-                    android:backgroundTint="#721817" />
+                    android:backgroundTint="#353535" />
             </LinearLayout>
 
         </LinearLayout>
@@ -78,7 +78,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
                 android:background="@drawable/ic_dashboard_black_24dp"
-                android:backgroundTint="#721817"
+                android:backgroundTint="#353535"
                 android:textColor="#ffffff" />
 
         </LinearLayout>
