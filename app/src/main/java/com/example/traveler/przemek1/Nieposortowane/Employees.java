@@ -28,7 +28,7 @@ public class Employees extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employees);
+        setContentView(R.layout.activity_temperature);
 
         barChart = (BarChart) findViewById(R.id.barGraph);
         int n = 6;

@@ -5,55 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout android:id="@+id/RelativeLayout01"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnzanieczyszczenie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="?android:attr/colorPrimaryDark"
-            android:text="zanieczyszczenie"
-            android:textColor="#ffffff"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="57dp" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btntemperature"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/btndeszcz"
-            android:layout_marginTop="19dp"
-            android:backgroundTint="?android:attr/colorPrimaryDark"
-            android:text="Temperatura"
-            android:textColor="#ffffff"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="114dp" />
+            <RelativeLayout
+                android:id="@+id/RelativeLayout01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btndeszcz"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/btnzanieczyszczenie"
-            android:layout_marginTop="14dp"
-            android:backgroundTint="?android:attr/colorPrimaryDark"
-            android:text="Deszcz"
-            android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/btnzanieczyszczenie"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="zanieczyszczenie"
+                    android:textColor="#ffffff" />
 
-        <Button
-        android:id="@+id/btnwyloguj"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="WYLOGUJ" />
+                <Button
+                    android:id="@+id/btndeszcz"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/btnzanieczyszczenie"
+                    android:backgroundTint="#353535"
+                    android:text="Deszcz"
+                    android:textColor="#ffffff" />
 
 
-    </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btntemperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:backgroundTint="#312F2F"
+                    android:text="Temperatura"
+                    android:textColor="#ffffff" />
+
+                <Button
+                    android:id="@+id/btnwyloguj"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/btntemperature"
+                    android:layout_centerHorizontal="true"
+
+                    android:backgroundTint="#721817"
+                    android:text="WYLOGUJ"
+                    android:textColor="#ffffff" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

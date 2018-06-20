@@ -43,7 +43,7 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employees);
+        setContentView(R.layout.activity_temperature);
 
         btn_wstecz = (Button) findViewById(R.id.btn_wstecz);
         btn_wstecz.setOnClickListener(this);

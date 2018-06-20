@@ -39,7 +39,7 @@ public class Pollution extends AppCompatActivity implements AsyncResponse{
         HashMap postData2 = new HashMap();
         postData2.put("mobile1", "android1");
         PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
-        task.execute("http://traveler95.nazwa.pl/jeden/client/pollution.php");
+        task.execute("http://traveler95.nazwa.pl/jeden/client/pogoda/pollution.php");
 
 
     }
