@@ -56,7 +56,7 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
         btn_menu = (Button) findViewById(R.id.btn_menu);
         btn_menu.setOnClickListener(this);
 
-
+ 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             zmiana_daty_odebrana = extras.getString("zmiana_daty_wyslana");
