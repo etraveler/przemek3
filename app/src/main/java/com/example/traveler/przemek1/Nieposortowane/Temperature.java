@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.traveler.przemek1.Bus.DodajDoBusa;
+import com.example.traveler.przemek1.Glowne.Menu_pogoda;
 import com.example.traveler.przemek1.Inne.Wiersz12;
 import com.example.traveler.przemek1.R;
 import com.github.mikephil.charting.charts.BarChart;
@@ -31,9 +31,13 @@ import java.util.HashMap;
 public class Temperature extends AppCompatActivity implements AsyncResponse, View.OnClickListener {
 
     BarChart barChart;
-    String data_wstecz_wyslana;
-    String data_wstecz_odebrana;
-    Button wstecz;
+    String zmiana_daty_wstecz_wyslana;
+    String zmiana_daty_do_przodu_wyslana;
+    String zmiana_daty_odebrana;
+    Button btn_wstecz;
+    Button btn_do_przodu;
+    Button btn_menu;
+    String wstecz_czy_naprzod_odebrane;
     // the labels that should be drawn on the XAxis
 
     @Override
@@ -41,18 +45,24 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employees);
 
-        wstecz = (Button) findViewById(R.id.wstecz);
-        wstecz.setOnClickListener(this);
+        btn_wstecz = (Button) findViewById(R.id.btn_wstecz);
+        btn_wstecz.setOnClickListener(this);
+        btn_do_przodu = (Button) findViewById(R.id.btn_do_przodu);
+        btn_do_przodu.setOnClickListener(this);
+        btn_menu = (Button) findViewById(R.id.btn_menu);
+        btn_menu.setOnClickListener(this);
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            Toast.makeText(this, "extrass!", Toast.LENGTH_SHORT).show();
-            data_wstecz_odebrana = extras.getString("data_wstecz");
+            zmiana_daty_odebrana = extras.getString("zmiana_daty_wyslana");
+            wstecz_czy_naprzod_odebrane =  extras.getString("wstecz_czy_naprzod");
             HashMap postData = new HashMap();
+            Toast.makeText(this, zmiana_daty_odebrana, Toast.LENGTH_SHORT).show();
             postData.put("mobile1", "android1");
-            postData.put("data_wstecz", data_wstecz_odebrana);
+            postData.put("zmiana_daty", zmiana_daty_odebrana);
             PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
-            task.execute("http://traveler95.nazwa.pl/jeden/client/temperature3.php");
+            task.execute("http://traveler95.nazwa.pl/jeden/client/pogoda/temperature2.php");
 
         }
         else {
@@ -60,7 +70,7 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
             HashMap postData2 = new HashMap();
             postData2.put("mobile1", "android1");
             PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
-            task.execute("http://traveler95.nazwa.pl/jeden/client/temperature.php");
+            task.execute("http://traveler95.nazwa.pl/jeden/client/pogoda/temperature.php");
         }
 
     }
@@ -71,14 +81,13 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
 
         result = result.substring(0, result.length() - 1);
 
-        Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
 
 
         barChart = (BarChart) findViewById(R.id.barGraph);
         int n = 6;
         ArrayList<BarEntry> barEntries = new ArrayList<>();
-        int kot=1;
-        int pies=1;
+        int licznik_x=1;
+        int licznik_quarters=1;
         int licznikDaty=0;
         int y=0;
         String godziny;
@@ -89,9 +98,39 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
 
 
 
-     if (result.equals("pusto"))
+     if (result.equals("pust"))
         {
 
+            String zmiana_daty_odebrana2;
+            String miesiac_rok2;
+        if (wstecz_czy_naprzod_odebrane.equals("a")) {
+
+
+            zmiana_daty_wstecz_wyslana = zmiana_daty_odebrana;
+
+            zmiana_daty_odebrana2 = zmiana_daty_odebrana.substring(8);
+            int dzisiaj_dzien = Integer.parseInt(zmiana_daty_odebrana2);                   //zmiana daty na dzien wcześniej
+            int nastepny_dzien = dzisiaj_dzien + 1;                                //zmiana daty na dzien wcześniej
+            String nastepny_dzien_string = Integer.toString(nastepny_dzien);    //zmiana daty na dzien wcześniej
+            miesiac_rok2 = zmiana_daty_odebrana.substring(0, 8);                            //zmiana daty na dzien wcześniej
+            String jutrzejsza_data2 = miesiac_rok2 + nastepny_dzien_string;             //zmiana daty na dzien wcześniej
+            zmiana_daty_do_przodu_wyslana = jutrzejsza_data2;
+
+        }
+        else if (wstecz_czy_naprzod_odebrane.equals("b")) {
+
+            zmiana_daty_do_przodu_wyslana = zmiana_daty_odebrana;
+
+            zmiana_daty_odebrana2 = zmiana_daty_odebrana.substring(8);
+            int dzisiaj_dzien = Integer.parseInt(zmiana_daty_odebrana2);                   //zmiana daty na dzien wcześniej
+            int wczoraj_dzien = dzisiaj_dzien - 1;                                //zmiana daty na dzien wcześniej
+            String wczoraj_dzien_string = Integer.toString(wczoraj_dzien);    //zmiana daty na dzien wcześniej
+            miesiac_rok2 = zmiana_daty_odebrana.substring(0, 8);                            //zmiana daty na dzien wcześniej
+            String wczorajsza_data2 = miesiac_rok2 + wczoraj_dzien_string;             //zmiana daty na dzien wcześniej
+            zmiana_daty_wstecz_wyslana = wczorajsza_data2;
+
+
+        }
         }
         else
         {
@@ -111,37 +150,43 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
                         str = str.substring(0, str.length() - 3);
 
 
-                        quarters[pies]=str;             // do tablicy 'quarters' bedzie zapisywana po kolei godzina
-                        if (pies<24)
+                        quarters[licznik_quarters]=str;             // do tablicy 'quarters' bedzie zapisywana po kolei godzina
+                        if (licznik_quarters<24)
                         {
-                            pies++;
+                            licznik_quarters++;
                         }
 
                     }
                     if (i == 3) {               // 3 iteracja i teraz bedzie temperatura
-                        if (kot<25)
+                        if (licznik_x<25)
                         {
                         float f = Float.parseFloat(retval2);    // rzutowanie int na float, ale chyba juz niepotrzebne, bo w bazie sa floatmi
-                        barEntries.add(new BarEntry(kot, f));  // przypisanie danych do wykresu. 'kot' jako wartosc X czyli liczba 1 , 2, 3, a 'f' jako wartość Y, czyli temperatura
+                        barEntries.add(new BarEntry(licznik_x, f));  // przypisanie danych do wykresu. 'licznik_x' jako wartosc X czyli liczba 1 , 2, 3, a 'f' jako wartość Y, czyli temperatura
 
-                            kot++;
+                            licznik_x++;
                         }
 
                     }
                     if (i==4){                  //teraz powinna byc data sama
                         String zmiennaDate = retval2;       // przypisanie samej daty z 'retval2' do 'zmiennaDate'
                         zmiennaDate = zmiennaDate.substring(8);  // do zmiennej 'zmiennaDate', powinno się zapisać po 8 znaku w dacie, czyli sam dzien np. 11, 15, 16 itd.
-                        int dzien = Integer.parseInt(zmiennaDate);
-                        int dzien2=dzien-1;
-                        String dzienstr = Integer.toString(dzien2);
-                        String zmiennaDate2 = retval2.substring(0,8);
 
-                        String koniec=zmiennaDate2+dzienstr;
-                        Toast.makeText(this, koniec, Toast.LENGTH_SHORT).show();
 
-                        data_wstecz_wyslana=koniec;
+
+                        int dzisiejszy_dzien = Integer.parseInt(zmiennaDate);                   //zmiana daty na dzien wcześniej
+                        int wczorajszy_dzien=dzisiejszy_dzien-1;                                //zmiana daty na dzien wcześniej
+                        String wczorajszy_dzien_string = Integer.toString(wczorajszy_dzien);    //zmiana daty na dzien wcześniej
+                        String miesiac_rok = retval2.substring(0,8);                            //zmiana daty na dzien wcześniej
+                        String wczorajsza_data=miesiac_rok+wczorajszy_dzien_string;             //zmiana daty na dzien wcześniej
+                        zmiana_daty_wstecz_wyslana=wczorajsza_data;                             //zmiana daty na dzien wcześniej
+
+                        int jutrzejszy_dzien=dzisiejszy_dzien+1;                                //zmiana daty na dzien później
+                        String jutrzejszy_dzien_string = Integer.toString(jutrzejszy_dzien);    //zmiana daty na dzien później
+                        String jutrzejsza_data=miesiac_rok+jutrzejszy_dzien_string;             //zmiana daty na dzien później
+                        zmiana_daty_do_przodu_wyslana=jutrzejsza_data;                          //zmiana daty na dzien później
+
+
                         daty[licznikDaty]=zmiennaDate; // zapiszemy teraz kazdy dzien do zmiennej w tablicy
-                         Toast.makeText(this, daty[licznikDaty], Toast.LENGTH_SHORT).show();
                         if(licznikDaty<24)
                         {
                             licznikDaty++;
@@ -219,15 +264,34 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
     @Override
     public void onClick(View v) {
 
-        Intent in = new Intent(Temperature.this, Temperature.class);
-        in.putExtra("data_wstecz",data_wstecz_wyslana);
-        startActivity(in);
+        String wstecz_czy_naprzod; // a oznacza wsrttecz | b oznacza naprzód
+
+        switch (v.getId()) {
+            case R.id.btn_wstecz:
+                Intent in = new Intent(Temperature.this, Temperature.class);
+                wstecz_czy_naprzod="a";
+                in.putExtra("zmiana_daty_wyslana", zmiana_daty_wstecz_wyslana);
+                in.putExtra("wstecz_czy_naprzod", wstecz_czy_naprzod);
+                startActivity(in);
+                break;
+
+            case R.id.btn_do_przodu:
+                Intent in2 = new Intent(Temperature.this, Temperature.class);
+                wstecz_czy_naprzod="b";
+                in2.putExtra("zmiana_daty_wyslana", zmiana_daty_do_przodu_wyslana);
+                in2.putExtra("wstecz_czy_naprzod", wstecz_czy_naprzod);
+                startActivity(in2);
+                break;
+
+            case R.id.btn_menu:
+                Intent in3 = new Intent(Temperature.this, Menu_pogoda.class);
+                startActivity(in3);
+                break;
 
 
+        }
 
     }
-
-
 
     }
 

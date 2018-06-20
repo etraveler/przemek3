@@ -48,7 +48,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Build 3.8.0"
+            android:text="Build 3.9.7"
             android:textAlignment="gravity"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textColor="#BBBBBB" />
