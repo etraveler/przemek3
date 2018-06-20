@@ -30,38 +30,62 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".6"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".3"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btn_wstecz"
+                <TextView
+                    android:id="@+id/datatext"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:layout_weight="1"
-                    android:background="@android:drawable/ic_media_rew"
-                    android:backgroundTint="#353535" />
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/btn_wstecz"
+                    android:text=""
+                    android:layout_margin="2dp"
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".7"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btn_do_przodu"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:layout_weight="1"
-                    android:background="@android:drawable/ic_media_ff"
-                    android:backgroundTint="#353535" />
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_wstecz"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@android:drawable/ic_media_rew"
+                        android:backgroundTint="#353535" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_do_przodu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@android:drawable/ic_media_ff"
+                        android:backgroundTint="#353535" />
+
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

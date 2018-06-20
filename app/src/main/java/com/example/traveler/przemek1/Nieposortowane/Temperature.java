@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.traveler.przemek1.Glowne.Menu_pogoda;
@@ -186,6 +187,8 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
                         String jutrzejsza_data=miesiac_rok+jutrzejszy_dzien_string;             //zmiana daty na dzien później
                         zmiana_daty_do_przodu_wyslana=jutrzejsza_data;                          //zmiana daty na dzien później
 
+                        TextView dataView = (TextView) findViewById(R.id.datatext); //data na każdej stronie
+                        dataView.setText(retval2);
 
                         daty[licznikDaty]=zmiennaDate; // zapiszemy teraz kazdy dzien do zmiennej w tablicy
                         if(licznikDaty<24)
@@ -200,12 +203,10 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
             }
         }
 
-        int lime=0xff721817;
+        int redd=0xff721817;
 
         BarDataSet set = new BarDataSet(barEntries, "Temperatura w ℃");
-       // set.setColors(new int[] {R.color.colorAccent});
-        set.setColor(lime);
-       // set.setColors(ColorTemplate.VORDIPLOM_COLORS);
+        set.setColor(redd);
         BarData data = new BarData(set);    //tutaj sie rysuje wykres
         barChart.setDescription(null);
         barChart.invalidate();
