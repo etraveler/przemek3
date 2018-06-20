@@ -47,6 +47,8 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperature);
 
+
+
         btn_wstecz = (Button) findViewById(R.id.btn_wstecz);
         btn_wstecz.setOnClickListener(this);
         btn_do_przodu = (Button) findViewById(R.id.btn_do_przodu);
@@ -65,7 +67,8 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
             postData.put("zmiana_daty", zmiana_daty_odebrana);
             PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
             task.execute("http://traveler95.nazwa.pl/jeden/client/pogoda/temperature2.php");
-
+            TextView dataView = (TextView) findViewById(R.id.datatext); //data na każdej stronie
+            dataView.setText(zmiana_daty_odebrana);
         }
         else {
 
@@ -73,6 +76,7 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
             postData2.put("mobile1", "android1");
             PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData2);
             task.execute("http://traveler95.nazwa.pl/jeden/client/pogoda/temperature.php");
+
         }
 
     }
@@ -185,7 +189,7 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
                         int jutrzejszy_dzien=dzisiejszy_dzien+1;                                //zmiana daty na dzien później
                         String jutrzejszy_dzien_string = Integer.toString(jutrzejszy_dzien);    //zmiana daty na dzien później
                         String jutrzejsza_data=miesiac_rok+jutrzejszy_dzien_string;             //zmiana daty na dzien później
-                        zmiana_daty_do_przodu_wyslana=jutrzejsza_data;                          //zmiana daty na dzien później
+                        zmiana_daty_do_przodu_wyslana=jutrzejsza_data;                 //zmiana daty na dzien później
 
                         TextView dataView = (TextView) findViewById(R.id.datatext); //data na każdej stronie
                         dataView.setText(retval2);
