@@ -62,7 +62,6 @@ public class Temperature extends AppCompatActivity implements AsyncResponse, Vie
             zmiana_daty_odebrana = extras.getString("zmiana_daty_wyslana");
             wstecz_czy_naprzod_odebrane =  extras.getString("wstecz_czy_naprzod");
             HashMap postData = new HashMap();
-            Toast.makeText(this, zmiana_daty_odebrana, Toast.LENGTH_SHORT).show();
             postData.put("mobile1", "android1");
             postData.put("zmiana_daty", zmiana_daty_odebrana);
             PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
